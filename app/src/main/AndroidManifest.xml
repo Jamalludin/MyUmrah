@@ -52,11 +52,17 @@
         <activity
             android:name=".activity.approval.JamaahApprovalMyUmroh"
             android:theme="@style/AppTheme" />
-        <activity android:name=".activity.pembayaran.BayarDownPayment" />
-        <activity android:name=".activity.pembayaran.BayarFullPayment" />
-        <activity android:name=".activity.pembayaran.BayarBelanja" />
-        <activity android:name=".activity.perubahan.LinkKeluarga" />
-        <activity android:name=".activity.perubahan.PenggantianJamaah"></activity>
+        <activity android:name=".activity.pembayaran.BayarDownPayment"
+            android:theme="@style/AppTheme"/>
+        <activity android:name=".activity.pembayaran.BayarFullPayment"
+            android:theme="@style/AppTheme"/>
+        <activity android:name=".activity.pembayaran.BayarBelanja"
+            android:theme="@style/AppTheme"/>
+        <activity android:name=".activity.perubahan.LinkKeluarga"
+            android:theme="@style/AppTheme"/>
+        <activity android:name=".activity.perubahan.PenggantianJamaah"
+            android:theme="@style/AppTheme">
+        </activity>
     </application>
 
 </manifest>
