@@ -1,0 +1,42 @@
+<<<<<<< HEAD
+*.iml
+.gradle
+/local.properties
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+=======
+myumrah-core/target
+myumrah-api/target
+myumrah-dashboard/target
+logs/
+	
+!.mvn/wrapper/maven-wrapper.jar
+
+### STS ###
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.DS_Store
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+nbproject/private/
+nbbuild/
+build/
+dist/
+nbdist/
+.nb-gradle/
+target/
+>>>>>>> d192a2784c3e6395de8edc7bc4edcfbf5967f7aa

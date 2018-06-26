@@ -1,0 +1,699 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="15dp"
+    tools:context=".activity.daftar_umroh.DataPendukung">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/viewAlamat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp">
+
+                <TextView
+                    android:id="@+id/txt_alamat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="Data Pendukung"
+                    android:drawableRight="@drawable/add_people"
+                    android:layout_marginRight="10dp"
+                    android:textSize="20dp"
+                    android:textStyle="bold"/>
+
+                <View
+                    android:id="@+id/lineViewAlamat"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dip"
+                    android:layout_below="@+id/txt_alamat"
+                    android:background="#000000" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/input_layout_alamat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lineViewAlamat"
+                    android:layout_marginTop="20dp">
+
+                    <EditText
+                        android:id="@+id/input_alamat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Alamat"
+                        android:inputType="textMultiLine"
+                        android:scrollbars="vertical" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/input_layout_rtrw"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/input_layout_alamat"
+                    android:layout_marginTop="20dp">
+
+                    <EditText
+                        android:id="@+id/input_rtrw"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Rt / Rw"
+                        android:inputType="text" />
+                </android.support.design.widget.TextInputLayout>
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/viewDaerah"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/viewAlamat"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="5dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/reltif1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/prov"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:text="Pilih Provinsi : "
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/spinner_provinsi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/prov"
+                        android:layout_marginTop="10dp"
+                        android:text="Privinsi"
+                        android:textSize="18dp"></Spinner>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/reltif2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/reltif1"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/lthtx"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="Pilih Kabupaten : "
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/spinner_kabupaten"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/lthtx"
+                        android:layout_marginTop="10dp">
+
+                    </Spinner>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/reltif3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/reltif2"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/pilcmt"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:text="Pilih Kecamatan : "
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/spinner_kecamatan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/pilcmt"
+                        android:layout_marginTop="10dp">
+
+                    </Spinner>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/reltif4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/reltif3"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/pilLur"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:text="Pilih Kelurahan : "
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/spinner_kelurahan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/pilLur"
+                        android:layout_marginTop="10dp">
+
+                    </Spinner>
+
+                    <TextView
+                        android:id="@+id/tx_pos"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/spinner_kelurahan"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Kode Pos : "
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txt_pos"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tx_pos"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:hint="Kode Pos"
+                        android:textSize="20dp" />
+
+                </RelativeLayout>
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/viewMahram"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/viewDaerah"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+
+            <RelativeLayout
+                android:id="@+id/reltif5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/viewDaerah"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/txt_ukuranBaju"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Ukuran Baju"
+                    android:textStyle="bold"
+                    android:textSize="18dp"/>
+
+                <Spinner
+                    android:id="@+id/spinnerBaju"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toEndOf="@+id/txt_ukuranBaju">
+                </Spinner>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dip"
+                    android:layout_below="@+id/spinnerBaju"
+                    android:id="@+id/viewBaju"
+                    android:background="#000000" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/namaMaharam"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/viewBaju"
+                    android:layout_marginTop="10dp">
+
+                    <EditText
+                        android:id="@+id/input_mahramNama"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Nama Mahram"
+                        android:inputType="text"
+                        android:maxLength="100" />
+                </android.support.design.widget.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/txt_statMahram"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/namaMaharam"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Status Mahram"
+                    android:textStyle="bold"
+                    android:textSize="20dp"/>
+
+                <Spinner
+                    android:id="@+id/spinnerStatMahram"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_statMahram"
+                    android:layout_marginTop="10dp">
+                </Spinner>
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/viewPekerjaan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/viewMahram"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp">
+
+                <TextView
+                    android:id="@+id/txt_pekerjaan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="Pendidikan dan Pekerjaan"
+                    android:textSize="20dp"
+                    android:drawableRight="@drawable/school_36dp"
+                    android:textStyle="bold"/>
+
+                <View
+                    android:id="@+id/lineViewPekerjaan"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dip"
+                    android:layout_below="@+id/txt_pekerjaan"
+                    android:background="#000000" />
+
+                <RelativeLayout
+                    android:id="@+id/relativeKerja"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lineViewPekerjaan"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/txt_didik"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="5dp"
+                        android:text="Pendidikan Terakhir"
+                        android:textStyle="bold"
+                        android:textSize="16dp"/>
+
+                    <Spinner
+                        android:id="@+id/spinner_pendidikan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txt_didik"
+                        android:layout_marginTop="10dp">
+                    </Spinner>
+
+                    <TextView
+                        android:id="@+id/txt_kerja"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/spinner_pendidikan"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="5dp"
+                        android:text="Pekerjaan"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/spinnerKerja"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txt_kerja"
+                        android:layout_marginTop="10dp">
+                    </Spinner>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/input_layout_dinas"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/spinnerKerja"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="10dp">
+
+                        <EditText
+                            android:id="@+id/input_dinas"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Dinas Kerja"
+                            android:inputType="textMultiLine"
+                            android:scrollbars="vertical" />
+                    </android.support.design.widget.TextInputLayout>
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/viewPenyakit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/viewPekerjaan"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp">
+
+                <TextView
+                    android:id="@+id/txt_kesehatan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="Riwayat Kesehatan"
+                    android:drawableRight="@drawable/hospital_36dp"
+                    android:textSize="20dp"
+                    android:textStyle="bold"/>
+
+                <View
+                    android:id="@+id/lineViewKesehatan"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dip"
+                    android:layout_below="@+id/txt_kesehatan"
+                    android:background="#000000" />
+
+                <LinearLayout
+                    android:id="@+id/linearSehat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_kesehatan"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="20dp"
+                    android:weightSum="3">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.9"
+                        android:paddingLeft="10dp"
+                        android:text="Penyakit Berat Yang Pernah Diderita"
+                        android:textColor="@color/colorPrimary" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.1"
+                        android:text="Tahun"
+                        android:textColor="#448AFF" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Lama"
+                        android:textColor="#448AFF" />
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/lineViewSehat"
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dip"
+                    android:layout_below="@+id/linearSehat"
+                    android:layout_marginBottom="10dp"
+                    android:background="#000000" />
+
+                <LinearLayout
+                    android:id="@+id/linearPenyakit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lineViewSehat"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:weightSum="3">
+
+                    <Spinner
+                        android:id="@+id/spinnerSakit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.9"
+                        android:textColor="@color/colorPrimary" />
+
+                    <Spinner
+                        android:id="@+id/spinnerTahun"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.1"
+                        android:textColor="#448AFF" />
+
+                    <Spinner
+                        android:id="@+id/spinnerLama"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="#448AFF" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearPenyakit2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/linearPenyakit"
+                    android:layout_marginBottom="10dp"
+                    android:weightSum="3">
+
+                    <Spinner
+                        android:id="@+id/spinnerSakit2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.9"
+                        android:textColor="@color/colorPrimary" />
+
+                    <Spinner
+                        android:id="@+id/spinnerTahun2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.1"
+                        android:textColor="#448AFF" />
+
+                    <Spinner
+                        android:id="@+id/spinnerLama2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="#448AFF" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearPenyakit3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/linearPenyakit2"
+                    android:layout_marginBottom="10dp"
+                    android:weightSum="3">
+
+                    <Spinner
+                        android:id="@+id/spinnerSakit3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.9"
+                        android:textColor="@color/colorPrimary" />
+
+                    <Spinner
+                        android:id="@+id/spinnerTahun3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.1"
+                        android:textColor="#448AFF" />
+
+                    <Spinner
+                        android:id="@+id/spinnerLama3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="#448AFF" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/viewDadurat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/viewPenyakit"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="15dp">
+
+                <TextView
+                    android:id="@+id/txt_darurat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="Keluarga Yang Dapat Dihubungi"
+                    android:textSize="20dp"
+                    android:textStyle="bold"/>
+
+                <View
+                    android:id="@+id/lineViewDarurat"
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dip"
+                    android:layout_below="@+id/txt_darurat"
+                    android:background="#000000" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/view_namaDarurat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lineViewDarurat"
+                    android:layout_marginTop="20dp">
+
+                    <EditText
+                        android:id="@+id/input_namaDarurat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Nama Lengkap"
+                        android:inputType="textMultiLine"
+                        android:maxLength="100" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/view_hpDarurat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/view_namaDarurat"
+                    android:layout_marginTop="20dp">
+
+                    <EditText
+                        android:id="@+id/input_nomorDarurat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Nomor Handphone"
+                        android:inputType="number"
+                        android:maxLength="14" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/view_alamatDarurat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/view_hpDarurat"
+                    android:layout_marginTop="20dp">
+
+                    <EditText
+                        android:id="@+id/input_alamatDarurat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Masukan Alamat"
+                        android:inputType="textMultiLine" />
+                </android.support.design.widget.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/view_alamatDarurat"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:id="@+id/txt_hubunganDarurat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view_alamatDarurat"
+                        android:layout_weight="1.4"
+                        android:text="Hubungan : "
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/spinnerHubdarurat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/txt_hubunganDarurat"
+                        android:layout_weight="0.6">
+                    </Spinner>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <Button
+            android:id="@+id/btn_data_pendukung"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/viewDadurat"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/colorPrimary"
+            android:text="Kirim Data"
+            android:textColor="@android:color/white" />
+
+    </RelativeLayout>
+
+</ScrollView>

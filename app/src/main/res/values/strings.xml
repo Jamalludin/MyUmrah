@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">MyUmrah</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="mont">
+        <item>--Pilih--</item>
+        <item>Januari</item>
+        <item>Februari</item>
+        <item>Maret</item>
+        <item>April</item>
+        <item>Mei</item>
+        <item>Juni</item>
+        <item>Juli</item>
+        <item>Agustus</item>
+        <item>September</item>
+        <item>Oktober</item>
+        <item>November</item>
+        <item>Desember</item>
+    </string-array>
+
+    <string-array name="golongan_darah">
+        <item>A</item>
+        <item>B</item>
+        <item>AB</item>
+        <item>O</item>
+    </string-array>
+
+    <string-array name="perkawinan">
+        <item>Menikah</item>
+        <item>Belum Menikah</item>
+        <item>Duda</item>
+        <item>Janda</item>
+    </string-array>
+
+    <string-array name="approval">
+        <item>Approval</item>
+        <item>Persetujuan Bendahara</item>
+        <item>Persetujuan Bank</item>
+        <item>Persetujuan Travel</item>
+    </string-array>
+
+    <string-array name="bayar">
+        <item>--Pilih--</item>
+        <item>Talangan</item>
+        <item>Full Payment Depan</item>
+        <item>Full Payment Belakang</item>
+    </string-array>
+</resources>
