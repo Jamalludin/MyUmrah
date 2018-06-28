@@ -3,8 +3,7 @@ package com.uninet.myumrah.presenter;
 import android.content.Context;
 
 import com.uninet.myumrah.interactor.ApprovalInteractor;
-import com.uninet.myumrah.interactor.CaraBayarInteractor;
-import com.uninet.myumrah.interactor.DetailJamaahInteractor;
+import com.uninet.myumrah.interactor.JamaahInteractor;
 import com.uninet.myumrah.view.ApprovalView;
 
 import org.json.JSONObject;
@@ -13,12 +12,12 @@ public class ApprovalPresenter {
 
     private ApprovalView approvalView;
     private ApprovalInteractor approvalInteractor;
-    private DetailJamaahInteractor detailJamaahInteractor;
+    private JamaahInteractor jamaahInteractor;
 
     public ApprovalPresenter(ApprovalView approvalView, Context context) {
         this.approvalView = approvalView;
         approvalInteractor = new ApprovalInteractor(context);
-        detailJamaahInteractor = new DetailJamaahInteractor(context);
+        jamaahInteractor = new JamaahInteractor(context);
     }
 
     public void setListApproval(){
@@ -30,8 +29,17 @@ public class ApprovalPresenter {
         });
     }
 
+    public void setUpdateJamaah(String jamaahUpdate){
+        jamaahInteractor.updateJamaah(jamaahUpdate, new JamaahInteractor.UpdateJamaah() {
+            @Override
+            public void updateJamaah(String updateJamaah) {
+                approvalView.updateJamaah(updateJamaah);
+            }
+        });
+    }
+
     public void setDetailJamaah(){
-        detailJamaahInteractor.detailJamaah(new DetailJamaahInteractor.DataJamaah() {
+        jamaahInteractor.detailJamaah(new JamaahInteractor.DataJamaah() {
             @Override
             public void dataJamaah(String dataJamaah) {
                 approvalView.detailJamaah(dataJamaah);

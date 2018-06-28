@@ -11,6 +11,9 @@ public class Talangan implements Serializable{
     private Bank bank;
     private List<DownPayment> downPayments;
 
+    public Talangan() {
+    }
+
     public Talangan(Integer idTalangan) {
         this.idTalangan = idTalangan;
     }

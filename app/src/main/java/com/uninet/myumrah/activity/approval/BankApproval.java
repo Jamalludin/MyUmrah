@@ -8,14 +8,26 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import com.google.gson.reflect.TypeToken;
 import com.uninet.myumrah.R;
 import com.uninet.myumrah.activity.AbstracGenericActivity;
+import com.uninet.myumrah.model.Jamaah;
 import com.uninet.myumrah.presenter.ApprovalPresenter;
 import com.uninet.myumrah.view.ApprovalView;
+
+import java.lang.reflect.Type;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 
 import static com.uninet.myumrah.activity.approval.KoperasiApproval.ASSIGMENT;
 
 public class BankApproval extends AbstracGenericActivity implements ApprovalView,View.OnClickListener {
+
+    private Jamaah jamaah = new Jamaah();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,31 +68,50 @@ public class BankApproval extends AbstracGenericActivity implements ApprovalView
     @Override
     public void detailJamaah(String detailJamaah) {
 
+        DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+
         try {
 
+            JsonParser parser = new JsonParser();
+            JsonObject approval = parser.parse(detailJamaah).getAsJsonObject();
+            Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").serializeNulls().create();
+
+            Type type = new TypeToken<Jamaah>() {}.getType();
+            jamaah = gson.fromJson(approval.get("data"), type);
+
+
         }catch (Exception e){
+            e.printStackTrace();
 
         }
 
-        tgl_registrasi.setText(" : ");
-        id_jamaah.setText(" : ");
-        nama_jamaah.setText(" : ");
-        nik_jamaah.setText(" : ");
-        hp_jamaah.setText(" : ");
-        jk_jamaah.setText(" : ");
-        agen_jamaah.setText(" : ");
-        paket_jamaah.setText(" : ");
-        cicilan_jamaah.setText(" : ");
-        periode.setText(" : ");
-        berangkat.setText(" : ");
-        va_jamaah.setText(" : ");
-        bank_jamaah.setText(" : ");
-        txt_noRek.setText(" : ");
+        String tglRegistrasi = format.format(jamaah.getTglDaftar());
+        String tglBerangkat = format.format(jamaah.getPaket().getTglBerangkat());
+
+        tgl_registrasi.setText(" : "+tglRegistrasi);
+        id_jamaah.setText(" : "+jamaah.getIdCard());
+        nama_jamaah.setText(" : "+jamaah.getNamaLengkap());
+        nik_jamaah.setText(" : "+jamaah.getNik());
+        hp_jamaah.setText(" : "+jamaah.getNoHp());
+        jk_jamaah.setText(" : "+jamaah.getJenisKelamin().getNamaJenisKelamin());
+        agen_jamaah.setText(" : "+jamaah.getAgen().getNamaAgen());
+        paket_jamaah.setText(" : "+jamaah.getPaket().getNamaPaket());
+        cicilan_jamaah.setText(" : "+jamaah.getCicilan().getNominalCicilan());
+        periode.setText(" : "+jamaah.getCicilan().getLamaCicilan());
+        berangkat.setText(" : "+tglBerangkat);
+        va_jamaah.setText(" : "+jamaah.getVa().getNamaVa());
+        bank_jamaah.setText(" : "+jamaah.getBank().getNamaBank());
+        txt_noRek.setText(" : "+jamaah.getNoRek());
 
     }
 
     @Override
     public void approvalJamaah(String approvalJamaah) {
+
+    }
+
+    @Override
+    public void updateJamaah(String updateJamaah) {
 
     }
 

@@ -37,13 +37,15 @@ import java.util.List;
 import static com.uninet.myumrah.util.DaftarUtil.HARGA_PAKET;
 import static com.uninet.myumrah.util.DaftarUtil.IDDP;
 import static com.uninet.myumrah.util.DaftarUtil.NOMINAL_DP;
-import static com.uninet.myumrah.util.DaftarUtil.TALANGAN;
+import static com.uninet.myumrah.util.DaftarUtil.TALANGAN_ID;
 import static com.uninet.myumrah.util.DaftarUtil.TOTAL_TALANGAN;
 
 public class CicilanPaket extends AbstracGenericActivity implements CicilanPaketView {
 
     public DecimalFormat formatter = new DecimalFormat("#,###");
     public static String item;
+    Talangan tangalanBank = new Talangan();
+    public String idTal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,10 +78,6 @@ public class CicilanPaket extends AbstracGenericActivity implements CicilanPaket
                 dpNominal.setText(formatter.format(Double.parseDouble(item)));
 
                 talangan();
-                downPaymentPresenter.setTalangan();
-                downPaymentPresenter.setCicilan();
-
-                Toast.makeText(CicilanPaket.this, ""+TALANGAN, Toast.LENGTH_SHORT).show();
 
             }
 
@@ -95,6 +93,7 @@ public class CicilanPaket extends AbstracGenericActivity implements CicilanPaket
 
         TOTAL_TALANGAN = Double.parseDouble(HARGA_PAKET) - Double.parseDouble(item);
         totalTalangan.setText(" : " + " Rp." + formatter.format(TOTAL_TALANGAN));
+        downPaymentPresenter.setTalangan();
 
     }
 
@@ -152,23 +151,21 @@ public class CicilanPaket extends AbstracGenericActivity implements CicilanPaket
     @Override
     public void listTalangan(String talangan) {
 
-
         try {
+            JsonParser parser = new JsonParser();
+            JsonObject approval = parser.parse(talangan).getAsJsonObject();
+            Gson gson = new Gson();
 
-            JSONObject obj = new JSONObject(talangan);
-            Iterator iterator = obj.keys();
-            while (iterator.hasNext()) {
-                String key = (String) iterator.next();
-                JSONObject object = obj.getJSONObject(key);
-                Gson gson = new Gson();
-                Talangan talangans = gson.fromJson(object.toString(), Talangan.class);
-                TALANGAN = talangans.getIdTalangan().toString();
+            Type type = new TypeToken<Talangan>() {}.getType();
+            tangalanBank = gson.fromJson(approval.get("data"), type);
 
-            }
         } catch (Exception e) {
 
         }
 
+        Log.i("talanganID",String.valueOf(tangalanBank.getIdTalangan()));
+        TALANGAN_ID = String.valueOf(tangalanBank.getIdTalangan());
+        downPaymentPresenter.setCicilan();
     }
 
 }

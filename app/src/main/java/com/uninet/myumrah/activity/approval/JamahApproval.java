@@ -53,15 +53,6 @@ public class JamahApproval extends AbstracGenericActivity implements ApprovalVie
 
         try {
 
-            /*JSONObject obj = new JSONObject(listJamah);
-            Iterator iterator = obj.keys();
-            while (iterator.hasNext()) {
-                String key = (String) iterator.next();
-                JSONObject object = obj.getJSONObject(key);
-                Jamaah jamaah = JsonUtil.fromJson(object.toString(), Jamaah.class);
-                Log.i("asdsafsaf",jamaah.getNamaLengkap());
-            }*/
-
             JsonParser parser = new JsonParser();
             JsonObject approval = parser.parse(listJamah).getAsJsonObject();
             Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
@@ -85,6 +76,11 @@ public class JamahApproval extends AbstracGenericActivity implements ApprovalVie
 
     @Override
     public void approvalJamaah(String approvalJamaah) {
+
+    }
+
+    @Override
+    public void updateJamaah(String updateJamaah) {
 
     }
 }

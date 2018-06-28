@@ -4,6 +4,7 @@ public interface DataTambahanView {
     void validasiDataSuccess(String data);
     void validasiDataError(String data);
     void daftar(String daftar);
+    void approval(String approval);
     void provinsi(String provinsi);
     void kabupaten(String kabupaten);
     void kecamatan(String kecamatan);

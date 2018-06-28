@@ -23,6 +23,9 @@ public class Paket implements Serializable{
     private StatusPesawat statusPesawat;
     private List<Agen> agens;
 
+    public Paket() {
+    }
+
     public Paket(String idPaket) {
         this.idPaket = idPaket;
     }

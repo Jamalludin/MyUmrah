@@ -30,7 +30,7 @@ public class CicilanInteractor {
     }
 
     public void Cicilan(final CicilanList cicilanList){
-        StringRequest cicilanReq = new StringRequest(Request.Method.GET, CICILAN_LIST+ DaftarUtil.TALANGAN+"&id-bank="+IDDP, new Response.Listener<String>() {
+        StringRequest cicilanReq = new StringRequest(Request.Method.GET, CICILAN_LIST+ DaftarUtil.TALANGAN_ID+"&id-bank="+BANKID, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Log.i("cicilan", response.toString());

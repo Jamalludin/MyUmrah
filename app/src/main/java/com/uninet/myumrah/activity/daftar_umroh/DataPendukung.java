@@ -15,6 +15,7 @@ import com.uninet.myumrah.MainActivity;
 import com.uninet.myumrah.R;
 import com.uninet.myumrah.activity.AbstracGenericActivity;
 import com.uninet.myumrah.activity.login_aplikasi.Session;
+import com.uninet.myumrah.model.Approval;
 import com.uninet.myumrah.model.Bank;
 import com.uninet.myumrah.model.Cicilan;
 import com.uninet.myumrah.model.DownPayment;
@@ -22,23 +23,29 @@ import com.uninet.myumrah.model.GolonganDarah;
 import com.uninet.myumrah.model.Hubungan;
 import com.uninet.myumrah.model.Instansi;
 import com.uninet.myumrah.model.Jamaah;
+import com.uninet.myumrah.model.JamaahApproval;
 import com.uninet.myumrah.model.JamaahPenyakit;
 import com.uninet.myumrah.model.JenisBayar;
 import com.uninet.myumrah.model.JenisKelamin;
 import com.uninet.myumrah.model.Kecamatan;
 import com.uninet.myumrah.model.Kelurahan;
 import com.uninet.myumrah.model.Kewarganegaraan;
+import com.uninet.myumrah.model.KotaKabupaten;
 import com.uninet.myumrah.model.Paket;
 import com.uninet.myumrah.model.Pekerjaan;
 import com.uninet.myumrah.model.Pendidikan;
 import com.uninet.myumrah.model.Penyakit;
 import com.uninet.myumrah.model.Provinsi;
+import com.uninet.myumrah.model.StatusAktif;
+import com.uninet.myumrah.model.StatusApproval;
 import com.uninet.myumrah.model.StatusKawin;
 import com.uninet.myumrah.model.StatusMahram;
+import com.uninet.myumrah.model.StatusPesawat;
 import com.uninet.myumrah.model.Talangan;
 import com.uninet.myumrah.model.Ukuran;
 import com.uninet.myumrah.model.User;
 import com.uninet.myumrah.presenter.DataTambahanPresenter;
+import com.uninet.myumrah.util.JsonUtil;
 import com.uninet.myumrah.view.DataTambahanView;
 
 import org.json.JSONObject;
@@ -96,7 +103,7 @@ import static com.uninet.myumrah.util.DaftarUtil.STATUS_MAHRAM;
 import static com.uninet.myumrah.util.DaftarUtil.TAHUN_SAKIT1;
 import static com.uninet.myumrah.util.DaftarUtil.TAHUN_SAKIT2;
 import static com.uninet.myumrah.util.DaftarUtil.TAHUN_SAKIT3;
-import static com.uninet.myumrah.util.DaftarUtil.TALANGAN;
+import static com.uninet.myumrah.util.DaftarUtil.TALANGAN_ID;
 import static com.uninet.myumrah.util.DaftarUtil.TELP_KELUARGA;
 import static com.uninet.myumrah.util.DaftarUtil.TEMPAT_LAHIR;
 import static com.uninet.myumrah.util.DaftarUtil.TERAKHIR_UMROH;
@@ -105,14 +112,12 @@ import static com.uninet.myumrah.util.DaftarUtil.UKURAN_BAJU_ID;
 
 public class DataPendukung extends AbstracGenericActivity implements DataTambahanView,AdapterView.OnItemSelectedListener{
 
-    ArrayList<Integer> idSakits   = new ArrayList<Integer>();
-    ArrayList<String> lamaSakits  = new ArrayList<String>();
-    ArrayList<String> tahunSakits = new ArrayList<String>();
-
-    Jamaah jamaah = new Jamaah();
-    List<JamaahPenyakit> jamaahSakitList = new ArrayList<>();
-    JamaahPenyakit jamaahPenyakit = new JamaahPenyakit();
-    Penyakit penyakit = new Penyakit();
+    private Jamaah jamaah = new Jamaah();
+    private JamaahApproval jamaahApproval = new JamaahApproval();
+    private DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+    private List<Integer> idPenyakit = new ArrayList<>();
+    private List<Integer> tahunSakit = new ArrayList<>();
+    private List<Integer> lamaSakit  = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -201,21 +206,6 @@ public class DataPendukung extends AbstracGenericActivity implements DataTambaha
             @Override
             public void onClick(View v) {
 
-                idSakits.add(Integer.parseInt(NAMA_PENYAKIT1));
-                idSakits.add(Integer.parseInt(NAMA_PENYAKIT2));
-                idSakits.add(Integer.parseInt(NAMA_PENYAKIT3));
-                tahunSakits.add(TAHUN_SAKIT1);
-                tahunSakits.add(TAHUN_SAKIT2);
-                tahunSakits.add(TAHUN_SAKIT3);
-                lamaSakits.add(LAMA_SAKIT1);
-                lamaSakits.add(LAMA_SAKIT2);
-                lamaSakits.add(LAMA_SAKIT3);
-
-
-                jamaahPenyakit.setPenyakit(penyakit);
-                jamaahSakitList.add(jamaahPenyakit);
-
-
                 ALAMAT_LENGKAP  = alamatJamaah.getText().toString();
                 RT_RW           = rtrw.getText().toString();
                 NAMA_MAHRAM     = namaMahram.getText().toString();
@@ -230,15 +220,14 @@ public class DataPendukung extends AbstracGenericActivity implements DataTambaha
                 jamaah.setNip(NIP_JAMAAH);
                 jamaah.setKk(NO_KK);
                 jamaah.setTempatLahir(TEMPAT_LAHIR);
-
-                Date format = null;
+                Date tglLahir = null;
                 try {
-                    format = new SimpleDateFormat("yyyy-MM-dd").parse(TGL_LAHIR);
+                    tglLahir = format.parse(TGL_LAHIR);
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
-                jamaah.setTglDaftar(format);
-
+                jamaah.setTglLahir(tglLahir);
+                jamaah.setTglDaftar(new java.sql.Date(new Date().getTime()));
                 jamaah.setAlamat(ALAMAT_LENGKAP);
                 jamaah.setRtrw(RT_RW);
                 jamaah.setEmail(EMAIL_JAMAAH);
@@ -262,21 +251,38 @@ public class DataPendukung extends AbstracGenericActivity implements DataTambaha
                 jamaah.setUkuran(new Ukuran(Integer.parseInt(UKURAN_BAJU_ID)));
                 jamaah.setKelurahan(new Kelurahan(KELURAHAN_ID,POS_KODE));
                 jamaah.setKecamatan(new Kecamatan(KECAMATAN_ID));
+                jamaah.setKotaKabupaten(new KotaKabupaten(KABUPATEN_ID));
                 jamaah.setProvinsi(new Provinsi(PROVINSI_ID));
                 jamaah.setCicilan(new Cicilan(Integer.parseInt(CICILAN_ID)));
                 jamaah.setDownPayment(new DownPayment(Integer.parseInt(IDDP)));
-                jamaah.setTalangan(new Talangan(Integer.parseInt(TALANGAN)));
+                jamaah.setTalangan(new Talangan(Integer.parseInt(TALANGAN_ID)));
                 jamaah.setJenisBayar(new JenisBayar(Integer.parseInt(BAYAR_ID)));
                 jamaah.setInstansi(new Instansi(Integer.parseInt(INSTANSI_ID)));
-                jamaah.setJamaahPenyakits(jamaahSakitList);
+                jamaah.setStatusAktif(new StatusAktif(0));
+                jamaah.setStatusPesawat(new StatusPesawat());
 
-                Map<Object, Object> data = new HashMap<Object, Object>();
-                data.put(jamaah,jamaah);
-                JSONObject object = new JSONObject(data);
-                dataTambahanPresenter.setDaftar(object);
+                jamaahApproval.setApproval(new Approval(1));
+                jamaahApproval.setStatusApproval(new StatusApproval(2));
+                jamaah.setJamaahApproval(jamaahApproval);
 
-                startActivity(new Intent(DataPendukung.this, MainActivity.class));
-                Toast.makeText(DataPendukung.this, "Berhasil Daftar", Toast.LENGTH_SHORT).show();
+                idPenyakit.add(Integer.parseInt(NAMA_PENYAKIT1));
+                idPenyakit.add(Integer.parseInt(NAMA_PENYAKIT2));
+                idPenyakit.add(Integer.parseInt(NAMA_PENYAKIT3));
+                tahunSakit.add(Integer.parseInt(TAHUN_SAKIT1));
+                tahunSakit.add(Integer.parseInt(TAHUN_SAKIT2));
+                tahunSakit.add(Integer.parseInt(TAHUN_SAKIT3));
+                lamaSakit.add(Integer.parseInt(LAMA_SAKIT1));
+                lamaSakit.add(Integer.parseInt(LAMA_SAKIT2));
+                lamaSakit.add(Integer.parseInt(LAMA_SAKIT3));
+                List<JamaahPenyakit> penyakits = new ArrayList<>();
+                for (int i = 0; i<idPenyakit.size(); i++){
+                    Penyakit penyakit = new Penyakit();
+                    penyakit.setIdPenyakit(idPenyakit.get(i));
+
+                }
+
+                dataTambahanPresenter.setDaftar(JsonUtil.toJson(jamaah));
+
             }
         });
 
@@ -294,6 +300,11 @@ public class DataPendukung extends AbstracGenericActivity implements DataTambaha
 
     @Override
     public void daftar(String daftar) {
+
+    }
+
+    @Override
+    public void approval(String approval) {
 
     }
 
@@ -576,8 +587,7 @@ public class DataPendukung extends AbstracGenericActivity implements DataTambaha
             STATUS_MAHRAM = getIdMahram(position).toString();
 
         }else if (spinner.getId() == R.id.spinnerHubdarurat){
-
-
+            HUBUNGAN_KELUARGA = idHubungan(position).toString();
 
         }else if (spinner.getId() == R.id.spinnerSakit){
 

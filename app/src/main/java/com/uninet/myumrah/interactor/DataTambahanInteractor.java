@@ -243,8 +243,8 @@ public class DataTambahanInteractor {
 
     }
 
-    public void daftar(JSONObject json, final Save save){
-        JsonObjectRequest requestDaftar = new JsonObjectRequest(Request.Method.POST, DAFTAR, json, new Response.Listener<JSONObject>() {
+    public void daftar(final String json, final Save save){
+        JsonObjectRequest requestDaftar = new JsonObjectRequest(Request.Method.POST, DAFTAR, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 Log.i("daftar", response.toString());
@@ -263,6 +263,11 @@ public class DataTambahanInteractor {
                 Map<String,String> params = new HashMap<String, String>();
                 params.put("Content-Type", "application/json");
                 return params;
+            }
+
+            @Override
+            public byte[] getBody() {
+                return json.getBytes();
             }
         };
         requestDataTambahan.add(requestDaftar);

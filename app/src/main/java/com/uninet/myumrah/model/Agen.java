@@ -27,6 +27,9 @@ public class Agen implements Serializable{
     private Provinsi provinsi;
     private JenisKelamin jenisKelamin;
 
+    public Agen() {
+    }
+
     public Integer getTotalCount() {
         return totalCount;
     }

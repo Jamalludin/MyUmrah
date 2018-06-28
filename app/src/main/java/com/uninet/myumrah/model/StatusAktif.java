@@ -2,32 +2,22 @@ package com.uninet.myumrah.model;
 
 import java.io.Serializable;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@ToString
 public class StatusAktif implements Serializable{
 
     private Integer idStatusAktif;
     private String namaStatusAktif;
 
-    public Integer getIdStatusAktif() {
-        return idStatusAktif;
+    public StatusAktif() {
     }
 
-    public void setIdStatusAktif(Integer idStatusAktif) {
+    public StatusAktif(Integer idStatusAktif) {
         this.idStatusAktif = idStatusAktif;
-    }
-
-    public String getNamaStatusAktif() {
-        return namaStatusAktif;
-    }
-
-    public void setNamaStatusAktif(String namaStatusAktif) {
-        this.namaStatusAktif = namaStatusAktif;
-    }
-
-    @Override
-    public String toString() {
-        return "StatusAktif{" +
-                "idStatusAktif=" + idStatusAktif +
-                ", namaStatusAktif='" + namaStatusAktif + '\'' +
-                '}';
     }
 }

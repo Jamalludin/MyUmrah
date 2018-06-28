@@ -2,6 +2,7 @@ package com.uninet.myumrah.presenter;
 
 import android.content.Context;
 
+import com.uninet.myumrah.interactor.ApprovalInteractor;
 import com.uninet.myumrah.interactor.DataTambahanInteractor;
 import com.uninet.myumrah.view.DataTambahanView;
 
@@ -11,17 +12,28 @@ public class DataTambahanPresenter {
 
     private DataTambahanView dataTambahanView;
     private DataTambahanInteractor dataTambahanInteractor;
+    private ApprovalInteractor approvalInteractor;
 
     public DataTambahanPresenter(DataTambahanView dataTambahanView, Context context) {
         this.dataTambahanView = dataTambahanView;
         dataTambahanInteractor = new DataTambahanInteractor(context);
+        approvalInteractor = new ApprovalInteractor(context);
     }
 
-    public void setDaftar(JSONObject daftar){
+    public void setDaftar(String daftar){
         dataTambahanInteractor.daftar(daftar, new DataTambahanInteractor.Save() {
             @Override
             public void Hasil(String hasil) {
                 dataTambahanView.daftar(hasil);
+            }
+        });
+    }
+
+    public void setSaveApproval(String saveApproval){
+        approvalInteractor.approvalSave(saveApproval, new ApprovalInteractor.ApprovalSave() {
+            @Override
+            public void approvalSave(String approvalSave) {
+                dataTambahanView.approval(approvalSave);
             }
         });
     }

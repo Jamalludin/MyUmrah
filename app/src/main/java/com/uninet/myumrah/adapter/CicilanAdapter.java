@@ -18,7 +18,6 @@ import java.text.DecimalFormat;
 import java.util.List;
 
 import static com.uninet.myumrah.util.DaftarUtil.CICILAN_ID;
-import static com.uninet.myumrah.util.DaftarUtil.TALANGAN;
 
 public class CicilanAdapter extends RecyclerView.Adapter<CicilanAdapter.CicilanHolder> {
 

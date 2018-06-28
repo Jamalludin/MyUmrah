@@ -7,6 +7,10 @@ public class Va implements Serializable{
     private String idVa;
     private String namaVa;
 
+    public Va() {
+    }
+
+
     public String getIdVa() {
         return idVa;
     }

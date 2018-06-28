@@ -19,7 +19,6 @@ import com.uninet.myumrah.presenter.list_paket.CaraBayarPresenter;
 import com.uninet.myumrah.presenter.list_paket.InstansiPresenter;
 import com.uninet.myumrah.presenter.list_paket.LamaHariPresenter;
 import com.uninet.myumrah.presenter.list_paket.PaketPresenter;
-import com.uninet.myumrah.util.PenyakitUnity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -27,7 +26,6 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.List;
 
 public abstract class AbstracGenericActivity extends AppCompatActivity{
 
@@ -99,15 +97,15 @@ public abstract class AbstracGenericActivity extends AppCompatActivity{
     protected Calendar calendar = Calendar.getInstance();
 
     //datapendukung
-    protected ArrayList<String> provinsiArr        = new ArrayList<String>();
-    protected ArrayList<String> kelurahanArr       = new ArrayList<String>();
-    protected ArrayList<String> kabupatenArr       = new ArrayList<String>();
-    protected ArrayList<String> kecamatanArr       = new ArrayList<String>();
+    protected ArrayList<String> provinsiArr     = new ArrayList<String>();
+    protected ArrayList<String> kelurahanArr    = new ArrayList<String>();
+    protected ArrayList<String> kabupatenArr    = new ArrayList<String>();
+    protected ArrayList<String> kecamatanArr    = new ArrayList<String>();
     protected ArrayList<String> bajuUkuran      = new ArrayList<String>();
-    protected ArrayList<String> pendidikanArr      = new ArrayList<String>();
-    protected ArrayList<String> pekerjaanArr       = new ArrayList<String>();
+    protected ArrayList<String> pendidikanArr   = new ArrayList<String>();
+    protected ArrayList<String> pekerjaanArr    = new ArrayList<String>();
     protected ArrayList<String> mahramarr       = new ArrayList<String>();
-    protected ArrayList<String> hubunganArr         = new ArrayList<String>();
+    protected ArrayList<String> hubunganArr     = new ArrayList<String>();
     protected ArrayList<String> tahunSakitArray = new ArrayList<String>();
     protected ArrayList<String> penyakitList    = new ArrayList<String>();
     protected ArrayList<String> lamaList        = new ArrayList<String>();
@@ -147,10 +145,8 @@ public abstract class AbstracGenericActivity extends AppCompatActivity{
     protected JSONArray pendidikanArray;
     protected JSONArray pekerjaanArray;
     protected JSONArray mahramArray;
-    protected JSONArray daruratArray;
     protected JSONArray penyakitArray;
     protected JSONArray hubunganArray;
-    protected List<PenyakitUnity> sakits = new ArrayList<>();
     protected String  idProvi;
 
     //approval
@@ -410,7 +406,7 @@ public abstract class AbstracGenericActivity extends AppCompatActivity{
 
         try {
 
-            JSONObject hubunganObj = daruratArray.getJSONObject(ikatan);
+            JSONObject hubunganObj = hubunganArray.getJSONObject(ikatan);
             hubungans = hubunganObj.getString("idHubungan");
 
         } catch (JSONException e) {

@@ -16,7 +16,7 @@ public class DaftarUtil {
     public static String HARGA_PAKET;
     public static String NOMINAL_DP;
     public static double TOTAL_TALANGAN;
-    public static String TALANGAN;
+    public static String TALANGAN_ID;
     public static String NAMA_LENGKAP;
     public static String NAMA_AYAH;
     public static String TEMPAT_LAHIR;

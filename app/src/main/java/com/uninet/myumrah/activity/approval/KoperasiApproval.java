@@ -16,13 +16,21 @@ import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
 import com.uninet.myumrah.R;
 import com.uninet.myumrah.activity.AbstracGenericActivity;
+import com.uninet.myumrah.model.Agen;
+import com.uninet.myumrah.model.Approval;
+import com.uninet.myumrah.model.Bank;
+import com.uninet.myumrah.model.Cicilan;
 import com.uninet.myumrah.model.Jamaah;
 import com.uninet.myumrah.model.JamaahApproval;
+import com.uninet.myumrah.model.JenisKelamin;
 import com.uninet.myumrah.model.ListJamaah;
+import com.uninet.myumrah.model.Paket;
+import com.uninet.myumrah.model.Va;
 import com.uninet.myumrah.presenter.ApprovalPresenter;
 import com.uninet.myumrah.util.JsonUtil;
 import com.uninet.myumrah.view.ApprovalView;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.lang.reflect.Type;
@@ -38,6 +46,7 @@ public class KoperasiApproval extends AbstracGenericActivity implements Approval
 
     public static String NOMOR_REK;
     public static String ASSIGMENT;
+    private Jamaah jamaah = new Jamaah();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,7 +89,7 @@ public class KoperasiApproval extends AbstracGenericActivity implements Approval
     @Override
     public void detailJamaah(String detailJamaah) {
 
-        Jamaah jamaah = new Jamaah();
+        DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 
         try {
 
@@ -91,17 +100,17 @@ public class KoperasiApproval extends AbstracGenericActivity implements Approval
             Type type = new TypeToken<Jamaah>() {}.getType();
             jamaah = gson.fromJson(approval.get("data"), type);
 
+
         }catch (Exception e){
             e.printStackTrace();
 
         }
 
-        DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
         String tglRegistrasi = format.format(jamaah.getTglDaftar());
         String tglBerangkat = format.format(jamaah.getPaket().getTglBerangkat());
 
         tgl_registrasi.setText(" : "+tglRegistrasi);
-        id_jamaah.setText(" : "+jamaah.getIdJamaah());
+        id_jamaah.setText(" : "+jamaah.getIdCard());
         nama_jamaah.setText(" : "+jamaah.getNamaLengkap());
         nik_jamaah.setText(" : "+jamaah.getNik());
         hp_jamaah.setText(" : "+jamaah.getNoHp());
@@ -123,6 +132,11 @@ public class KoperasiApproval extends AbstracGenericActivity implements Approval
     }
 
     @Override
+    public void updateJamaah(String updateJamaah) {
+
+    }
+
+    @Override
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.setuju_jamaah_benda:
@@ -130,9 +144,11 @@ public class KoperasiApproval extends AbstracGenericActivity implements Approval
                 NOMOR_REK = no_rek.getText().toString();
                 ASSIGMENT = assigment.getText().toString();
                 JamaahApproval jamaahApproval = new JamaahApproval();
+                jamaah.setNoRek(NOMOR_REK);
+                jamaahApproval.setApproval(new Approval(2));
                 jamaahApproval.setAssesmentKoperasi(ASSIGMENT);
-                jamaahApproval.setJamaah(new Jamaah(NOMOR_REK));
                 jamaahApproval.setTglApprovalKoperasi(new java.sql.Date(new Date().getTime()));
+                jamaah.setJamaahApproval(jamaahApproval);
 
                 if (ASSIGMENT.equals("")){
 
@@ -144,8 +160,8 @@ public class KoperasiApproval extends AbstracGenericActivity implements Approval
 
                 }else {
 
-                    approvalPresenter.setApprovalKoperasi(JsonUtil.toJson(jamaahApproval));
-                    Toast.makeText(this, "ASD", Toast.LENGTH_SHORT).show();
+                    approvalPresenter.setUpdateJamaah(JsonUtil.toJson(jamaah));
+
                     /*pdialog.setMessage("Sedang Memproses...");
                     pdialog.show();*/
                 }

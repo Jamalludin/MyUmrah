@@ -67,12 +67,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/hrgPaket"
-                        android:text="100"/>
+                        android:text=""/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/totalDP"
-                        android:text="100"/>
+                        android:text=""/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -84,7 +84,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/nilaiTalangan"
-                        android:text="100"/>
+                        android:text=""/>
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

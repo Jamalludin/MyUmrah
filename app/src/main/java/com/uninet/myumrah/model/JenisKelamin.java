@@ -7,6 +7,13 @@ public class JenisKelamin implements Serializable{
     private Integer idJenisKelamin;
     private String namaJenisKelamin;
 
+    public JenisKelamin() {
+    }
+
+    public JenisKelamin(String namaJenisKelamin) {
+        this.namaJenisKelamin = namaJenisKelamin;
+    }
+
     public JenisKelamin(Integer idJenisKelamin) {
         this.idJenisKelamin = idJenisKelamin;
     }

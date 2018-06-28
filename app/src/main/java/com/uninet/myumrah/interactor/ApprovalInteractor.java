@@ -63,6 +63,12 @@ public class ApprovalInteractor {
 
             }
         }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String,String> params = new HashMap<String, String>();
+                params.put("Content-Type", "application/json");
+                return params;
+            }
 
             @Override
             public byte[] getBody(){
@@ -127,9 +133,8 @@ public class ApprovalInteractor {
 
     }
 
-    public void approvalSave(JSONObject saveApproval, final ApprovalSave approvalSave){
-
-        JsonObjectRequest requestSave = new JsonObjectRequest(Request.Method.POST, APPROVAL_SAVE, saveApproval, new Response.Listener<JSONObject>() {
+    public void approvalSave(final String saveApproval, final ApprovalSave approvalSave){
+        JsonObjectRequest requestSave = new JsonObjectRequest(Request.Method.POST, APPROVAL_SAVE, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
 
@@ -148,6 +153,11 @@ public class ApprovalInteractor {
                 Map<String,String> params = new HashMap<String, String>();
                 params.put("Content-Type", "application/json");
                 return params;
+            }
+
+            @Override
+            public byte[] getBody() {
+                return saveApproval.getBytes();
             }
         };
         queueApproval.add(requestSave);

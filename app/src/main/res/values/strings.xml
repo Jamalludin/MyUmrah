@@ -35,10 +35,8 @@
     </string-array>
 
     <string-array name="approval">
-        <item>Approval</item>
-        <item>Persetujuan Bendahara</item>
-        <item>Persetujuan Bank</item>
-        <item>Persetujuan Travel</item>
+        <item></item>
+        <item>Approval Jamaah</item>
     </string-array>
 
     <string-array name="bayar">
