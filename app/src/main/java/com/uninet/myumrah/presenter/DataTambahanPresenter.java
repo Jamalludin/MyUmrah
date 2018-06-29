@@ -8,6 +8,8 @@ import com.uninet.myumrah.view.DataTambahanView;
 
 import org.json.JSONObject;
 
+import java.util.List;
+
 public class DataTambahanPresenter {
 
     private DataTambahanView dataTambahanView;
@@ -20,7 +22,7 @@ public class DataTambahanPresenter {
         approvalInteractor = new ApprovalInteractor(context);
     }
 
-    public void setDaftar(String daftar){
+    public void setDaftar(String daftar, String penyakit){
         dataTambahanInteractor.daftar(daftar, new DataTambahanInteractor.Save() {
             @Override
             public void Hasil(String hasil) {

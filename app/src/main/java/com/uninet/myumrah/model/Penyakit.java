@@ -17,4 +17,8 @@ public class Penyakit implements Serializable{
 
     public Penyakit() {
     }
+
+    public Penyakit(Integer idPenyakit) {
+        this.idPenyakit = idPenyakit;
+    }
 }

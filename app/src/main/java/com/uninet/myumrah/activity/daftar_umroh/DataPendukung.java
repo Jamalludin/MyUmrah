@@ -11,6 +11,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.uninet.myumrah.MainActivity;
 import com.uninet.myumrah.R;
 import com.uninet.myumrah.activity.AbstracGenericActivity;
@@ -40,6 +42,7 @@ import com.uninet.myumrah.model.StatusAktif;
 import com.uninet.myumrah.model.StatusApproval;
 import com.uninet.myumrah.model.StatusKawin;
 import com.uninet.myumrah.model.StatusMahram;
+import com.uninet.myumrah.model.StatusPenyakit;
 import com.uninet.myumrah.model.StatusPesawat;
 import com.uninet.myumrah.model.Talangan;
 import com.uninet.myumrah.model.Ukuran;
@@ -53,6 +56,7 @@ import org.json.JSONObject;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.Year;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -114,10 +118,8 @@ public class DataPendukung extends AbstracGenericActivity implements DataTambaha
 
     private Jamaah jamaah = new Jamaah();
     private JamaahApproval jamaahApproval = new JamaahApproval();
+    private List<JamaahPenyakit> jamaahPenyakits = new ArrayList<>();
     private DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-    private List<Integer> idPenyakit = new ArrayList<>();
-    private List<Integer> tahunSakit = new ArrayList<>();
-    private List<Integer> lamaSakit  = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -265,23 +267,64 @@ public class DataPendukung extends AbstracGenericActivity implements DataTambaha
                 jamaahApproval.setStatusApproval(new StatusApproval(2));
                 jamaah.setJamaahApproval(jamaahApproval);
 
-                idPenyakit.add(Integer.parseInt(NAMA_PENYAKIT1));
-                idPenyakit.add(Integer.parseInt(NAMA_PENYAKIT2));
-                idPenyakit.add(Integer.parseInt(NAMA_PENYAKIT3));
-                tahunSakit.add(Integer.parseInt(TAHUN_SAKIT1));
-                tahunSakit.add(Integer.parseInt(TAHUN_SAKIT2));
-                tahunSakit.add(Integer.parseInt(TAHUN_SAKIT3));
-                lamaSakit.add(Integer.parseInt(LAMA_SAKIT1));
-                lamaSakit.add(Integer.parseInt(LAMA_SAKIT2));
-                lamaSakit.add(Integer.parseInt(LAMA_SAKIT3));
-                List<JamaahPenyakit> penyakits = new ArrayList<>();
-                for (int i = 0; i<idPenyakit.size(); i++){
-                    Penyakit penyakit = new Penyakit();
-                    penyakit.setIdPenyakit(idPenyakit.get(i));
+                if (NAMA_PENYAKIT1 != null & LAMA_SAKIT1 != null & TAHUN_SAKIT1 != null) {
+                    JamaahPenyakit jamaahPenyakit1 = new JamaahPenyakit();
+                    jamaahPenyakit1.setJamaah(jamaah);
 
+                    Penyakit penyakit1 = new Penyakit();
+                    penyakit1.setIdPenyakit(Integer.parseInt(NAMA_PENYAKIT1));
+                    jamaahPenyakit1.setPenyakit(penyakit1);
+
+                    jamaahPenyakit1.setLamaPenyakit(Integer.parseInt(LAMA_SAKIT1));
+                    jamaahPenyakit1.setTahunPenyakitIntType(Integer.parseInt(TAHUN_SAKIT1));
+
+                    StatusPenyakit statusPenyakit1 = new StatusPenyakit();
+                    statusPenyakit1.setIdStatus(0);
+                    jamaahPenyakit1.setStatusPenyakit(statusPenyakit1);
+
+                    jamaahPenyakits.add(jamaahPenyakit1);
                 }
 
-                dataTambahanPresenter.setDaftar(JsonUtil.toJson(jamaah));
+
+                if (NAMA_PENYAKIT2 != null & LAMA_SAKIT2 != null & TAHUN_SAKIT2 != null) {
+                    JamaahPenyakit jamaahPenyakit2 = new JamaahPenyakit();
+                    jamaahPenyakit2.setJamaah(jamaah);
+
+                    Penyakit penyakit2 = new Penyakit();
+                    penyakit2.setIdPenyakit(Integer.parseInt(NAMA_PENYAKIT2));
+                    jamaahPenyakit2.setPenyakit(penyakit2);
+
+                    jamaahPenyakit2.setLamaPenyakit(Integer.parseInt(LAMA_SAKIT2));
+                    jamaahPenyakit2.setTahunPenyakitIntType(Integer.parseInt(TAHUN_SAKIT2));
+
+                    StatusPenyakit statusPenyakit2 = new StatusPenyakit();
+                    statusPenyakit2.setIdStatus(0);
+                    jamaahPenyakit2.setStatusPenyakit(statusPenyakit2);
+
+                    jamaahPenyakits.add(jamaahPenyakit2);
+                }
+
+                if (NAMA_PENYAKIT3 != null & LAMA_SAKIT3 != null & TAHUN_SAKIT3 != null) {
+                    JamaahPenyakit jamaahPenyakit3 = new JamaahPenyakit();
+                    jamaahPenyakit3.setJamaah(jamaah);
+
+                    Penyakit penyakit3 = new Penyakit();
+                    penyakit3.setIdPenyakit(Integer.parseInt(NAMA_PENYAKIT3));
+                    jamaahPenyakit3.setPenyakit(penyakit3);
+
+                    jamaahPenyakit3.setLamaPenyakit(Integer.parseInt(LAMA_SAKIT3));
+                    jamaahPenyakit3.setTahunPenyakitIntType(Integer.parseInt(TAHUN_SAKIT3));
+
+                    StatusPenyakit statusPenyakit3 = new StatusPenyakit();
+                    statusPenyakit3.setIdStatus(0);
+                    jamaahPenyakit3.setStatusPenyakit(statusPenyakit3);
+
+                    jamaahPenyakits.add(jamaahPenyakit3);
+                }
+
+                Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
+                System.out.println("request"+gson.toJson(jamaah));
+                dataTambahanPresenter.setDaftar(gson.toJson(jamaah));
 
             }
         });

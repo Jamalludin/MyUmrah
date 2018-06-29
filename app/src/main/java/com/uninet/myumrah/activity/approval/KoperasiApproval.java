@@ -25,6 +25,9 @@ import com.uninet.myumrah.model.JamaahApproval;
 import com.uninet.myumrah.model.JenisKelamin;
 import com.uninet.myumrah.model.ListJamaah;
 import com.uninet.myumrah.model.Paket;
+import com.uninet.myumrah.model.StatusAktif;
+import com.uninet.myumrah.model.StatusApproval;
+import com.uninet.myumrah.model.User;
 import com.uninet.myumrah.model.Va;
 import com.uninet.myumrah.presenter.ApprovalPresenter;
 import com.uninet.myumrah.util.JsonUtil;
@@ -144,11 +147,14 @@ public class KoperasiApproval extends AbstracGenericActivity implements Approval
                 NOMOR_REK = no_rek.getText().toString();
                 ASSIGMENT = assigment.getText().toString();
                 JamaahApproval jamaahApproval = new JamaahApproval();
-                jamaah.setNoRek(NOMOR_REK);
                 jamaahApproval.setApproval(new Approval(2));
                 jamaahApproval.setAssesmentKoperasi(ASSIGMENT);
                 jamaahApproval.setTglApprovalKoperasi(new java.sql.Date(new Date().getTime()));
+                jamaahApproval.setStatusApproval(new StatusApproval(2));
+                jamaah.setNoRek(NOMOR_REK);
                 jamaah.setJamaahApproval(jamaahApproval);
+                jamaah.setStatusAktif(new StatusAktif(0));
+                jamaah.setUser(new User());
 
                 if (ASSIGMENT.equals("")){
 
