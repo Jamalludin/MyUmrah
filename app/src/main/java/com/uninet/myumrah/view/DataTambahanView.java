@@ -15,5 +15,6 @@ public interface DataTambahanView {
     void pekerjaan(String pekerjaan);
     void penyakit(String penyakit);
     void hubungan(String hubungan);
+    void savePenyakit(String savePenyakit);
 
 }

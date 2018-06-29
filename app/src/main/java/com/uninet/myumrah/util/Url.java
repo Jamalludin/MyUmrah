@@ -2,7 +2,7 @@ package com.uninet.myumrah.util;
 
 public class Url {
 
-    public static final String HOST2             = "http://10.12.1.176:8080/myumrah-api/";
+    public static final String HOST2             = "http://10.12.1.139:8080/myumrah-api/";
     public static final String HOST              = "http://36.37.68.130:41009/myumrah-api/";
     public static final String REGISTER          = HOST+"public/users";
     public static final String LOGIN             = HOST+"login";
@@ -31,6 +31,7 @@ public class Url {
     public static final String APPROVAL_MYUMROH  = HOST+"public/approval-myumrohs";
     public static final String APPROVAL_SAVE     = HOST2+"public/approval-create";
     public static final String UPDATE_JAMAAH     = HOST2+"public/update-jamaahs";
+    public static final String JAMAAH_PENYAKIT   = HOST2+"public/penyakit-create";
 
     /*public static final String URL      = "http://10.12.1.176/";
     public static final String LOGIN    = URL+"myumroh/user/login.php";*/

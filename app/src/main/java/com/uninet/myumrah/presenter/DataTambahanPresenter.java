@@ -22,7 +22,7 @@ public class DataTambahanPresenter {
         approvalInteractor = new ApprovalInteractor(context);
     }
 
-    public void setDaftar(String daftar, String penyakit){
+    public void setDaftar(String daftar){
         dataTambahanInteractor.daftar(daftar, new DataTambahanInteractor.Save() {
             @Override
             public void Hasil(String hasil) {
@@ -36,6 +36,15 @@ public class DataTambahanPresenter {
             @Override
             public void approvalSave(String approvalSave) {
                 dataTambahanView.approval(approvalSave);
+            }
+        });
+    }
+
+    public void setSavePenyakit(String savePenyakit){
+        dataTambahanInteractor.penyakitSave(savePenyakit, new DataTambahanInteractor.PenyakitSave() {
+            @Override
+            public void Penyakit(String penyakitSave) {
+                dataTambahanView.savePenyakit(penyakitSave);
             }
         });
     }

@@ -22,6 +22,7 @@ import static com.uninet.myumrah.util.DaftarUtil.KECAMATAN_ID;
 import static com.uninet.myumrah.util.DaftarUtil.PROVINSI_ID;
 import static com.uninet.myumrah.util.Url.DAFTAR;
 import static com.uninet.myumrah.util.Url.HUBUNGAN;
+import static com.uninet.myumrah.util.Url.JAMAAH_PENYAKIT;
 import static com.uninet.myumrah.util.Url.KABUPATEN;
 import static com.uninet.myumrah.util.Url.KECAMATAN;
 import static com.uninet.myumrah.util.Url.KELURAHAN;
@@ -243,7 +244,7 @@ public class DataTambahanInteractor {
 
     }
 
-    public void daftar(final String json, final Save save){
+    public void daftar(final String daftarJamaah, final Save save){
         JsonObjectRequest requestDaftar = new JsonObjectRequest(Request.Method.POST, DAFTAR, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
@@ -267,10 +268,41 @@ public class DataTambahanInteractor {
 
             @Override
             public byte[] getBody() {
-                return json.getBytes();
+                return daftarJamaah.getBytes();
             }
         };
         requestDataTambahan.add(requestDaftar);
+    }
+
+    public void penyakitSave(final String penyakit, final PenyakitSave penyakitSave){
+        JsonObjectRequest penyakitSaveRequest = new JsonObjectRequest(Request.Method.POST, JAMAAH_PENYAKIT, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                Log.i("jamaahPenyakit",response.toString());
+                penyakitSave.Penyakit(response.toString());
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        }){
+
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String,String> params = new HashMap<String, String>();
+                params.put("Content-Type", "application/json");
+                return params;
+            }
+
+            @Override
+            public byte[] getBody() {
+                return penyakit.getBytes();
+            }
+        };
+
+        requestDataTambahan.add(penyakitSaveRequest);
     }
 
     public interface ProvinsiList{
@@ -315,5 +347,9 @@ public class DataTambahanInteractor {
 
     public interface Save{
         void Hasil(String hasil);
+    }
+
+    public interface PenyakitSave{
+        void Penyakit(String penyakitSave);
     }
 }

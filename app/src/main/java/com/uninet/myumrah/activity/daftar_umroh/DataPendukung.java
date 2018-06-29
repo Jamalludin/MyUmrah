@@ -17,6 +17,7 @@ import com.uninet.myumrah.MainActivity;
 import com.uninet.myumrah.R;
 import com.uninet.myumrah.activity.AbstracGenericActivity;
 import com.uninet.myumrah.activity.login_aplikasi.Session;
+import com.uninet.myumrah.model.Agen;
 import com.uninet.myumrah.model.Approval;
 import com.uninet.myumrah.model.Bank;
 import com.uninet.myumrah.model.Cicilan;
@@ -63,6 +64,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.UUID;
 
 import static com.uninet.myumrah.util.DaftarUtil.ALAMAT_KELUARGA;
 import static com.uninet.myumrah.util.DaftarUtil.ALAMAT_LENGKAP;
@@ -115,6 +117,10 @@ import static com.uninet.myumrah.util.DaftarUtil.TGL_LAHIR;
 import static com.uninet.myumrah.util.DaftarUtil.UKURAN_BAJU_ID;
 
 public class DataPendukung extends AbstracGenericActivity implements DataTambahanView,AdapterView.OnItemSelectedListener{
+    @Override
+    public void savePenyakit(String savePenyakit) {
+
+    }
 
     private Jamaah jamaah = new Jamaah();
     private JamaahApproval jamaahApproval = new JamaahApproval();
@@ -216,6 +222,7 @@ public class DataPendukung extends AbstracGenericActivity implements DataTambaha
                 TELP_KELUARGA   = telpDarurat.getText().toString();
                 DINAS           = dinas.getText().toString();
 
+                jamaah.setIdJamaah(UUID.randomUUID().toString());
                 jamaah.setNamaLengkap(NAMA_LENGKAP);
                 jamaah.setNamaAyah(NAMA_AYAH);
                 jamaah.setNik(NIK_JAMAAH);
@@ -262,6 +269,7 @@ public class DataPendukung extends AbstracGenericActivity implements DataTambaha
                 jamaah.setInstansi(new Instansi(Integer.parseInt(INSTANSI_ID)));
                 jamaah.setStatusAktif(new StatusAktif(0));
                 jamaah.setStatusPesawat(new StatusPesawat());
+                jamaah.setAgen(new Agen());
 
                 jamaahApproval.setApproval(new Approval(1));
                 jamaahApproval.setStatusApproval(new StatusApproval(2));
@@ -325,6 +333,7 @@ public class DataPendukung extends AbstracGenericActivity implements DataTambaha
                 Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
                 System.out.println("request"+gson.toJson(jamaah));
                 dataTambahanPresenter.setDaftar(gson.toJson(jamaah));
+                dataTambahanPresenter.setSavePenyakit(gson.toJson(jamaahPenyakits));
 
             }
         });
