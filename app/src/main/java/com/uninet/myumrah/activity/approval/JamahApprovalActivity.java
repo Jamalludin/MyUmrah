@@ -30,7 +30,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class JamahApproval extends AbstracGenericActivity implements ApprovalView {
+public class JamahApprovalActivity extends AbstracGenericActivity implements ApprovalView {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

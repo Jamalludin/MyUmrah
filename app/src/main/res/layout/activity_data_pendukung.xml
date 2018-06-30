@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginBottom="15dp"
-    tools:context=".activity.daftar_umroh.DataPendukung">
+    tools:context=".activity.daftar_umroh.DataPendukungActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"

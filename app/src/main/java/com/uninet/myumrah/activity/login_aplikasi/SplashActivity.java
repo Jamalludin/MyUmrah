@@ -5,10 +5,7 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.uninet.myumrah.MainActivity;
 import com.uninet.myumrah.R;
-import com.uninet.myumrah.activity.daftar_umroh.DaftarUmroh;
-import com.uninet.myumrah.activity.daftar_umroh.DataPendukung;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -23,7 +20,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
 
-                Intent intent = new Intent(SplashActivity.this, Login.class);
+                Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
                 startActivity(intent);
                 finish();
 

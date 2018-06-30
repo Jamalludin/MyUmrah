@@ -1,6 +1,5 @@
 package com.uninet.myumrah.activity.approval;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -23,9 +22,9 @@ import java.lang.reflect.Type;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
-import static com.uninet.myumrah.activity.approval.KoperasiApproval.ASSIGMENT;
+import static com.uninet.myumrah.activity.approval.KoperasiApprovalActivity.ASSIGMENT;
 
-public class MyUmrahApproval extends AbstracGenericActivity implements ApprovalView,View.OnClickListener {
+public class MyUmrahApprovalActivity extends AbstracGenericActivity implements ApprovalView,View.OnClickListener {
 
     private Jamaah jamaah = new Jamaah();
 

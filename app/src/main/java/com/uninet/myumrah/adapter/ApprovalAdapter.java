@@ -10,12 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.uninet.myumrah.R;
-import com.uninet.myumrah.activity.approval.BankApproval;
-import com.uninet.myumrah.activity.approval.JamahApproval;
-import com.uninet.myumrah.activity.approval.KoperasiApproval;
-import com.uninet.myumrah.activity.approval.MyUmrahApproval;
-import com.uninet.myumrah.activity.login_aplikasi.Session;
-import com.uninet.myumrah.model.Jamaah;
+import com.uninet.myumrah.activity.approval.KoperasiApprovalActivity;
 import com.uninet.myumrah.model.ListJamaah;
 
 import java.util.List;
@@ -62,7 +57,7 @@ public class ApprovalAdapter extends RecyclerView.Adapter<ApprovalAdapter.ViewHo
                 /*String role = new Session(view.getContext()).role();
                 if (role.equalsIgnoreCase("")){
 
-                    Intent calon = new Intent(view.getContext(), KoperasiApproval.class);
+                    Intent calon = new Intent(view.getContext(), KoperasiApprovalActivity.class);
                     Bundle bundle = new Bundle();
                     bundle.putString("idnya", jamaahs.get(position).getIdJamaah());
                     calon.putExtras(bundle);
@@ -70,7 +65,7 @@ public class ApprovalAdapter extends RecyclerView.Adapter<ApprovalAdapter.ViewHo
 
                 }else if (role.equalsIgnoreCase("")){
 
-                    Intent calon = new Intent(view.getContext(), BankApproval.class);
+                    Intent calon = new Intent(view.getContext(), BankApprovalActivity.class);
                     Bundle bundle = new Bundle();
                     bundle.putString("idnya", jamaahs.get(position).getIdJamaah());
                     calon.putExtras(bundle);
@@ -78,13 +73,13 @@ public class ApprovalAdapter extends RecyclerView.Adapter<ApprovalAdapter.ViewHo
 
                 }else {
 
-                    Intent calon = new Intent(view.getContext(), MyUmrahApproval.class);
+                    Intent calon = new Intent(view.getContext(), MyUmrahApprovalActivity.class);
                     Bundle bundle = new Bundle();
                     bundle.putString("idnya", jamaahs.get(position).getIdJamaah());
                     calon.putExtras(bundle);
                     view.getContext().startActivity(calon);
                 }*/
-                Intent calon = new Intent(view.getContext(), KoperasiApproval.class);
+                Intent calon = new Intent(view.getContext(), KoperasiApprovalActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("idnya", jamaahs.get(position).getIdJamaah());
                 calon.putExtras(bundle);

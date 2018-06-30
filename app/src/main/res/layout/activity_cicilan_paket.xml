@@ -8,7 +8,7 @@
     android:layout_marginBottom="10dp"
     android:layout_marginLeft="10dp"
     android:layout_marginRight="10dp"
-    tools:context=".activity.daftar_umroh.CicilanPaket">
+    tools:context=".activity.daftar_umroh.CicilanPaketActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"

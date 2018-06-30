@@ -5,11 +5,11 @@ import android.os.Bundle;
 
 import com.uninet.myumrah.R;
 
-public class BayarFullPayment extends AppCompatActivity {
+public class BayarBelanjaActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_full_payment);
+        setContentView(R.layout.activity_belanja);
     }
 }

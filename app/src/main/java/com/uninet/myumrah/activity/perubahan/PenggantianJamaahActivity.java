@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import com.uninet.myumrah.R;
 
-public class PenggantianJamaah extends AppCompatActivity {
+public class PenggantianJamaahActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

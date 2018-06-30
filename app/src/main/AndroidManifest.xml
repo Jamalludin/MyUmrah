@@ -21,46 +21,46 @@
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme" />
-        <activity android:name=".activity.login_aplikasi.Login" />
+        <activity android:name=".activity.login_aplikasi.LoginActivity" />
         <activity
-            android:name=".activity.daftar_umroh.DaftarUmroh"
+            android:name=".activity.daftar_umroh.DaftarUmrohActivity"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".activity.daftar_umroh.ListPaket"
+            android:name=".activity.daftar_umroh.ListPaketActivity"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".activity.daftar_umroh.CicilanPaket"
+            android:name=".activity.daftar_umroh.CicilanPaketActivity"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".activity.daftar_umroh.DataPendukung"
+            android:name=".activity.daftar_umroh.DataPendukungActivity"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".activity.approval.KoperasiApproval"
+            android:name=".activity.approval.KoperasiApprovalActivity"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".activity.approval.BankApproval"
+            android:name=".activity.approval.BankApprovalActivity"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".activity.approval.MyUmrahApproval"
+            android:name=".activity.approval.MyUmrahApprovalActivity"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".activity.approval.JamahApproval"
+            android:name=".activity.approval.JamahApprovalActivity"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".activity.approval.JamaahApprovalBank"
+            android:name=".activity.approval.JamaahApprovalBankActivity"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".activity.approval.JamaahApprovalMyUmroh"
+            android:name=".activity.approval.JamaahApprovalMyUmrohActivity"
             android:theme="@style/AppTheme" />
-        <activity android:name=".activity.pembayaran.BayarDownPayment"
+        <activity android:name=".activity.pembayaran.BayarDownPaymentActivity"
             android:theme="@style/AppTheme"/>
-        <activity android:name=".activity.pembayaran.BayarFullPayment"
+        <activity android:name=".activity.pembayaran.BayarFullPaymentActivity"
             android:theme="@style/AppTheme"/>
-        <activity android:name=".activity.pembayaran.BayarBelanja"
+        <activity android:name=".activity.pembayaran.BayarBelanjaActivity"
             android:theme="@style/AppTheme"/>
-        <activity android:name=".activity.perubahan.LinkKeluarga"
+        <activity android:name=".activity.perubahan.LinkKeluargaActivity"
             android:theme="@style/AppTheme"/>
-        <activity android:name=".activity.perubahan.PenggantianJamaah"
+        <activity android:name=".activity.perubahan.PenggantianJamaahActivity"
             android:theme="@style/AppTheme">
         </activity>
     </application>

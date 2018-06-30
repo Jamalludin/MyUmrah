@@ -45,7 +45,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class KoperasiApproval extends AbstracGenericActivity implements ApprovalView,View.OnClickListener{
+public class KoperasiApprovalActivity extends AbstracGenericActivity implements ApprovalView,View.OnClickListener{
 
     public static String NOMOR_REK;
     public static String ASSIGMENT;

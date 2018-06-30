@@ -8,10 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.uninet.myumrah.R;
-import com.uninet.myumrah.activity.daftar_umroh.DaftarUmroh;
+import com.uninet.myumrah.activity.daftar_umroh.DaftarUmrohActivity;
 import com.uninet.myumrah.model.Cicilan;
 
 import java.text.DecimalFormat;
@@ -66,7 +65,7 @@ public class CicilanAdapter extends RecyclerView.Adapter<CicilanAdapter.CicilanH
             public void onClick(View view) {
 
             CICILAN_ID = String.valueOf(cicilanList.get(position).getIdCicilan());
-            view.getContext().startActivity(new Intent(view.getContext(), DaftarUmroh.class));
+            view.getContext().startActivity(new Intent(view.getContext(), DaftarUmrohActivity.class));
 
             }
         });

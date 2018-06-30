@@ -47,7 +47,7 @@ import static com.uninet.myumrah.util.DaftarUtil.MINGGU;
 import static com.uninet.myumrah.util.DaftarUtil.TAHUN;
 
 
-public class ListPaket extends AbstracGenericActivity implements ListPaketView, AdapterView.OnItemSelectedListener {
+public class ListPaketActivity extends AbstracGenericActivity implements ListPaketView, AdapterView.OnItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,8 +99,8 @@ public class ListPaket extends AbstracGenericActivity implements ListPaketView, 
         super.tahunPaket();
         super.weekPaket();
 
-        tahunPaketSpin.setAdapter(new ArrayAdapter<String>(ListPaket.this, android.R.layout.simple_spinner_dropdown_item, tahunPaket));
-        weekPakerSpin.setAdapter(new ArrayAdapter<String>(ListPaket.this, android.R.layout.simple_spinner_dropdown_item, weekPaket));
+        tahunPaketSpin.setAdapter(new ArrayAdapter<String>(ListPaketActivity.this, android.R.layout.simple_spinner_dropdown_item, tahunPaket));
+        weekPakerSpin.setAdapter(new ArrayAdapter<String>(ListPaketActivity.this, android.R.layout.simple_spinner_dropdown_item, weekPaket));
 
         ArrayAdapter<CharSequence> adapter_ubah = ArrayAdapter.createFromResource(this, R.array.mont, android.R.layout.simple_spinner_item);
         adapter_ubah.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -133,7 +133,7 @@ public class ListPaket extends AbstracGenericActivity implements ListPaketView, 
                 lamaJalan.add(hariObj.getString("hariPaket"));
             }
 
-            lamaPerjalanan.setAdapter(new ArrayAdapter<String>(ListPaket.this, android.R.layout.simple_spinner_dropdown_item, lamaJalan));
+            lamaPerjalanan.setAdapter(new ArrayAdapter<String>(ListPaketActivity.this, android.R.layout.simple_spinner_dropdown_item, lamaJalan));
 
         } catch (Exception e) {
 
@@ -156,7 +156,7 @@ public class ListPaket extends AbstracGenericActivity implements ListPaketView, 
                 bayarPaket.add(hariObj.getString("namaJenisBayar"));
             }
 
-            caraBayar.setAdapter(new ArrayAdapter<String>(ListPaket.this, android.R.layout.simple_spinner_dropdown_item, bayarPaket));
+            caraBayar.setAdapter(new ArrayAdapter<String>(ListPaketActivity.this, android.R.layout.simple_spinner_dropdown_item, bayarPaket));
 
         }catch (Exception e){
 
@@ -179,7 +179,7 @@ public class ListPaket extends AbstracGenericActivity implements ListPaketView, 
 
             }
 
-            instansiList.setAdapter(new ArrayAdapter<String>(ListPaket.this, android.R.layout.simple_spinner_dropdown_item, instanList));
+            instansiList.setAdapter(new ArrayAdapter<String>(ListPaketActivity.this, android.R.layout.simple_spinner_dropdown_item, instanList));
 
         } catch (Exception e) {
 
@@ -202,7 +202,7 @@ public class ListPaket extends AbstracGenericActivity implements ListPaketView, 
                 bankList.add(objInstan.getString("namaBank"));
 
             }
-            bankListSpin.setAdapter(new ArrayAdapter<String>(ListPaket.this, android.R.layout.simple_spinner_dropdown_item, bankList));
+            bankListSpin.setAdapter(new ArrayAdapter<String>(ListPaketActivity.this, android.R.layout.simple_spinner_dropdown_item, bankList));
 
         }catch (Exception e){
 
@@ -241,7 +241,7 @@ public class ListPaket extends AbstracGenericActivity implements ListPaketView, 
 
     @Override
     public void onValidasiError(String message) {
-        Toasty.error(ListPaket.this, message, Toast.LENGTH_LONG).show();
+        Toasty.error(ListPaketActivity.this, message, Toast.LENGTH_LONG).show();
     }
 
     @Override

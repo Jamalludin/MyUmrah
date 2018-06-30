@@ -29,7 +29,7 @@ import java.util.Calendar;
 
 public abstract class AbstracGenericActivity extends AppCompatActivity{
 
-    //ListPaket
+    //ListPaketActivity
     protected ArrayList<String> lamaJalan     = new ArrayList<String>();
     protected ArrayList<String> tahunPaket    = new ArrayList<String>();
     protected ArrayList<String> weekPaket     = new ArrayList<String>();

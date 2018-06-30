@@ -9,10 +9,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
@@ -20,7 +18,6 @@ import com.uninet.myumrah.R;
 import com.uninet.myumrah.activity.AbstracGenericActivity;
 import com.uninet.myumrah.adapter.CicilanAdapter;
 import com.uninet.myumrah.model.Cicilan;
-import com.uninet.myumrah.model.Paket;
 import com.uninet.myumrah.model.Talangan;
 import com.uninet.myumrah.presenter.DownPaymentPresenter;
 import com.uninet.myumrah.view.CicilanPaketView;
@@ -31,16 +28,14 @@ import java.lang.reflect.Type;
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import static com.uninet.myumrah.util.DaftarUtil.HARGA_PAKET;
 import static com.uninet.myumrah.util.DaftarUtil.IDDP;
-import static com.uninet.myumrah.util.DaftarUtil.NOMINAL_DP;
 import static com.uninet.myumrah.util.DaftarUtil.TALANGAN_ID;
 import static com.uninet.myumrah.util.DaftarUtil.TOTAL_TALANGAN;
 
-public class CicilanPaket extends AbstracGenericActivity implements CicilanPaketView {
+public class CicilanPaketActivity extends AbstracGenericActivity implements CicilanPaketView {
 
     public DecimalFormat formatter = new DecimalFormat("#,###");
     public static String item;
@@ -110,7 +105,7 @@ public class CicilanPaket extends AbstracGenericActivity implements CicilanPaket
                 dpList.add(objDp.getDouble("nominalDp"));
             }
 
-            downPaymentListSpin.setAdapter(new ArrayAdapter<Double>(CicilanPaket.this, android.R.layout.simple_spinner_dropdown_item, dpList));
+            downPaymentListSpin.setAdapter(new ArrayAdapter<Double>(CicilanPaketActivity.this, android.R.layout.simple_spinner_dropdown_item, dpList));
 
         } catch (Exception e) {
 

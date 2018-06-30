@@ -12,11 +12,11 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
-import com.uninet.myumrah.activity.approval.JamaahApprovalBank;
-import com.uninet.myumrah.activity.approval.JamaahApprovalMyUmroh;
-import com.uninet.myumrah.activity.approval.JamahApproval;
-import com.uninet.myumrah.activity.daftar_umroh.ListPaket;
-import com.uninet.myumrah.activity.login_aplikasi.Login;
+import com.uninet.myumrah.activity.approval.JamaahApprovalBankActivity;
+import com.uninet.myumrah.activity.approval.JamaahApprovalMyUmrohActivity;
+import com.uninet.myumrah.activity.approval.JamahApprovalActivity;
+import com.uninet.myumrah.activity.daftar_umroh.ListPaketActivity;
+import com.uninet.myumrah.activity.login_aplikasi.LoginActivity;
 import com.uninet.myumrah.activity.login_aplikasi.Session;
 
 public class MainActivity extends AppCompatActivity {
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                startActivity(new Intent(MainActivity.this, ListPaket.class));
+                startActivity(new Intent(MainActivity.this, ListPaketActivity.class));
             }
         });
 
@@ -51,11 +51,11 @@ public class MainActivity extends AppCompatActivity {
                 if (item == 0){
 
                 }else if (item == 1){
-                    startActivity(new Intent(MainActivity.this, JamahApproval.class));
+                    startActivity(new Intent(MainActivity.this, JamahApprovalActivity.class));
                 }else if (item == 2){
-                    startActivity(new Intent(MainActivity.this, JamaahApprovalBank.class));
+                    startActivity(new Intent(MainActivity.this, JamaahApprovalBankActivity.class));
                 }else {
-                    startActivity(new Intent(MainActivity.this, JamaahApprovalMyUmroh.class));
+                    startActivity(new Intent(MainActivity.this, JamaahApprovalMyUmrohActivity.class));
                 }
             }
 
@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()){
             case R.id.menu_logout:
                 new Session(getApplicationContext()).logout();
-                startActivity(new Intent(MainActivity.this, Login.class));
+                startActivity(new Intent(MainActivity.this, LoginActivity.class));
                 finish();
                 return true;
 

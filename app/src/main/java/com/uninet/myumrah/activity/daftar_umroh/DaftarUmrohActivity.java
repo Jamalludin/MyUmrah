@@ -43,7 +43,7 @@ import static com.uninet.myumrah.util.DaftarUtil.TERAKHIR_UMROH;
 import static com.uninet.myumrah.util.DaftarUtil.TGL_LAHIR;
 
 
-public class DaftarUmroh extends AbstracGenericActivity implements DataDiriView, AdapterView.OnItemSelectedListener{
+public class DaftarUmrohActivity extends AbstracGenericActivity implements DataDiriView, AdapterView.OnItemSelectedListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,7 +100,7 @@ public class DaftarUmroh extends AbstracGenericActivity implements DataDiriView,
         img_tgl_lahir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new DatePickerDialog(DaftarUmroh.this, date, calendar.get(Calendar.YEAR),
+                new DatePickerDialog(DaftarUmrohActivity.this, date, calendar.get(Calendar.YEAR),
                         calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH)).show();
             }
         });
@@ -137,7 +137,7 @@ public class DaftarUmroh extends AbstracGenericActivity implements DataDiriView,
 
                     KELAMIN = "2";
                 }
-                startActivity(new Intent(DaftarUmroh.this,DataPendukung.class));
+                startActivity(new Intent(DaftarUmrohActivity.this,DataPendukungActivity.class));
             }
         });
 

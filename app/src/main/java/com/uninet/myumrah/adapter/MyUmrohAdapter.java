@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.uninet.myumrah.R;
-import com.uninet.myumrah.activity.approval.JamaahApprovalMyUmroh;
+import com.uninet.myumrah.activity.approval.JamaahApprovalMyUmrohActivity;
 import com.uninet.myumrah.model.Jamaah;
 
 import java.util.List;
@@ -56,7 +56,7 @@ public class MyUmrohAdapter extends RecyclerView.Adapter<MyUmrohAdapter.ViewAppr
             @Override
             public void onClick(View view) {
 
-                Intent calon = new Intent(view.getContext(), JamaahApprovalMyUmroh.class);
+                Intent calon = new Intent(view.getContext(), JamaahApprovalMyUmrohActivity.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("idJMnya", approvalTravels.get(position).getIdJamaah());

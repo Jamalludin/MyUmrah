@@ -10,12 +10,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.uninet.myumrah.R;
-import com.uninet.myumrah.activity.daftar_umroh.CicilanPaket;
-import com.uninet.myumrah.activity.daftar_umroh.DaftarUmroh;
-import com.uninet.myumrah.model.Bank;
-import com.uninet.myumrah.model.Instansi;
-import com.uninet.myumrah.model.Jamaah;
-import com.uninet.myumrah.model.JenisBayar;
+import com.uninet.myumrah.activity.daftar_umroh.CicilanPaketActivity;
+import com.uninet.myumrah.activity.daftar_umroh.DaftarUmrohActivity;
 import com.uninet.myumrah.model.Paket;
 
 import java.text.DateFormat;
@@ -101,12 +97,12 @@ public class PaketAdapter extends RecyclerView.Adapter<PaketAdapter.PaketHolder>
                 ID_PAKET = paketUmrohUnityList.get(position).getIdPaket();
                 if (BAYAR_ID.equalsIgnoreCase("1")){
 
-                    view.getContext().startActivity(new Intent(view.getContext(), CicilanPaket.class));
+                    view.getContext().startActivity(new Intent(view.getContext(), CicilanPaketActivity.class));
                     HARGA_PAKET = String.valueOf(paketUmrohUnityList.get(position).getHargaPaket());
 
                 }else {
 
-                    view.getContext().startActivity(new Intent(view.getContext(), DaftarUmroh.class));
+                    view.getContext().startActivity(new Intent(view.getContext(), DaftarUmrohActivity.class));
 
                 }
             }

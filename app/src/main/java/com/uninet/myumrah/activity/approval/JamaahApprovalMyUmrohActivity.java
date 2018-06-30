@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import com.uninet.myumrah.R;
 
-public class JamaahApprovalMyUmroh extends AppCompatActivity {
+public class JamaahApprovalMyUmrohActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

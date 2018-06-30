@@ -9,7 +9,7 @@
     android:paddingBottom="20dp"
     android:paddingLeft="5dp"
     android:paddingRight="5dp"
-    tools:context=".activity.approval.JamahApproval">
+    tools:context=".activity.approval.JamahApprovalActivity">
 
     <TextView
         android:layout_width="wrap_content"

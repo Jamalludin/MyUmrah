@@ -15,7 +15,7 @@ import com.uninet.myumrah.fragment.RegisterFragment;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Login extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     private ViewPager viewPager;
     private TabLayout tabLayout;
@@ -35,7 +35,7 @@ public class Login extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager){
 
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new LoginFragment(), "Login");
+        adapter.addFragment(new LoginFragment(), "LoginActivity");
         adapter.addFragment(new RegisterFragment(),"Sign Up");
         viewPager.setAdapter(adapter);
     }

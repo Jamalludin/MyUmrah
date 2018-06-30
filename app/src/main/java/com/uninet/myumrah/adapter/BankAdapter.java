@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.uninet.myumrah.R;
-import com.uninet.myumrah.activity.approval.JamaahApprovalBank;
+import com.uninet.myumrah.activity.approval.JamaahApprovalBankActivity;
 import com.uninet.myumrah.model.Jamaah;
 
 import java.util.List;
@@ -56,7 +56,7 @@ public class BankAdapter extends RecyclerView.Adapter<BankAdapter.ViewHolder> {
             @Override
             public void onClick(View view) {
 
-                Intent calon = new Intent(view.getContext(), JamaahApprovalBank.class);
+                Intent calon = new Intent(view.getContext(), JamaahApprovalBankActivity.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("idJMnya", approvalList.get(position).getIdJamaah());

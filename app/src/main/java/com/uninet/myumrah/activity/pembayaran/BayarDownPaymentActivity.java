@@ -1,15 +1,15 @@
-package com.uninet.myumrah.activity.perubahan;
+package com.uninet.myumrah.activity.pembayaran;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.uninet.myumrah.R;
 
-public class LinkKeluarga extends AppCompatActivity {
+public class BayarDownPaymentActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_link_keluarga);
+        setContentView(R.layout.activity_down_payment);
     }
 }
