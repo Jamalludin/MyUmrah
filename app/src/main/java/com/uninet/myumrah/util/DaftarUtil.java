@@ -28,7 +28,7 @@ public class DaftarUtil {
     public static String TERAKHIR_UMROH;
     public static String TGL_LAHIR;
     public static String GOLDAR;
-    public static String USER_NAME;
+    public static String ROLE_USER;
     public static String ID_PAKET;
     public static String RIWAYAT_PERKAWINAN;
     public static String NEGARA;
@@ -42,8 +42,6 @@ public class DaftarUtil {
     public static String PROVINSI_ID;
     public static String PENDIDIKAN_ID;
     public static String PEKERJAAN_ID;
-    public static String ALAMAT_INSTANSI;
-    public static String TELP_INSTANSI;
     public static String UKURAN_BAJU_ID;
     public static String NAMA_MAHRAM;
     public static String STATUS_MAHRAM;

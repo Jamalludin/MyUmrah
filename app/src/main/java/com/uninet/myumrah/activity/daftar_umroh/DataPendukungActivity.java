@@ -267,7 +267,6 @@ public class DataPendukungActivity extends AbstracGenericActivity implements Dat
 
                 if (NAMA_PENYAKIT1 != null & LAMA_SAKIT1 != null & TAHUN_SAKIT1 != null) {
                     JamaahPenyakit jamaahPenyakit1 = new JamaahPenyakit();
-                    //jamaahPenyakit1.setJamaah(jamaah);
 
                     Penyakit penyakit1 = new Penyakit();
                     penyakit1.setIdPenyakit(Integer.parseInt(NAMA_PENYAKIT1));
@@ -286,7 +285,6 @@ public class DataPendukungActivity extends AbstracGenericActivity implements Dat
 
                 if (NAMA_PENYAKIT2 != null & LAMA_SAKIT2 != null & TAHUN_SAKIT2 != null) {
                     JamaahPenyakit jamaahPenyakit2 = new JamaahPenyakit();
-                    //jamaahPenyakit2.setJamaah(jamaah);
 
                     Penyakit penyakit2 = new Penyakit();
                     penyakit2.setIdPenyakit(Integer.parseInt(NAMA_PENYAKIT2));
@@ -304,7 +302,6 @@ public class DataPendukungActivity extends AbstracGenericActivity implements Dat
 
                 if (NAMA_PENYAKIT3 != null & LAMA_SAKIT3 != null & TAHUN_SAKIT3 != null) {
                     JamaahPenyakit jamaahPenyakit3 = new JamaahPenyakit();
-                    //jamaahPenyakit3.setJamaah(jamaah);
 
                     Penyakit penyakit3 = new Penyakit();
                     penyakit3.setIdPenyakit(Integer.parseInt(NAMA_PENYAKIT3));
@@ -326,7 +323,6 @@ public class DataPendukungActivity extends AbstracGenericActivity implements Dat
                 System.out.println("request"+gson.toJson(jamaah));
                 dataTambahanPresenter.setDaftar(gson.toJson(jamaah));
                 System.out.println("penyakit"+gson.toJson(jamaahPenyakits));
-                //dataTambahanPresenter.setSavePenyakit(gson.toJson(jamaahPenyakits));
 
             }
         });

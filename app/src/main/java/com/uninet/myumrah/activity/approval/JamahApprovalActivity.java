@@ -1,10 +1,8 @@
 package com.uninet.myumrah.activity.approval;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -13,22 +11,17 @@ import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
 import com.uninet.myumrah.R;
 import com.uninet.myumrah.activity.AbstracGenericActivity;
+import com.uninet.myumrah.activity.login_aplikasi.Session;
 import com.uninet.myumrah.adapter.ApprovalAdapter;
-import com.uninet.myumrah.adapter.PaketAdapter;
-import com.uninet.myumrah.model.Jamaah;
 import com.uninet.myumrah.model.ListJamaah;
-import com.uninet.myumrah.model.Paket;
-import com.uninet.myumrah.model.Talangan;
 import com.uninet.myumrah.presenter.ApprovalPresenter;
-import com.uninet.myumrah.util.JsonUtil;
 import com.uninet.myumrah.view.ApprovalView;
-
-import org.json.JSONObject;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
+
+import static com.uninet.myumrah.util.DaftarUtil.ROLE_USER;
 
 public class JamahApprovalActivity extends AbstracGenericActivity implements ApprovalView {
 
@@ -41,6 +34,8 @@ public class JamahApprovalActivity extends AbstracGenericActivity implements App
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
+
+        ROLE_USER = new Session(getApplicationContext()).role();
 
         approvalPresenter = new ApprovalPresenter(this, getApplicationContext());
         approvalPresenter.setListApproval();

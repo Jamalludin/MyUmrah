@@ -14,13 +14,20 @@ import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
 import com.uninet.myumrah.R;
 import com.uninet.myumrah.activity.AbstracGenericActivity;
+import com.uninet.myumrah.model.Approval;
 import com.uninet.myumrah.model.Jamaah;
+import com.uninet.myumrah.model.JamaahApproval;
+import com.uninet.myumrah.model.StatusAktif;
+import com.uninet.myumrah.model.StatusApproval;
+import com.uninet.myumrah.model.User;
 import com.uninet.myumrah.presenter.ApprovalPresenter;
+import com.uninet.myumrah.util.JsonUtil;
 import com.uninet.myumrah.view.ApprovalView;
 
 import java.lang.reflect.Type;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import static com.uninet.myumrah.activity.approval.KoperasiApprovalActivity.ASSIGMENT;
 
@@ -122,28 +129,47 @@ public class MyUmrahApprovalActivity extends AbstracGenericActivity implements A
             case R.id.setuju_jamaah_travel:
 
                 ASSIGMENT = assigment.getText().toString();
+                JamaahApproval jamaahApproval = new JamaahApproval();
+                jamaahApproval.setApproval(new Approval());
+                jamaahApproval.setAssesmentKoperasi(ASSIGMENT);
+                jamaahApproval.setTglApprovalKoperasi(new java.sql.Date(new Date().getTime()));
+                jamaahApproval.setStatusApproval(new StatusApproval(1));
+                jamaah.setJamaahApproval(jamaahApproval);
+                jamaah.setStatusAktif(new StatusAktif(1));
+                jamaah.setUser(new User());
 
                 if (ASSIGMENT.equals("")){
 
                     Toast.makeText(this, "Mohon Isi Assigment", Toast.LENGTH_SHORT).show();
                 }else {
 
-                    pdialog.setMessage("Sedang Memproses...");
-                    pdialog.show();
+                    approvalPresenter.setUpdateJamaah(JsonUtil.toJson(jamaah));
+                    /*pdialog.setMessage("Sedang Memproses...");
+                    pdialog.show();*/
                 }
 
                 break;
 
             case R.id.tolak_jamaah_travel:
+
                 ASSIGMENT = assigment.getText().toString();
+                JamaahApproval jamaahApproval1 = new JamaahApproval();
+                jamaahApproval1.setApproval(new Approval());
+                jamaahApproval1.setAssesmentKoperasi(ASSIGMENT);
+                jamaahApproval1.setTglApprovalKoperasi(new java.sql.Date(new Date().getTime()));
+                jamaahApproval1.setStatusApproval(new StatusApproval(0));
+                jamaah.setJamaahApproval(jamaahApproval1);
+                jamaah.setStatusAktif(new StatusAktif(0));
+                jamaah.setUser(new User());
 
                 if (ASSIGMENT.equals("")){
 
                     Toast.makeText(this, "Mohon Isi Assigment", Toast.LENGTH_SHORT).show();
                 }else {
 
-                    pdialog.setMessage("Sedang Memproses...");
-                    pdialog.show();
+                    approvalPresenter.setUpdateJamaah(JsonUtil.toJson(jamaah));
+                    /*pdialog.setMessage("Sedang Memproses...");
+                    pdialog.show();*/
                 }
                 break;
 

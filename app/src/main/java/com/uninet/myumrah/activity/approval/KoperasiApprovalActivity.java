@@ -178,6 +178,15 @@ public class KoperasiApprovalActivity extends AbstracGenericActivity implements 
 
                 NOMOR_REK = no_rek.getText().toString();
                 ASSIGMENT = assigment.getText().toString();
+                JamaahApproval jamaahApproval1 = new JamaahApproval();
+                jamaahApproval1.setApproval(new Approval(1));
+                jamaahApproval1.setAssesmentKoperasi(ASSIGMENT);
+                jamaahApproval1.setTglApprovalKoperasi(new java.sql.Date(new Date().getTime()));
+                jamaahApproval1.setStatusApproval(new StatusApproval(0));
+                jamaah.setNoRek(NOMOR_REK);
+                jamaah.setJamaahApproval(jamaahApproval1);
+                jamaah.setStatusAktif(new StatusAktif(0));
+                jamaah.setUser(new User());
 
                 if (ASSIGMENT.equals("")){
 
@@ -185,8 +194,9 @@ public class KoperasiApprovalActivity extends AbstracGenericActivity implements 
 
                 }else {
 
-                    pdialog.setMessage("Sedang Memproses...");
-                    pdialog.show();
+                    approvalPresenter.setUpdateJamaah(JsonUtil.toJson(jamaah));
+                    /*pdialog.setMessage("Sedang Memproses...");
+                    pdialog.show();*/
                 }
 
                 break;

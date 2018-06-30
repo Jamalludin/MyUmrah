@@ -55,7 +55,7 @@ public class ApprovalAdapter extends RecyclerView.Adapter<ApprovalAdapter.ViewHo
             public void onClick(View view) {
 
                 /*String role = new Session(view.getContext()).role();
-                if (role.equalsIgnoreCase("")){
+                if (ROLE_USER.equalsIgnoreCase("ROLE_BANDAHARA_KOPERASI")){
 
                     Intent calon = new Intent(view.getContext(), KoperasiApprovalActivity.class);
                     Bundle bundle = new Bundle();
@@ -63,7 +63,7 @@ public class ApprovalAdapter extends RecyclerView.Adapter<ApprovalAdapter.ViewHo
                     calon.putExtras(bundle);
                     view.getContext().startActivity(calon);
 
-                }else if (role.equalsIgnoreCase("")){
+                }else if (ROLE_USER.equalsIgnoreCase("ROLE_PETUGAS_BANK")){
 
                     Intent calon = new Intent(view.getContext(), BankApprovalActivity.class);
                     Bundle bundle = new Bundle();

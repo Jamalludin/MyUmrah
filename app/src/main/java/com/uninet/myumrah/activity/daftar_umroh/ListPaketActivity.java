@@ -282,13 +282,13 @@ public class ListPaketActivity extends AbstracGenericActivity implements ListPak
             if (item.equals("--Pilih--")){
 
                 BANK = null;
+                BANKID = null;
             }else {
 
                 BANK = item;
                 BANKID = getIdBank(position-1).toString();
 
             }
-
 
         }else {
 
