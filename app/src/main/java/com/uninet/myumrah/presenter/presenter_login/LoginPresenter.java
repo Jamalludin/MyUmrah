@@ -2,6 +2,7 @@ package com.uninet.myumrah.presenter.presenter_login;
 
 import com.uninet.myumrah.model.model_login.LoginModel;
 import com.uninet.myumrah.model.model_login.ValidasiLoginModel;
+import com.uninet.myumrah.view.ILoginPresenter;
 import com.uninet.myumrah.view.LoginView;
 
 public class LoginPresenter implements ILoginPresenter {

@@ -14,7 +14,6 @@ public class DaftarUtil {
     public static String BAYAR;
     public static String IDDP;
     public static String HARGA_PAKET;
-    public static String NOMINAL_DP;
     public static double TOTAL_TALANGAN;
     public static String TALANGAN_ID;
     public static String NAMA_LENGKAP;
@@ -60,4 +59,5 @@ public class DaftarUtil {
     public static String ALAMAT_KELUARGA;
     public static String DINAS;
     public static String CICILAN_ID;
+    public static String NAMA_USER;
 }

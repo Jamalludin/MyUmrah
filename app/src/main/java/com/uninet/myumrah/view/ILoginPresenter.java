@@ -1,4 +1,4 @@
-package com.uninet.myumrah.presenter.presenter_login;
+package com.uninet.myumrah.view;
 
 public interface ILoginPresenter {
 

@@ -19,7 +19,7 @@ import com.uninet.myumrah.MainActivity;
 import com.uninet.myumrah.R;
 import com.uninet.myumrah.interactor.LoginInteractor;
 import com.uninet.myumrah.presenter.presenter_login.LoginPresenter;
-import com.uninet.myumrah.presenter.presenter_login.ILoginPresenter;
+import com.uninet.myumrah.view.ILoginPresenter;
 import com.uninet.myumrah.util.JsonUtil;
 import com.uninet.myumrah.model.CommonModel;
 import com.uninet.myumrah.view.LoginView;

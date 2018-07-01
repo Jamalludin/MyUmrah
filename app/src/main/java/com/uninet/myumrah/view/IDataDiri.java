@@ -1,4 +1,4 @@
-package com.uninet.myumrah.presenter;
+package com.uninet.myumrah.view;
 
 public interface IDataDiri {
     void validasi(String namaLengkap,String namaAyah,String tempatLahir,String noKK,

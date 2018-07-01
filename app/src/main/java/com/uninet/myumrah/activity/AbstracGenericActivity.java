@@ -6,15 +6,16 @@ import android.support.v7.widget.RecyclerView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.uninet.myumrah.presenter.ApprovalPresenter;
-import com.uninet.myumrah.presenter.DataDiriPresenter;
+import com.uninet.myumrah.presenter.BayarPresenter;
 import com.uninet.myumrah.presenter.DataTambahanPresenter;
 import com.uninet.myumrah.presenter.DownPaymentPresenter;
-import com.uninet.myumrah.presenter.IDataDiri;
+import com.uninet.myumrah.view.IDataDiri;
 import com.uninet.myumrah.presenter.list_paket.BankPresenter;
 import com.uninet.myumrah.presenter.list_paket.CaraBayarPresenter;
 import com.uninet.myumrah.presenter.list_paket.InstansiPresenter;
@@ -118,7 +119,6 @@ public abstract class AbstracGenericActivity extends AppCompatActivity{
     protected EditText alamatDarurat;
     protected EditText dinas;
     protected TextView txtPos;
-    protected TextView txtProvinsi;
     protected Spinner pilihPovinsi;
     protected Spinner pilihKabupaten;
     protected Spinner pilihKecamatan;
@@ -173,6 +173,18 @@ public abstract class AbstracGenericActivity extends AppCompatActivity{
     protected Button tolakApproval;
     public static String IDJAMAAH;
 
+    protected LinearLayout mainLayout;
+    protected TextView downpayment;
+
+    protected TextView bukanDP;
+    protected TextView totalBayar;
+    protected TextView prosesDP;
+    protected TextView blmDftr;
+    protected Button btn_bayar;
+    protected Button cancel_Bayar;
+
+    protected BayarPresenter bayarPresenter;
+
     protected void tahunPaket() {
         int year = Calendar.getInstance().get(Calendar.YEAR);
 
@@ -188,13 +200,6 @@ public abstract class AbstracGenericActivity extends AppCompatActivity{
             weekPaket.add("Minggu Ke "+Integer.toString(w));
         }
 
-    }
-
-    protected void bulanPaket(){
-
-        for (int m = 1; m <= 12; m++){
-            montPaket.add(Integer.toString(m));
-        }
     }
 
     protected String getIdInstansi(int a){

@@ -1,16 +1,13 @@
 package com.uninet.myumrah.presenter.list_paket;
 
 import android.content.Context;
-import android.widget.ListView;
 
 import com.uninet.myumrah.interactor.PaketInteractor;
-import com.uninet.myumrah.model.Paket;
 import com.uninet.myumrah.model.model_paket.ModelPaket;
+import com.uninet.myumrah.view.IPaketPresenter;
 import com.uninet.myumrah.view.ListPaketView;
 
-import java.util.List;
-
-public class PaketPresenter implements IPaketPresenter{
+public class PaketPresenter implements IPaketPresenter {
 
     private ListPaketView listPaketView;
     private PaketInteractor paketInteractor;

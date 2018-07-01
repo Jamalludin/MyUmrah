@@ -20,6 +20,7 @@ import com.uninet.myumrah.activity.daftar_umroh.ListPaketActivity;
 import com.uninet.myumrah.activity.login_aplikasi.LoginActivity;
 import com.uninet.myumrah.activity.login_aplikasi.Session;
 
+import static com.uninet.myumrah.util.DaftarUtil.NAMA_USER;
 import static com.uninet.myumrah.util.DaftarUtil.ROLE_USER;
 
 public class MainActivity extends AppCompatActivity {
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ROLE_USER = new Session(getApplicationContext()).role();
+        NAMA_USER = new Session(getApplicationContext()).getUserName();
 
         daftar = (Button)findViewById(R.id.btn_daftar_umroh);
         daftar.setOnClickListener(new View.OnClickListener() {

@@ -33,5 +33,6 @@ public class Url {
     public static final String APPROVAL_SAVE     = HOST2+"/public/approval/creates";
     public static final String UPDATE_JAMAAH     = HOST2+"/public/jamaah/updates";
     public static final String JAMAAH_PENYAKIT   = HOST2+"/public/penyakit/creates";
+    public static final String TAGIHAN_BAYAR     = HOST+"";
 
 }

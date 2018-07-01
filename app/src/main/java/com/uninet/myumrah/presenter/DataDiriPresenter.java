@@ -2,8 +2,9 @@ package com.uninet.myumrah.presenter;
 
 import com.uninet.myumrah.model.DataDiriModel;
 import com.uninet.myumrah.view.DataDiriView;
+import com.uninet.myumrah.view.IDataDiri;
 
-public class DataDiriPresenter implements IDataDiri{
+public class DataDiriPresenter implements IDataDiri {
 
     private DataDiriView dataDiriView;
 
