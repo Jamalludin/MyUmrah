@@ -10,7 +10,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
-import static com.uninet.myumrah.util.Url.PAKET_UMROH;
+import static com.uninet.myumrah.util.Url.LAMA_HARI;
 
 public class LamaPaketInteractor {
     public RequestQueue lamaPaket;
@@ -21,7 +21,7 @@ public class LamaPaketInteractor {
 
     public void LamaPaketRequest(final LamaHari lamaHari){
 
-        StringRequest requestLama = new StringRequest(Request.Method.GET, PAKET_UMROH, new Response.Listener<String>() {
+        StringRequest requestLama = new StringRequest(Request.Method.GET, LAMA_HARI, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Log.i("lama", response.toString());

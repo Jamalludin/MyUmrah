@@ -70,6 +70,7 @@ public class Jamaah implements Serializable{
     private List<JamaahPenyakit> jamaahPenyakits = new ArrayList<>();
     private List<Dokumen> dokumens = new ArrayList<>();
     private Instansi instansi;
+    private String dinasPekerjaan;
 
     public Jamaah() {
     }

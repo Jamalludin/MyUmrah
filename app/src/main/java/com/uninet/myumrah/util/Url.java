@@ -6,7 +6,8 @@ public class Url {
     public static final String HOST              = "http://36.37.68.130:41009/myumrah-api";
     public static final String REGISTER          = HOST+"/public/users";
     public static final String LOGIN             = HOST+"/login";
-    public static final String PAKET_UMROH       = HOST+"/public/paket/find-hariPakets";
+    public static final String LAMA_HARI         = HOST+"/public/paket/find-hariPakets";
+    public static final String PAKET_UMROH       = HOST+"/public/paket/find-by-spec";
     public static final String LIST_INSTANSI     = HOST+"/public/instansi/finds";
     public static final String LIST_BANK         = HOST+"/public/bank/find-banks?idinstansi=";
     public static final String CARA_BAYAR        = HOST+"/public/bayar/finds";
@@ -23,7 +24,7 @@ public class Url {
     public static final String PENYAKIT          = HOST+"/public/penyakit/finds";
     public static final String HUBUNGAN          = HOST+"/public/hubungan/finds";
     public static final String DAFTAR            = HOST2+"/public/jamaah/creates";
-    public static final String APPROVAL          = HOST+"/public/jamaah/find-by-role?namaRole=ROLE_BANDAHARA_KOPERASI";
+    public static final String APPROVAL          = HOST+"/public/jamaah/find-by-role?namaRole=";
     public static final String DETAIL_JAMAAH     = HOST+"/public/jamaah/find-by-id?idJamaah=";
     public static final String TALANGAN          = HOST+"/public/talangan/find-by-dp";
     public static final String APPROVAL_KOPERASI = HOST2+"/public/approval/update-koperasi";

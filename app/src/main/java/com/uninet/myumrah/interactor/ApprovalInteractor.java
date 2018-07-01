@@ -17,6 +17,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.uninet.myumrah.util.DaftarUtil.ROLE_USER;
 import static com.uninet.myumrah.util.Url.APPROVAL;
 import static com.uninet.myumrah.util.Url.APPROVAL_BANK;
 import static com.uninet.myumrah.util.Url.APPROVAL_KOPERASI;
@@ -31,7 +32,7 @@ public class ApprovalInteractor {
     }
 
     public void approvalJamaah(final ListApproval listApproval){
-            StringRequest requestApproval = new StringRequest(Request.Method.GET, APPROVAL, new Response.Listener<String>() {
+            StringRequest requestApproval = new StringRequest(Request.Method.GET, APPROVAL+ROLE_USER, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Log.i("approval", response.toString());

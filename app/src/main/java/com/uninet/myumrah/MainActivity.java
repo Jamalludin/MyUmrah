@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.uninet.myumrah.activity.approval.JamaahApprovalBankActivity;
 import com.uninet.myumrah.activity.approval.JamaahApprovalMyUmrohActivity;
@@ -18,6 +19,8 @@ import com.uninet.myumrah.activity.approval.JamahApprovalActivity;
 import com.uninet.myumrah.activity.daftar_umroh.ListPaketActivity;
 import com.uninet.myumrah.activity.login_aplikasi.LoginActivity;
 import com.uninet.myumrah.activity.login_aplikasi.Session;
+
+import static com.uninet.myumrah.util.DaftarUtil.ROLE_USER;
 
 public class MainActivity extends AppCompatActivity {
     private Button daftar;
@@ -27,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ROLE_USER = new Session(getApplicationContext()).role();
 
         daftar = (Button)findViewById(R.id.btn_daftar_umroh);
         daftar.setOnClickListener(new View.OnClickListener() {

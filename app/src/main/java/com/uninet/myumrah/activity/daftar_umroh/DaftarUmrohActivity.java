@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.uninet.myumrah.R;
 import com.uninet.myumrah.activity.AbstracGenericActivity;
+import com.uninet.myumrah.presenter.DataDiriPresenter;
 import com.uninet.myumrah.view.DataDiriView;
 
 import java.text.SimpleDateFormat;
@@ -50,6 +51,8 @@ public class DaftarUmrohActivity extends AbstracGenericActivity implements DataD
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daftar_umroh);
 
+        dataDiri = new DataDiriPresenter(this);
+
         textNama        = (EditText)findViewById(R.id.input_nama_lengkap);
         textAyah        = (EditText)findViewById(R.id.input_nama_ayah);
         textTmpLahir    = (EditText)findViewById(R.id.input_lahir);
@@ -72,7 +75,7 @@ public class DaftarUmrohActivity extends AbstracGenericActivity implements DataD
         perkawinans     = new ArrayList<String>();
 
         golonganDarahSpin = (Spinner)findViewById(R.id.spinner_goldarIndi);
-        statusPerkawinan = (Spinner)findViewById(R.id.spinner_status_perkawinan);
+        statusPerkawinan  = (Spinner)findViewById(R.id.spinner_status_perkawinan);
 
         golonganDarahSpin.setOnItemSelectedListener(this);
         statusPerkawinan.setOnItemSelectedListener(this);
@@ -137,7 +140,9 @@ public class DaftarUmrohActivity extends AbstracGenericActivity implements DataD
 
                     KELAMIN = "2";
                 }
-                startActivity(new Intent(DaftarUmrohActivity.this,DataPendukungActivity.class));
+
+                dataDiri.validasi(NAMA_LENGKAP,NAMA_AYAH,TEMPAT_LAHIR,NO_KK,NIK_JAMAAH,
+                        NO_HP,EMAIL_JAMAAH,TGL_LAHIR,KELAMIN,RIWAYAT_PERKAWINAN,NEGARA,GOLDAR);
             }
         });
 
@@ -145,7 +150,7 @@ public class DaftarUmrohActivity extends AbstracGenericActivity implements DataD
 
     @Override
     public void validasiDataSuccess(String data) {
-        Toasty.success(this, data, Toast.LENGTH_LONG).show();
+        startActivity(new Intent(DaftarUmrohActivity.this,DataPendukungActivity.class));
 
     }
 

@@ -14,6 +14,7 @@ import com.uninet.myumrah.presenter.ApprovalPresenter;
 import com.uninet.myumrah.presenter.DataDiriPresenter;
 import com.uninet.myumrah.presenter.DataTambahanPresenter;
 import com.uninet.myumrah.presenter.DownPaymentPresenter;
+import com.uninet.myumrah.presenter.IDataDiri;
 import com.uninet.myumrah.presenter.list_paket.BankPresenter;
 import com.uninet.myumrah.presenter.list_paket.CaraBayarPresenter;
 import com.uninet.myumrah.presenter.list_paket.InstansiPresenter;
@@ -46,7 +47,6 @@ public abstract class AbstracGenericActivity extends AppCompatActivity{
     protected CaraBayarPresenter caraBayarPresenter;
     protected BankPresenter bankPresenter;
     protected PaketPresenter paketPresenter;
-    protected DataDiriPresenter dataDiriPresenter;
     protected DownPaymentPresenter downPaymentPresenter;
     protected DataTambahanPresenter dataTambahanPresenter;
     protected Spinner lamaPerjalanan;
@@ -95,6 +95,7 @@ public abstract class AbstracGenericActivity extends AppCompatActivity{
     protected ArrayList<String> darahs = new ArrayList<String>();;
     protected ArrayList<String> perkawinans = new ArrayList<String>();
     protected Calendar calendar = Calendar.getInstance();
+    protected IDataDiri dataDiri;
 
     //datapendukung
     protected ArrayList<String> provinsiArr     = new ArrayList<String>();

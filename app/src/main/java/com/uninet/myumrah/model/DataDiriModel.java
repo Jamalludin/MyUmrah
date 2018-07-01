@@ -10,10 +10,8 @@ public class DataDiriModel {
     public String tempatLahir;
     public String noKK;
     public String nik;
-    public String nip;
     public String noHp;
     public String email;
-    public String terakhirUmroh;
     public String tglLahir;
     public String jenisKelamin;
     public String statusKawin;
@@ -21,18 +19,15 @@ public class DataDiriModel {
     public String golonganDarah;
 
     public DataDiriModel(String namaLengkap, String namaAyah, String tempatLahir, String noKK,
-                         String nik, String nip, String noHp, String email, String terakhirUmroh,
-                         String tglLahir, String jenisKelamin, String statusKawin,
-                         String kewargaNegaraan, String golonganDarah) {
+                         String nik, String noHp, String email, String tglLahir, String jenisKelamin,
+                         String statusKawin, String kewargaNegaraan, String golonganDarah) {
         this.namaLengkap = namaLengkap;
         this.namaAyah = namaAyah;
         this.tempatLahir = tempatLahir;
         this.noKK = noKK;
         this.nik = nik;
-        this.nip = nip;
         this.noHp = noHp;
         this.email = email;
-        this.terakhirUmroh = terakhirUmroh;
         this.tglLahir = tglLahir;
         this.jenisKelamin = jenisKelamin;
         this.statusKawin = statusKawin;
@@ -60,20 +55,12 @@ public class DataDiriModel {
         return nik;
     }
 
-    public String getNip() {
-        return nip;
-    }
-
     public String getNoHp() {
         return noHp;
     }
 
     public String getEmail() {
         return email;
-    }
-
-    public String getTerakhirUmroh() {
-        return terakhirUmroh;
     }
 
     public String getTglLahir() {
@@ -105,31 +92,23 @@ public class DataDiriModel {
             return 2;
         else if (TextUtils.isEmpty(getNoKK()))
             return 3;
-        else if (TextUtils.isEmpty(getNik()))
+        else if (getNoKK().length() < 16)
             return 4;
-        else if (TextUtils.isEmpty(getNoHp()))
+        else if (TextUtils.isEmpty(getNik()))
             return 5;
-        else if (getNoHp().length() <= 11)
+        else if (getNik().length() < 16)
             return 6;
-        else if (TextUtils.isEmpty(getEmail()))
+        else if (TextUtils.isEmpty(getNoHp()))
             return 7;
-        else if (!Patterns.EMAIL_ADDRESS.matcher(getEmail()).matches())
+        else if (getNoHp().length() < 11)
             return 8;
-        else if (TextUtils.isEmpty(getTglLahir()))
+        else if (TextUtils.isEmpty(getEmail()))
             return 9;
-        else if (getNip() == "")
+        else if (!Patterns.EMAIL_ADDRESS.matcher(getEmail()).matches())
             return 10;
-        else if (getTerakhirUmroh() == "")
-            return 10;
-        else if (getJenisKelamin() == "")
-            return 10;
-        else if (getStatusKawin() == "")
-            return 10;
-        else if (getKewargaNegaraan() == "")
-            return 10;
-        else if (getGolonganDarah() == "")
-            return 10;
+        else if (TextUtils.isEmpty(getTglLahir()))
+            return 11;
         else
-            return 10;
+            return 12;
     }
 }

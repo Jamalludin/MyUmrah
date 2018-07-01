@@ -257,6 +257,7 @@ public class DataPendukungActivity extends AbstracGenericActivity implements Dat
                 jamaah.setTalangan(new Talangan(Integer.parseInt(TALANGAN_ID)));
                 jamaah.setJenisBayar(new JenisBayar(Integer.parseInt(BAYAR_ID)));
                 jamaah.setInstansi(new Instansi(Integer.parseInt(INSTANSI_ID)));
+                jamaah.setDinasPekerjaan(DINAS);
                 jamaah.setStatusAktif(new StatusAktif(0));
                 jamaah.setStatusPesawat(new StatusPesawat());
                 jamaah.setAgen(new Agen());

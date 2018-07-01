@@ -35,8 +35,6 @@ public class JamahApprovalActivity extends AbstracGenericActivity implements App
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        ROLE_USER = new Session(getApplicationContext()).role();
-
         approvalPresenter = new ApprovalPresenter(this, getApplicationContext());
         approvalPresenter.setListApproval();
     }
