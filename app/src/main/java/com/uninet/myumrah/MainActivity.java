@@ -19,6 +19,7 @@ import com.uninet.myumrah.activity.approval.JamahApprovalActivity;
 import com.uninet.myumrah.activity.daftar_umroh.ListPaketActivity;
 import com.uninet.myumrah.activity.login_aplikasi.LoginActivity;
 import com.uninet.myumrah.activity.login_aplikasi.Session;
+import com.uninet.myumrah.activity.status.StatusPersetujuanKoperasiActivity;
 
 import static com.uninet.myumrah.util.DaftarUtil.NAMA_USER;
 import static com.uninet.myumrah.util.DaftarUtil.ROLE_USER;
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                startActivity(new Intent(MainActivity.this, ListPaketActivity.class));
+                startActivity(new Intent(MainActivity.this, StatusPersetujuanKoperasiActivity.class));
             }
         });
 

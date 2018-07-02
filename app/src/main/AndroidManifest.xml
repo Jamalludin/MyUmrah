@@ -52,17 +52,29 @@
         <activity
             android:name=".activity.approval.JamaahApprovalMyUmrohActivity"
             android:theme="@style/AppTheme" />
-        <activity android:name=".activity.pembayaran.BayarDownPaymentActivity"
-            android:theme="@style/AppTheme"/>
-        <activity android:name=".activity.pembayaran.BayarFullPaymentActivity"
-            android:theme="@style/AppTheme"/>
-        <activity android:name=".activity.pembayaran.BayarBelanjaActivity"
-            android:theme="@style/AppTheme"/>
-        <activity android:name=".activity.perubahan.LinkKeluargaActivity"
-            android:theme="@style/AppTheme"/>
-        <activity android:name=".activity.perubahan.PenggantianJamaahActivity"
-            android:theme="@style/AppTheme">
-        </activity>
+        <activity
+            android:name=".activity.pembayaran.BayarDownPaymentActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.pembayaran.BayarFullPaymentActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.pembayaran.BayarBelanjaActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.perubahan.LinkKeluargaActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.perubahan.PenggantianJamaahActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.status.StatusPersetujuanKoperasiActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.status.StatusPersetujuanBankActivity"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".activity.status.StatusPersetujuanTravelActivity"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
