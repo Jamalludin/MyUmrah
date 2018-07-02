@@ -73,7 +73,23 @@
         <activity
             android:name=".activity.status.StatusPersetujuanBankActivity"
             android:theme="@style/AppTheme" />
-        <activity android:name=".activity.status.StatusPersetujuanTravelActivity"
+        <activity
+            android:name=".activity.status.StatusPersetujuanTravelActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.status.CekIdJamaahdanNoVaActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.status.CekBayarDownpaymentActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.status.CekBayarFullPaymentActivity"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".activity.status.CekPembayaranCicilanActivity"
+            android:theme="@style/AppTheme"/>
+        <activity android:name=".activity.status.CekBayarMahramActivity"
+            android:theme="@style/AppTheme"/>
+        <activity android:name=".activity.status.CekSuratRekomendasiPasporActivity"
             android:theme="@style/AppTheme"></activity>
     </application>
 

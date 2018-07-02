@@ -8,11 +8,13 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.uninet.myumrah.presenter.ApprovalPresenter;
 import com.uninet.myumrah.presenter.BayarPresenter;
+import com.uninet.myumrah.presenter.CekStatusPresenter;
 import com.uninet.myumrah.presenter.DataTambahanPresenter;
 import com.uninet.myumrah.presenter.DownPaymentPresenter;
 import com.uninet.myumrah.view.IDataDiri;
@@ -180,8 +182,19 @@ public abstract class AbstracGenericActivity extends AppCompatActivity{
     protected TextView totalBayar;
     protected TextView prosesDP;
     protected TextView blmDftr;
+    protected TextView jenisBayar;
+    protected TextView tglApproval;
+    protected TextView assigmentApproval;
+    protected TextView noVa;
+    protected TextView statusVa;
+    protected TextView ketBayar;
     protected Button btn_bayar;
     protected Button cancel_Bayar;
+    protected ImageView pdfRekomendasi;
+
+    protected RelativeLayout rLayout;
+
+    protected CekStatusPresenter statusPresenter;
 
     protected BayarPresenter bayarPresenter;
 

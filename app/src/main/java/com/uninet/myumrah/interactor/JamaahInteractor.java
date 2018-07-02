@@ -18,7 +18,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static com.uninet.myumrah.activity.AbstracGenericActivity.IDJAMAAH;
+import static com.uninet.myumrah.util.DaftarUtil.NAMA_USER;
 import static com.uninet.myumrah.util.Url.DETAIL_JAMAAH;
+import static com.uninet.myumrah.util.Url.FIND_USER;
 import static com.uninet.myumrah.util.Url.UPDATE_JAMAAH;
 
 public class JamaahInteractor {
@@ -75,11 +77,32 @@ public class JamaahInteractor {
 
     }
 
+    public void findByNamaUser(final FindByNamaUser findByNamaUser){
+        StringRequest requestNamaUser = new StringRequest(Request.Method.GET, FIND_USER+NAMA_USER, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Log.i("findNamaUser",response.toString());
+                findByNamaUser.findByNamaUser(response.toString());
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        });
+        queueDetail.add(requestNamaUser);
+    }
+
     public interface DataJamaah{
         void dataJamaah (String dataJamaah);
     }
 
     public interface UpdateJamaah{
         void updateJamaah(String updateJamaah);
+    }
+
+    public interface FindByNamaUser{
+        void findByNamaUser(String namaUser);
     }
 }

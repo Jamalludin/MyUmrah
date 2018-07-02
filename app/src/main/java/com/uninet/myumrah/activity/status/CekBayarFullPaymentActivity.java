@@ -1,7 +1,7 @@
 package com.uninet.myumrah.activity.status;
 
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -16,32 +16,28 @@ import com.uninet.myumrah.presenter.CekStatusPresenter;
 import com.uninet.myumrah.view.CekStatusView;
 
 import java.lang.reflect.Type;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 
-public class StatusPersetujuanTravelActivity extends AbstracGenericActivity implements CekStatusView {
+public class CekBayarFullPaymentActivity extends AbstracGenericActivity implements CekStatusView {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_status_persetujuan_travel);
+        setContentView(R.layout.activity_cek_bayar_full_payment);
 
         statusPresenter = new CekStatusPresenter(this,getApplicationContext());
         statusPresenter.cekStatus();
 
-        nama_jamaah         = (TextView)findViewById(R.id.txt_cekTravName);
-        nik_jamaah          = (TextView)findViewById(R.id.txt_nikCekTrav);
-        jenisBayar          = (TextView)findViewById(R.id.txt_jnsBayarTrav);
-        tglApproval         = (TextView)findViewById(R.id.txt_tglApproTrav);
-        assigmentApproval   = (TextView)findViewById(R.id.txt_assigTrav);
-        rLayout             = (RelativeLayout)this.findViewById(R.id.rLetaveTrav);
+        id_jamaah    = (TextView)findViewById(R.id.txt_idJamaah_fp);
+        nama_jamaah  = (TextView)findViewById(R.id.txt_namaJamaah_fp);
+        nik_jamaah   = (TextView)findViewById(R.id.txt_nomorIndukJamaah_fp);
+        ketBayar    = (TextView)findViewById(R.id.txt_status_fp);
+
     }
 
     @Override
     public void statusView(String approvalStatus) {
 
         Jamaah jamaah = new Jamaah();
-        DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 
         try {
 
@@ -58,11 +54,8 @@ public class StatusPersetujuanTravelActivity extends AbstracGenericActivity impl
 
         }
 
-        String tglApprovalMyumroh = format.format(jamaah.getJamaahApproval().getTglApprovalMyumroh());
         nama_jamaah.setText(" : "+jamaah.getNamaLengkap());
         nik_jamaah.setText(" : "+jamaah.getNik());
-        jenisBayar.setText(" : "+jamaah.getJenisBayar().getNamaJenisBayar());
-        tglApproval.setText(" : "+tglApprovalMyumroh);
-        assigmentApproval.setText(" : "+jamaah.getJamaahApproval().getAssesmentMyumroh());
+        id_jamaah.setText(" : "+jamaah.getIdJamaah());
     }
 }

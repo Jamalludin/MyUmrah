@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="2dp"
+    android:orientation="horizontal"
+    android:weightSum="2">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.2"
+        android:paddingLeft="10dp"
+        android:text="Cicilan Ke"
+        android:id="@+id/txt_list_cicialan"
+        android:textColor="@color/colorPrimary" />
+
+    <TextView
+        android:id="@+id/txt_list_status_cicilan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingLeft="10dp"
+        android:text="Status Cicilan"
+        android:textColor="#448AFF" />
+
+</LinearLayout>
