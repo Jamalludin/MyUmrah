@@ -19,7 +19,14 @@ import com.uninet.myumrah.activity.approval.JamahApprovalActivity;
 import com.uninet.myumrah.activity.daftar_umroh.ListPaketActivity;
 import com.uninet.myumrah.activity.login_aplikasi.LoginActivity;
 import com.uninet.myumrah.activity.login_aplikasi.Session;
+import com.uninet.myumrah.activity.pembayaran.BayarFullPaymentActivity;
+import com.uninet.myumrah.activity.status.CekBayarDownpaymentActivity;
+import com.uninet.myumrah.activity.status.CekBayarFullPaymentActivity;
+import com.uninet.myumrah.activity.status.CekBayarMahramActivity;
+import com.uninet.myumrah.activity.status.CekIdJamaahdanNoVaActivity;
+import com.uninet.myumrah.activity.status.StatusPersetujuanBankActivity;
 import com.uninet.myumrah.activity.status.StatusPersetujuanKoperasiActivity;
+import com.uninet.myumrah.activity.status.StatusPersetujuanTravelActivity;
 
 import static com.uninet.myumrah.util.DaftarUtil.NAMA_USER;
 import static com.uninet.myumrah.util.DaftarUtil.ROLE_USER;
@@ -41,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                startActivity(new Intent(MainActivity.this, StatusPersetujuanKoperasiActivity.class));
+                startActivity(new Intent(MainActivity.this, ListPaketActivity.class));
             }
         });
 
@@ -61,9 +68,23 @@ public class MainActivity extends AppCompatActivity {
                 }else if (item == 1){
                     startActivity(new Intent(MainActivity.this, JamahApprovalActivity.class));
                 }else if (item == 2){
-                    startActivity(new Intent(MainActivity.this, JamaahApprovalBankActivity.class));
+                    startActivity(new Intent(MainActivity.this, BayarFullPaymentActivity.class));
+                }else if (item == 3){
+                    startActivity(new Intent(MainActivity.this, BayarFullPaymentActivity.class));
+                }else if (item == 4){
+                    startActivity(new Intent(MainActivity.this, CekBayarDownpaymentActivity.class));
+                }else if (item == 5){
+                    startActivity(new Intent(MainActivity.this, CekBayarFullPaymentActivity.class));
+                }else if (item == 6){
+                    startActivity(new Intent(MainActivity.this, CekBayarMahramActivity.class));
+                }else if (item == 7){
+                    startActivity(new Intent(MainActivity.this, CekIdJamaahdanNoVaActivity.class));
+                }else if (item == 8){
+                    startActivity(new Intent(MainActivity.this, StatusPersetujuanKoperasiActivity.class));
+                }else if (item == 9){
+                    startActivity(new Intent(MainActivity.this, StatusPersetujuanTravelActivity.class));
                 }else {
-                    startActivity(new Intent(MainActivity.this, JamaahApprovalMyUmrohActivity.class));
+                    startActivity(new Intent(MainActivity.this, StatusPersetujuanBankActivity.class));
                 }
             }
 

@@ -1,8 +1,7 @@
 package com.uninet.myumrah.activity.approval;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,34 +15,20 @@ import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
 import com.uninet.myumrah.R;
 import com.uninet.myumrah.activity.AbstracGenericActivity;
-import com.uninet.myumrah.model.Agen;
 import com.uninet.myumrah.model.Approval;
-import com.uninet.myumrah.model.Bank;
-import com.uninet.myumrah.model.Cicilan;
 import com.uninet.myumrah.model.Jamaah;
 import com.uninet.myumrah.model.JamaahApproval;
-import com.uninet.myumrah.model.JenisKelamin;
-import com.uninet.myumrah.model.ListJamaah;
-import com.uninet.myumrah.model.Paket;
 import com.uninet.myumrah.model.StatusAktif;
 import com.uninet.myumrah.model.StatusApproval;
 import com.uninet.myumrah.model.User;
-import com.uninet.myumrah.model.Va;
 import com.uninet.myumrah.presenter.ApprovalPresenter;
 import com.uninet.myumrah.util.JsonUtil;
 import com.uninet.myumrah.view.ApprovalView;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
-
 import java.lang.reflect.Type;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class KoperasiApprovalActivity extends AbstracGenericActivity implements ApprovalView,View.OnClickListener{
 
@@ -60,9 +45,9 @@ public class KoperasiApprovalActivity extends AbstracGenericActivity implements 
         IDJAMAAH        = extras.getString("idnya");
 
         tgl_registrasi  = (TextView) findViewById(R.id.tglDftr_bendahara);
-        id_jamaah       = (TextView) findViewById(R.id.id_jamaah_bendahara);
-        nama_jamaah     = (TextView) findViewById(R.id.nama_lengkap_jamaah_bendahara);
-        nik_jamaah      = (TextView) findViewById(R.id.nip_jamaah_bendahara);
+        idJamaah = (TextView) findViewById(R.id.id_jamaah_bendahara);
+        namaJamaah = (TextView) findViewById(R.id.nama_lengkap_jamaah_bendahara);
+        nikJamaah = (TextView) findViewById(R.id.nip_jamaah_bendahara);
         hp_jamaah       = (TextView) findViewById(R.id.no_hp_jamaah_bendahara);
         jk_jamaah       = (TextView) findViewById(R.id.txt_jk_benda);
         agen_jamaah     = (TextView) findViewById(R.id.agen_bendahara);
@@ -113,9 +98,9 @@ public class KoperasiApprovalActivity extends AbstracGenericActivity implements 
         String tglBerangkat = format.format(jamaah.getPaket().getTglBerangkat());
 
         tgl_registrasi.setText(" : "+tglRegistrasi);
-        id_jamaah.setText(" : "+jamaah.getIdCard());
-        nama_jamaah.setText(" : "+jamaah.getNamaLengkap());
-        nik_jamaah.setText(" : "+jamaah.getNik());
+        idJamaah.setText(" : "+jamaah.getIdCard());
+        namaJamaah.setText(" : "+jamaah.getNamaLengkap());
+        nikJamaah.setText(" : "+jamaah.getNik());
         hp_jamaah.setText(" : "+jamaah.getNoHp());
         jk_jamaah.setText(" : "+jamaah.getJenisKelamin().getNamaJenisKelamin());
         agen_jamaah.setText(" : "+jamaah.getAgen().getNamaAgen());
@@ -195,6 +180,8 @@ public class KoperasiApprovalActivity extends AbstracGenericActivity implements 
                 }else {
 
                     approvalPresenter.setUpdateJamaah(JsonUtil.toJson(jamaah));
+                    startActivity(new Intent(KoperasiApprovalActivity.this, JamaahApproval.class));
+                    finish();
                     /*pdialog.setMessage("Sedang Memproses...");
                     pdialog.show();*/
                 }

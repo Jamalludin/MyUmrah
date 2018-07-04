@@ -27,10 +27,10 @@ public class CekSuratRekomendasiPasporActivity extends AbstracGenericActivity im
         statusPresenter = new CekStatusPresenter(this,getApplicationContext());
         statusPresenter.cekStatus();
 
-        id_jamaah      = (TextView)findViewById(R.id.txt_idJamaah_rekPaspor);
-        nama_jamaah    = (TextView)findViewById(R.id.txt_namaJamaah_rekPaspor);
-        nik_jamaah     = (TextView)findViewById(R.id.txt_nomorIndukJamaah_rekPaspor);
-        ketBayar       = (TextView)findViewById(R.id.txt_status_rekPaspor);
+        idJamaah = (TextView)findViewById(R.id.txt_idJamaah_rekPaspor);
+        namaJamaah = (TextView)findViewById(R.id.txt_namaJamaah_rekPaspor);
+        nikJamaah = (TextView)findViewById(R.id.txt_nomorIndukJamaah_rekPaspor);
+        status = (TextView)findViewById(R.id.txt_status_rekPaspor);
         pdfRekomendasi = (ImageView)findViewById(R.id.img_rekPaspor);
     }
 
@@ -54,9 +54,9 @@ public class CekSuratRekomendasiPasporActivity extends AbstracGenericActivity im
 
         }
 
-        nama_jamaah.setText(" : "+jamaah.getNamaLengkap());
-        nik_jamaah.setText(" : "+jamaah.getNik());
-        id_jamaah.setText(" : "+jamaah.getIdJamaah());
+        namaJamaah.setText(" : "+jamaah.getNamaLengkap());
+        nikJamaah.setText(" : "+jamaah.getNik());
+        idJamaah.setText(" : "+jamaah.getIdJamaah());
 
     }
 }

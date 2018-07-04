@@ -26,10 +26,10 @@ public class CekBayarMahramActivity extends AbstracGenericActivity implements Ce
         statusPresenter = new CekStatusPresenter(this,getApplicationContext());
         statusPresenter.cekStatus();
 
-        id_jamaah    = (TextView)findViewById(R.id.txt_idJamaah_mahram);
-        nama_jamaah  = (TextView)findViewById(R.id.txt_namaJamaah_mahram);
-        nik_jamaah   = (TextView)findViewById(R.id.txt_nomorIndukJamaah_mahram);
-        ketBayar    = (TextView)findViewById(R.id.txt_status_mahram);
+        idJamaah = (TextView)findViewById(R.id.txt_idJamaah_mahram);
+        namaJamaah = (TextView)findViewById(R.id.txt_namaJamaah_mahram);
+        nikJamaah = (TextView)findViewById(R.id.txt_nomorIndukJamaah_mahram);
+        status = (TextView)findViewById(R.id.txt_status_mahram);
     }
 
     @Override
@@ -52,9 +52,9 @@ public class CekBayarMahramActivity extends AbstracGenericActivity implements Ce
 
         }
 
-        nama_jamaah.setText(" : "+jamaah.getNamaLengkap());
-        nik_jamaah.setText(" : "+jamaah.getNik());
-        id_jamaah.setText(" : "+jamaah.getIdJamaah());
+        namaJamaah.setText(" : "+jamaah.getNamaLengkap());
+        nikJamaah.setText(" : "+jamaah.getNik());
+        idJamaah.setText(" : "+jamaah.getIdJamaah());
 
     }
 }

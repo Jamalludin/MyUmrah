@@ -29,8 +29,8 @@ public class StatusPersetujuanBankActivity extends AbstracGenericActivity implem
         statusPresenter = new CekStatusPresenter(this,getApplicationContext());
         statusPresenter.cekStatus();
 
-        nama_jamaah       = (TextView)findViewById(R.id.txt_cekBankName);
-        nik_jamaah        = (TextView)findViewById(R.id.txt_nikCekBank);
+        namaJamaah = (TextView)findViewById(R.id.txt_cekBankName);
+        nikJamaah = (TextView)findViewById(R.id.txt_nikCekBank);
         jenisBayar        = (TextView)findViewById(R.id.txt_jnsBayarBank);
         tglApproval       = (TextView)findViewById(R.id.txt_tglApproBank);
         assigmentApproval = (TextView)findViewById(R.id.txt_assigBank);
@@ -59,8 +59,8 @@ public class StatusPersetujuanBankActivity extends AbstracGenericActivity implem
         }
 
         String tglApprovalBank = format.format(jamaah.getJamaahApproval().getTglApprovalBank());
-        nama_jamaah.setText(" : "+jamaah.getNamaLengkap());
-        nik_jamaah.setText(" : "+jamaah.getNik());
+        namaJamaah.setText(" : "+jamaah.getNamaLengkap());
+        nikJamaah.setText(" : "+jamaah.getNik());
         jenisBayar.setText(" : "+jamaah.getJenisBayar().getNamaJenisBayar());
         tglApproval.setText(" : "+tglApprovalBank);
         assigmentApproval.setText(" : "+jamaah.getJamaahApproval().getAssesmentBank());

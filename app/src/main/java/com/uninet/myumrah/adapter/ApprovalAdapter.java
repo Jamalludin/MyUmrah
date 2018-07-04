@@ -10,10 +10,15 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.uninet.myumrah.R;
+import com.uninet.myumrah.activity.approval.BankApprovalActivity;
 import com.uninet.myumrah.activity.approval.KoperasiApprovalActivity;
+import com.uninet.myumrah.activity.approval.MyUmrahApprovalActivity;
+import com.uninet.myumrah.activity.login_aplikasi.Session;
 import com.uninet.myumrah.model.ListJamaah;
 
 import java.util.List;
+
+import static com.uninet.myumrah.util.DaftarUtil.ROLE_USER;
 
 public class ApprovalAdapter extends RecyclerView.Adapter<ApprovalAdapter.ViewHolder> {
 
@@ -54,7 +59,6 @@ public class ApprovalAdapter extends RecyclerView.Adapter<ApprovalAdapter.ViewHo
             @Override
             public void onClick(View view) {
 
-                /*String role = new Session(view.getContext()).role();
                 if (ROLE_USER.equalsIgnoreCase("ROLE_BANDAHARA_KOPERASI")){
 
                     Intent calon = new Intent(view.getContext(), KoperasiApprovalActivity.class);
@@ -78,12 +82,12 @@ public class ApprovalAdapter extends RecyclerView.Adapter<ApprovalAdapter.ViewHo
                     bundle.putString("idnya", jamaahs.get(position).getIdJamaah());
                     calon.putExtras(bundle);
                     view.getContext().startActivity(calon);
-                }*/
-                Intent calon = new Intent(view.getContext(), KoperasiApprovalActivity.class);
+                }
+                /*Intent calon = new Intent(view.getContext(), KoperasiApprovalActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("idnya", jamaahs.get(position).getIdJamaah());
                 calon.putExtras(bundle);
-                view.getContext().startActivity(calon);
+                view.getContext().startActivity(calon);*/
 
 
             }

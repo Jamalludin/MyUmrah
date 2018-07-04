@@ -29,8 +29,8 @@ public class StatusPersetujuanTravelActivity extends AbstracGenericActivity impl
         statusPresenter = new CekStatusPresenter(this,getApplicationContext());
         statusPresenter.cekStatus();
 
-        nama_jamaah         = (TextView)findViewById(R.id.txt_cekTravName);
-        nik_jamaah          = (TextView)findViewById(R.id.txt_nikCekTrav);
+        namaJamaah = (TextView)findViewById(R.id.txt_cekTravName);
+        nikJamaah = (TextView)findViewById(R.id.txt_nikCekTrav);
         jenisBayar          = (TextView)findViewById(R.id.txt_jnsBayarTrav);
         tglApproval         = (TextView)findViewById(R.id.txt_tglApproTrav);
         assigmentApproval   = (TextView)findViewById(R.id.txt_assigTrav);
@@ -59,8 +59,8 @@ public class StatusPersetujuanTravelActivity extends AbstracGenericActivity impl
         }
 
         String tglApprovalMyumroh = format.format(jamaah.getJamaahApproval().getTglApprovalMyumroh());
-        nama_jamaah.setText(" : "+jamaah.getNamaLengkap());
-        nik_jamaah.setText(" : "+jamaah.getNik());
+        namaJamaah.setText(" : "+jamaah.getNamaLengkap());
+        nikJamaah.setText(" : "+jamaah.getNik());
         jenisBayar.setText(" : "+jamaah.getJenisBayar().getNamaJenisBayar());
         tglApproval.setText(" : "+tglApprovalMyumroh);
         assigmentApproval.setText(" : "+jamaah.getJamaahApproval().getAssesmentMyumroh());

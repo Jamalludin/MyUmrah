@@ -1,5 +1,6 @@
 package com.uninet.myumrah.activity.status;
 
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -16,20 +17,20 @@ import com.uninet.myumrah.view.CekStatusView;
 
 import java.lang.reflect.Type;
 
-public class CekBayarDownpaymentActivity extends AbstracGenericActivity implements CekStatusView {
+public class StatusPengirimanKelengkapanActivity extends AbstracGenericActivity implements CekStatusView {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cek_bayar_downpayment);
+        setContentView(R.layout.activity_status_pengiriman_kelengkapan);
 
         statusPresenter = new CekStatusPresenter(this,getApplicationContext());
         statusPresenter.cekStatus();
 
-        idJamaah = (TextView)findViewById(R.id.txt_idJamaah_dp);
-        namaJamaah = (TextView)findViewById(R.id.txt_namaJamaah_dp);
-        nikJamaah = (TextView)findViewById(R.id.txt_nomorIndukJamaah_dp);
-        status = (TextView)findViewById(R.id.txt_status_dp);
+        idJamaah = (TextView)findViewById(R.id.txt_idJamaah_pengiriman);
+        namaJamaah = (TextView)findViewById(R.id.txt_namaJamaah_pengiriman);
+        nikJamaah = (TextView)findViewById(R.id.txt_nomorIndukJamaah_pengiriman);
+        status = (TextView)findViewById(R.id.txt_status_visa);
     }
 
     @Override

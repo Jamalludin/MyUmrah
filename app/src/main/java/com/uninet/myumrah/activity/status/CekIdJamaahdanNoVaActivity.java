@@ -15,8 +15,6 @@ import com.uninet.myumrah.presenter.CekStatusPresenter;
 import com.uninet.myumrah.view.CekStatusView;
 
 import java.lang.reflect.Type;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 
 public class CekIdJamaahdanNoVaActivity extends AbstracGenericActivity implements CekStatusView {
 
@@ -28,11 +26,11 @@ public class CekIdJamaahdanNoVaActivity extends AbstracGenericActivity implement
         statusPresenter = new CekStatusPresenter(this,getApplicationContext());
         statusPresenter.cekStatus();
 
-        id_jamaah    = (TextView)findViewById(R.id.txt_idJamaahVA);
-        nama_jamaah  = (TextView)findViewById(R.id.txt_namaJamaahVA);
-        nik_jamaah   = (TextView)findViewById(R.id.txt_nomorIndukJamaahVA);
+        idJamaah = (TextView)findViewById(R.id.txt_idJamaahVA);
+        namaJamaah = (TextView)findViewById(R.id.txt_namaJamaahVA);
+        nikJamaah = (TextView)findViewById(R.id.txt_nomorIndukJamaahVA);
         noVa        = (TextView)findViewById(R.id.txt_noVa);
-        statusVa    = (TextView)findViewById(R.id.txt_statusVA);
+        statusAktif = (TextView)findViewById(R.id.txt_statusVA);
     }
 
     @Override
@@ -55,9 +53,9 @@ public class CekIdJamaahdanNoVaActivity extends AbstracGenericActivity implement
 
         }
 
-        nama_jamaah.setText(" : "+jamaah.getNamaLengkap());
-        nik_jamaah.setText(" : "+jamaah.getNik());
-        id_jamaah.setText(" : "+jamaah.getIdJamaah());
+        namaJamaah.setText(" : "+jamaah.getNamaLengkap());
+        nikJamaah.setText(" : "+jamaah.getNik());
+        idJamaah.setText(" : "+jamaah.getIdJamaah());
         noVa.setText(" : "+jamaah.getVa().getNamaVa());
     }
 }

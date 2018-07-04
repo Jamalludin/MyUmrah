@@ -29,8 +29,8 @@ public class StatusPersetujuanKoperasiActivity extends AbstracGenericActivity im
         statusPresenter = new CekStatusPresenter(this,getApplicationContext());
         statusPresenter.cekStatus();
 
-        nama_jamaah       = (TextView)findViewById(R.id.txt_cekBendaName);
-        nik_jamaah        = (TextView)findViewById(R.id.txt_nikCekBenda);
+        namaJamaah = (TextView)findViewById(R.id.txt_cekBendaName);
+        nikJamaah = (TextView)findViewById(R.id.txt_nikCekBenda);
         jenisBayar        = (TextView)findViewById(R.id.txt_jnsBayarBenda);
         tglApproval       = (TextView)findViewById(R.id.txt_tglApproBen);
         assigmentApproval = (TextView)findViewById(R.id.txt_assigBend);
@@ -59,8 +59,8 @@ public class StatusPersetujuanKoperasiActivity extends AbstracGenericActivity im
         }
 
         String tglApprovalKoperasi = format.format(jamaah.getJamaahApproval().getTglApprovalKoperasi());
-        nama_jamaah.setText(" : "+jamaah.getNamaLengkap());
-        nik_jamaah.setText(" : "+jamaah.getNik());
+        namaJamaah.setText(" : "+jamaah.getNamaLengkap());
+        nikJamaah.setText(" : "+jamaah.getNik());
         jenisBayar.setText(" : "+jamaah.getJenisBayar().getNamaJenisBayar());
         tglApproval.setText(" : "+tglApprovalKoperasi);
         assigmentApproval.setText(" : "+jamaah.getJamaahApproval().getAssesmentKoperasi());

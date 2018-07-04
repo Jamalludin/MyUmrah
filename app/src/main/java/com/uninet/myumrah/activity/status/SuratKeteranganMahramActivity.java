@@ -16,20 +16,20 @@ import com.uninet.myumrah.view.CekStatusView;
 
 import java.lang.reflect.Type;
 
-public class CekBayarDownpaymentActivity extends AbstracGenericActivity implements CekStatusView {
+public class SuratKeteranganMahramActivity extends AbstracGenericActivity implements CekStatusView {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cek_bayar_downpayment);
+        setContentView(R.layout.activity_surat_keterangan_mahram);
 
         statusPresenter = new CekStatusPresenter(this,getApplicationContext());
         statusPresenter.cekStatus();
 
-        idJamaah = (TextView)findViewById(R.id.txt_idJamaah_dp);
-        namaJamaah = (TextView)findViewById(R.id.txt_namaJamaah_dp);
-        nikJamaah = (TextView)findViewById(R.id.txt_nomorIndukJamaah_dp);
-        status = (TextView)findViewById(R.id.txt_status_dp);
+        idJamaah = (TextView)findViewById(R.id.txt_idJamaah_ketMahram);
+        namaJamaah = (TextView)findViewById(R.id.txt_namaJamaah_ketMahram);
+        nikJamaah = (TextView)findViewById(R.id.txt_nomorIndukJamaah_ketMahram);
+        status = (TextView)findViewById(R.id.txt_status_ketMahram);
     }
 
     @Override

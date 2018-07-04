@@ -1,5 +1,6 @@
 package com.uninet.myumrah.activity.approval;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -44,9 +45,9 @@ public class BankApprovalActivity extends AbstracGenericActivity implements Appr
         IDJAMAAH        = extras.getString("idnya");
 
         tgl_registrasi    = (TextView)findViewById(R.id.tglDftr_bank);
-        id_jamaah         = (TextView)findViewById(R.id.id_jamaah_bank);
-        nama_jamaah       = (TextView)findViewById(R.id.nama_lengkap_jamaah_bank);
-        nik_jamaah        = (TextView)findViewById(R.id.nip_jamaah_bank);
+        idJamaah = (TextView)findViewById(R.id.id_jamaah_bank);
+        namaJamaah = (TextView)findViewById(R.id.nama_lengkap_jamaah_bank);
+        nikJamaah = (TextView)findViewById(R.id.nip_jamaah_bank);
         hp_jamaah         = (TextView)findViewById(R.id.no_hp_jamaah_bank);
         jk_jamaah         = (TextView)findViewById(R.id.txt_jk_bank);
         agen_jamaah       = (TextView)findViewById(R.id.agen_bank);
@@ -95,9 +96,9 @@ public class BankApprovalActivity extends AbstracGenericActivity implements Appr
         String tglBerangkat = format.format(jamaah.getPaket().getTglBerangkat());
 
         tgl_registrasi.setText(" : "+tglRegistrasi);
-        id_jamaah.setText(" : "+jamaah.getIdCard());
-        nama_jamaah.setText(" : "+jamaah.getNamaLengkap());
-        nik_jamaah.setText(" : "+jamaah.getNik());
+        idJamaah.setText(" : "+jamaah.getIdCard());
+        namaJamaah.setText(" : "+jamaah.getNamaLengkap());
+        nikJamaah.setText(" : "+jamaah.getNik());
         hp_jamaah.setText(" : "+jamaah.getNoHp());
         jk_jamaah.setText(" : "+jamaah.getJenisKelamin().getNamaJenisKelamin());
         agen_jamaah.setText(" : "+jamaah.getAgen().getNamaAgen());
@@ -144,6 +145,8 @@ public class BankApprovalActivity extends AbstracGenericActivity implements Appr
                     approvalPresenter.setUpdateJamaah(JsonUtil.toJson(jamaah));
                     /*pdialog.setMessage("Sedang Memproses...");
                     pdialog.show();*/
+                    startActivity(new Intent(BankApprovalActivity.this, JamaahApproval.class));
+                    finish();
                 }
 
                 break;
@@ -168,6 +171,9 @@ public class BankApprovalActivity extends AbstracGenericActivity implements Appr
                     approvalPresenter.setUpdateJamaah(JsonUtil.toJson(jamaah));
                     /*pdialog.setMessage("Sedang Memproses...");
                     pdialog.show();*/
+
+                    startActivity(new Intent(BankApprovalActivity.this, JamaahApproval.class));
+                    finish();
                 }
 
                 break;

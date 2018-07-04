@@ -85,11 +85,58 @@
         <activity
             android:name=".activity.status.CekBayarFullPaymentActivity"
             android:theme="@style/AppTheme" />
-        <activity android:name=".activity.status.CekPembayaranCicilanActivity"
-            android:theme="@style/AppTheme"/>
-        <activity android:name=".activity.status.CekBayarMahramActivity"
-            android:theme="@style/AppTheme"/>
-        <activity android:name=".activity.status.CekSuratRekomendasiPasporActivity"
+        <activity
+            android:name=".activity.status.CekPembayaranCicilanActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.status.CekBayarMahramActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.status.CekSuratRekomendasiPasporActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.status.CekSuratPenambahanTigaKataActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.oprasional.DataKeberangkatanActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.oprasional.DataKepulanganActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.oprasional.DataJamaahSakitActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.oprasional.DataJamaahMeninggal"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.oprasional.DataJamaahTersesatActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.status.SuratKeteranganMahramActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.status.SuratKeteranganUmrohActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.status.StatusPasporActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.status.StatusVisaActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.status.StatusPengirimanKelengkapanActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.status.JadwalManasikActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.status.JadwalKeberangkatanActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.status.StatusAkomodasiActivity"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".activity.pendukung.DoaUmrohActivity"
             android:theme="@style/AppTheme"></activity>
     </application>
 

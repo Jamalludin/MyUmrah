@@ -1,6 +1,5 @@
 package com.uninet.myumrah.activity.status;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -27,10 +26,10 @@ public class CekBayarFullPaymentActivity extends AbstracGenericActivity implemen
         statusPresenter = new CekStatusPresenter(this,getApplicationContext());
         statusPresenter.cekStatus();
 
-        id_jamaah    = (TextView)findViewById(R.id.txt_idJamaah_fp);
-        nama_jamaah  = (TextView)findViewById(R.id.txt_namaJamaah_fp);
-        nik_jamaah   = (TextView)findViewById(R.id.txt_nomorIndukJamaah_fp);
-        ketBayar    = (TextView)findViewById(R.id.txt_status_fp);
+        idJamaah = (TextView)findViewById(R.id.txt_idJamaah_fp);
+        namaJamaah = (TextView)findViewById(R.id.txt_namaJamaah_fp);
+        nikJamaah = (TextView)findViewById(R.id.txt_nomorIndukJamaah_fp);
+        status = (TextView)findViewById(R.id.txt_status_fp);
 
     }
 
@@ -54,8 +53,8 @@ public class CekBayarFullPaymentActivity extends AbstracGenericActivity implemen
 
         }
 
-        nama_jamaah.setText(" : "+jamaah.getNamaLengkap());
-        nik_jamaah.setText(" : "+jamaah.getNik());
-        id_jamaah.setText(" : "+jamaah.getIdJamaah());
+        namaJamaah.setText(" : "+jamaah.getNamaLengkap());
+        nikJamaah.setText(" : "+jamaah.getNik());
+        idJamaah.setText(" : "+jamaah.getIdJamaah());
     }
 }

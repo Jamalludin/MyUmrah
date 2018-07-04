@@ -35,8 +35,18 @@
     </string-array>
 
     <string-array name="approval">
-        <item></item>
+        <item>Menu Lain</item>
         <item>Approval Jamaah</item>
+        <item>menu 1</item>
+        <item>menu 2</item>
+        <item>menu 3</item>
+        <item>menu 4</item>
+        <item>menu 5</item>
+        <item>menu 6</item>
+        <item>menu 7</item>
+        <item>menu 8</item>
+        <item>menu 9</item>
+        <item>menu 10</item>
     </string-array>
 
     <string-array name="bayar">
