@@ -44,20 +44,20 @@ public class KoperasiApprovalActivity extends AbstracGenericActivity implements 
         Bundle extras   = getIntent().getExtras();
         IDJAMAAH        = extras.getString("idnya");
 
-        tgl_registrasi  = (TextView) findViewById(R.id.tglDftr_bendahara);
+        tglRegistrasi = (TextView) findViewById(R.id.tglDftr_bendahara);
         idJamaah = (TextView) findViewById(R.id.id_jamaah_bendahara);
         namaJamaah = (TextView) findViewById(R.id.nama_lengkap_jamaah_bendahara);
         nikJamaah = (TextView) findViewById(R.id.nip_jamaah_bendahara);
-        hp_jamaah       = (TextView) findViewById(R.id.no_hp_jamaah_bendahara);
-        jk_jamaah       = (TextView) findViewById(R.id.txt_jk_benda);
-        agen_jamaah     = (TextView) findViewById(R.id.agen_bendahara);
-        paket_jamaah    = (TextView) findViewById(R.id.txt_paketPB);
-        cicilan_jamaah  = (TextView) findViewById(R.id.txt_cicil);
+        hpJamaah = (TextView) findViewById(R.id.no_hp_jamaah_bendahara);
+        jenisKelaminJamaah = (TextView) findViewById(R.id.txt_jk_benda);
+        agenJamaah = (TextView) findViewById(R.id.agen_bendahara);
+        paketJamaah = (TextView) findViewById(R.id.txt_paketPB);
+        cicilanJamaah = (TextView) findViewById(R.id.txt_cicil);
         periode         = (TextView) findViewById(R.id.txt_pcicil);
         berangkat       = (TextView) findViewById(R.id.txt_berangkatB);
-        va_jamaah       = (TextView) findViewById(R.id.txt_vaBenda);
-        bank_jamaah     = (TextView) findViewById(R.id.txt_bankBend);
-        no_rek          = (EditText) findViewById(R.id.input_noRekB);
+        vaJamaah = (TextView) findViewById(R.id.txt_vaBenda);
+        bankJamaah = (TextView) findViewById(R.id.txt_bankBend);
+        noRekening = (EditText) findViewById(R.id.input_noRekB);
         assigment       = (EditText) findViewById(R.id.input_assmentB);
         setujuApproval  = (Button) findViewById(R.id.setuju_jamaah_benda);
         tolakApproval   = (Button) findViewById(R.id.tolak_jamaah_benda);
@@ -97,19 +97,19 @@ public class KoperasiApprovalActivity extends AbstracGenericActivity implements 
         String tglRegistrasi = format.format(jamaah.getTglDaftar());
         String tglBerangkat = format.format(jamaah.getPaket().getTglBerangkat());
 
-        tgl_registrasi.setText(" : "+tglRegistrasi);
+        this.tglRegistrasi.setText(" : "+tglRegistrasi);
         idJamaah.setText(" : "+jamaah.getIdCard());
         namaJamaah.setText(" : "+jamaah.getNamaLengkap());
         nikJamaah.setText(" : "+jamaah.getNik());
-        hp_jamaah.setText(" : "+jamaah.getNoHp());
-        jk_jamaah.setText(" : "+jamaah.getJenisKelamin().getNamaJenisKelamin());
-        agen_jamaah.setText(" : "+jamaah.getAgen().getNamaAgen());
-        paket_jamaah.setText(" : "+jamaah.getPaket().getNamaPaket());
-        cicilan_jamaah.setText(" : "+jamaah.getCicilan().getNominalCicilan());
+        hpJamaah.setText(" : "+jamaah.getNoHp());
+        jenisKelaminJamaah.setText(" : "+jamaah.getJenisKelamin().getNamaJenisKelamin());
+        agenJamaah.setText(" : "+jamaah.getAgen().getNamaAgen());
+        paketJamaah.setText(" : "+jamaah.getPaket().getNamaPaket());
+        cicilanJamaah.setText(" : "+jamaah.getCicilan().getNominalCicilan());
         periode.setText(" : "+jamaah.getCicilan().getLamaCicilan());
         berangkat.setText(" : "+tglBerangkat);
-        va_jamaah.setText(" : "+jamaah.getVa().getNamaVa());
-        bank_jamaah.setText(" : "+jamaah.getBank().getNamaBank());
+        vaJamaah.setText(" : "+jamaah.getVa().getNamaVa());
+        bankJamaah.setText(" : "+jamaah.getBank().getNamaBank());
 
     }
 
@@ -129,7 +129,7 @@ public class KoperasiApprovalActivity extends AbstracGenericActivity implements 
         switch (v.getId()){
             case R.id.setuju_jamaah_benda:
 
-                NOMOR_REK = no_rek.getText().toString();
+                NOMOR_REK = noRekening.getText().toString();
                 ASSIGMENT = assigment.getText().toString();
                 JamaahApproval jamaahApproval = new JamaahApproval();
                 jamaahApproval.setApproval(new Approval(2));
@@ -161,7 +161,7 @@ public class KoperasiApprovalActivity extends AbstracGenericActivity implements 
 
             case R.id.tolak_jamaah_benda:
 
-                NOMOR_REK = no_rek.getText().toString();
+                NOMOR_REK = noRekening.getText().toString();
                 ASSIGMENT = assigment.getText().toString();
                 JamaahApproval jamaahApproval1 = new JamaahApproval();
                 jamaahApproval1.setApproval(new Approval(1));

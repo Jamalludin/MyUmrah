@@ -74,7 +74,7 @@ public class BayarDownPaymentActivity extends AbstracGenericActivity implements 
         idJamaah.setText(" : "+jamaah.getIdCard());
         namaJamaah.setText(" : "+jamaah.getNamaLengkap());
         nikJamaah.setText(" : "+jamaah.getNik());
-        hp_jamaah.setText(" : "+jamaah.getNoHp());
+        hpJamaah.setText(" : "+jamaah.getNoHp());
         downpayment.setText(" : "+jamaah.getDownPayment().getNominalDp());
         periode.setText(" : "+jamaah.getCicilan().getLamaCicilan());
 

@@ -20,7 +20,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/NoTittle" />
         <activity android:name=".activity.login_aplikasi.LoginActivity" />
         <activity
             android:name=".activity.daftar_umroh.DaftarUmrohActivity"
@@ -136,8 +136,15 @@
         <activity
             android:name=".activity.status.StatusAkomodasiActivity"
             android:theme="@style/AppTheme" />
-        <activity android:name=".activity.pendukung.DoaUmrohActivity"
-            android:theme="@style/AppTheme"></activity>
+        <activity
+            android:name=".activity.pendukung.DoaUmrohActivity"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".menu.MenuPendaftaranActivity" />
+        <activity android:name=".menu.MenuPembayaranActivity" />
+        <activity android:name=".menu.MenuPerubahanActivity" />
+        <activity android:name=".menu.MenuStatusActivity" />
+        <activity android:name=".menu.MenuOperationalActivity" />
+        <activity android:name=".menu.MenuPendukungActivity"></activity>
     </application>
 
 </manifest>

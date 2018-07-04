@@ -72,7 +72,7 @@ public class BayarFullPaymentActivity extends AbstracGenericActivity implements 
         idJamaah.setText(" : "+jamaah.getIdCard());
         namaJamaah.setText(" : "+jamaah.getNamaLengkap());
         nikJamaah.setText(" : "+jamaah.getNik());
-        hp_jamaah.setText(" : "+jamaah.getNoHp());
+        hpJamaah.setText(" : "+jamaah.getNoHp());
         totalBayar.setText(" : "+jamaah.getDownPayment().getNominalDp());
 
 

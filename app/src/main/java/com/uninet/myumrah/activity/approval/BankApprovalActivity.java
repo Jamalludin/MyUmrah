@@ -44,20 +44,20 @@ public class BankApprovalActivity extends AbstracGenericActivity implements Appr
         Bundle extras   = getIntent().getExtras();
         IDJAMAAH        = extras.getString("idnya");
 
-        tgl_registrasi    = (TextView)findViewById(R.id.tglDftr_bank);
+        tglRegistrasi = (TextView)findViewById(R.id.tglDftr_bank);
         idJamaah = (TextView)findViewById(R.id.id_jamaah_bank);
         namaJamaah = (TextView)findViewById(R.id.nama_lengkap_jamaah_bank);
         nikJamaah = (TextView)findViewById(R.id.nip_jamaah_bank);
-        hp_jamaah         = (TextView)findViewById(R.id.no_hp_jamaah_bank);
-        jk_jamaah         = (TextView)findViewById(R.id.txt_jk_bank);
-        agen_jamaah       = (TextView)findViewById(R.id.agen_bank);
-        paket_jamaah      = (TextView)findViewById(R.id.txt_paketBank);
-        cicilan_jamaah    = (TextView)findViewById(R.id.txt_cicilBank);
+        hpJamaah = (TextView)findViewById(R.id.no_hp_jamaah_bank);
+        jenisKelaminJamaah = (TextView)findViewById(R.id.txt_jk_bank);
+        agenJamaah = (TextView)findViewById(R.id.agen_bank);
+        paketJamaah = (TextView)findViewById(R.id.txt_paketBank);
+        cicilanJamaah = (TextView)findViewById(R.id.txt_cicilBank);
         periode           = (TextView)findViewById(R.id.txt_pcicilBank);
         berangkat         = (TextView)findViewById(R.id.txt_berangkatBank);
-        va_jamaah         = (TextView)findViewById(R.id.txt_vaBank);
-        bank_jamaah       = (TextView)findViewById(R.id.txt_aBank);
-        txt_noRek         = (TextView)findViewById(R.id.txt_aRekBank);
+        vaJamaah = (TextView)findViewById(R.id.txt_vaBank);
+        bankJamaah = (TextView)findViewById(R.id.txt_aBank);
+        txtNoRek = (TextView)findViewById(R.id.txt_aRekBank);
         assigment         = (EditText)findViewById(R.id.input_assmentBank);
 
         setujuApproval    = (Button)findViewById(R.id.setuju_jamaah_bank);
@@ -95,20 +95,20 @@ public class BankApprovalActivity extends AbstracGenericActivity implements Appr
         String tglRegistrasi = format.format(jamaah.getTglDaftar());
         String tglBerangkat = format.format(jamaah.getPaket().getTglBerangkat());
 
-        tgl_registrasi.setText(" : "+tglRegistrasi);
+        this.tglRegistrasi.setText(" : "+tglRegistrasi);
         idJamaah.setText(" : "+jamaah.getIdCard());
         namaJamaah.setText(" : "+jamaah.getNamaLengkap());
         nikJamaah.setText(" : "+jamaah.getNik());
-        hp_jamaah.setText(" : "+jamaah.getNoHp());
-        jk_jamaah.setText(" : "+jamaah.getJenisKelamin().getNamaJenisKelamin());
-        agen_jamaah.setText(" : "+jamaah.getAgen().getNamaAgen());
-        paket_jamaah.setText(" : "+jamaah.getPaket().getNamaPaket());
-        cicilan_jamaah.setText(" : "+jamaah.getCicilan().getNominalCicilan());
+        hpJamaah.setText(" : "+jamaah.getNoHp());
+        jenisKelaminJamaah.setText(" : "+jamaah.getJenisKelamin().getNamaJenisKelamin());
+        agenJamaah.setText(" : "+jamaah.getAgen().getNamaAgen());
+        paketJamaah.setText(" : "+jamaah.getPaket().getNamaPaket());
+        cicilanJamaah.setText(" : "+jamaah.getCicilan().getNominalCicilan());
         periode.setText(" : "+jamaah.getCicilan().getLamaCicilan());
         berangkat.setText(" : "+tglBerangkat);
-        va_jamaah.setText(" : "+jamaah.getVa().getNamaVa());
-        bank_jamaah.setText(" : "+jamaah.getBank().getNamaBank());
-        txt_noRek.setText(" : "+jamaah.getNoRek());
+        vaJamaah.setText(" : "+jamaah.getVa().getNamaVa());
+        bankJamaah.setText(" : "+jamaah.getBank().getNamaBank());
+        txtNoRek.setText(" : "+jamaah.getNoRek());
 
     }
 

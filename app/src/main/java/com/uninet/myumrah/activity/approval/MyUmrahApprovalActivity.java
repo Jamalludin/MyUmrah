@@ -44,20 +44,20 @@ public class MyUmrahApprovalActivity extends AbstracGenericActivity implements A
         Bundle extras   = getIntent().getExtras();
         IDJAMAAH        = extras.getString("idnya");
 
-        tgl_registrasi    = (TextView)findViewById(R.id.tglDftr_travel);
+        tglRegistrasi = (TextView)findViewById(R.id.tglDftr_travel);
         idJamaah = (TextView)findViewById(R.id.id_jamaah_travel);
         namaJamaah = (TextView)findViewById(R.id.nama_lengkap_jamaah_tra);
         nikJamaah = (TextView)findViewById(R.id.nip_jamaah_travel);
-        hp_jamaah         = (TextView)findViewById(R.id.no_hp_jamaah_travel);
-        jk_jamaah         = (TextView)findViewById(R.id.txt_jk_travel);
-        agen_jamaah       = (TextView)findViewById(R.id.agen_travel);
-        paket_jamaah      = (TextView)findViewById(R.id.txt_paketTra);
-        cicilan_jamaah    = (TextView)findViewById(R.id.txt_cicilTra);
+        hpJamaah = (TextView)findViewById(R.id.no_hp_jamaah_travel);
+        jenisKelaminJamaah = (TextView)findViewById(R.id.txt_jk_travel);
+        agenJamaah = (TextView)findViewById(R.id.agen_travel);
+        paketJamaah = (TextView)findViewById(R.id.txt_paketTra);
+        cicilanJamaah = (TextView)findViewById(R.id.txt_cicilTra);
         periode           = (TextView)findViewById(R.id.txt_pcicilTra);
         berangkat         = (TextView)findViewById(R.id.txt_berangkatTra);
-        va_jamaah         = (TextView)findViewById(R.id.txt_vaTra);
-        bank_jamaah       = (TextView)findViewById(R.id.txt_aTravel);
-        txt_noRek         = (TextView)findViewById(R.id.txt_aRekTra);
+        vaJamaah = (TextView)findViewById(R.id.txt_vaTra);
+        bankJamaah = (TextView)findViewById(R.id.txt_aTravel);
+        txtNoRek = (TextView)findViewById(R.id.txt_aRekTra);
         BICek             = (TextView)findViewById(R.id.txt_aCekBI);
         assigment         = (EditText)findViewById(R.id.input_assmentTra);
 
@@ -96,20 +96,20 @@ public class MyUmrahApprovalActivity extends AbstracGenericActivity implements A
         String tglRegistrasi = format.format(jamaah.getTglDaftar());
         String tglBerangkat = format.format(jamaah.getPaket().getTglBerangkat());
 
-        tgl_registrasi.setText(" : "+tglRegistrasi);
+        this.tglRegistrasi.setText(" : "+tglRegistrasi);
         idJamaah.setText(" : "+jamaah.getIdCard());
         namaJamaah.setText(" : "+jamaah.getNamaLengkap());
         nikJamaah.setText(" : "+jamaah.getNik());
-        hp_jamaah.setText(" : "+jamaah.getNoHp());
-        jk_jamaah.setText(" : "+jamaah.getJenisKelamin().getNamaJenisKelamin());
-        agen_jamaah.setText(" : "+jamaah.getAgen().getNamaAgen());
-        paket_jamaah.setText(" : "+jamaah.getPaket().getNamaPaket());
-        cicilan_jamaah.setText(" : "+jamaah.getCicilan().getNominalCicilan());
+        hpJamaah.setText(" : "+jamaah.getNoHp());
+        jenisKelaminJamaah.setText(" : "+jamaah.getJenisKelamin().getNamaJenisKelamin());
+        agenJamaah.setText(" : "+jamaah.getAgen().getNamaAgen());
+        paketJamaah.setText(" : "+jamaah.getPaket().getNamaPaket());
+        cicilanJamaah.setText(" : "+jamaah.getCicilan().getNominalCicilan());
         periode.setText(" : "+jamaah.getCicilan().getLamaCicilan());
         berangkat.setText(" : "+tglBerangkat);
-        va_jamaah.setText(" : "+jamaah.getVa().getNamaVa());
-        bank_jamaah.setText(" : "+jamaah.getBank().getNamaBank());
-        txt_noRek.setText(" : "+jamaah.getNoRek());
+        vaJamaah.setText(" : "+jamaah.getVa().getNamaVa());
+        bankJamaah.setText(" : "+jamaah.getBank().getNamaBank());
+        txtNoRek.setText(" : "+jamaah.getNoRek());
         BICek.setText(" : "+jamaah.getJamaahApproval().getAssesmentBank());
 
     }

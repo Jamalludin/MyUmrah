@@ -154,23 +154,23 @@ public abstract class AbstracGenericActivity extends AppCompatActivity{
 
     //approval
     protected ApprovalPresenter approvalPresenter;
-    protected TextView  tgl_registrasi;
+    protected TextView tglRegistrasi;
     protected TextView idJamaah;
     protected TextView namaJamaah;
     protected TextView nikJamaah;
-    protected TextView  hp_jamaah;
-    protected TextView  jk_jamaah;
-    protected TextView  agen_jamaah;
-    protected TextView  paket_jamaah;
-    protected TextView  cicilan_jamaah;
+    protected TextView hpJamaah;
+    protected TextView jenisKelaminJamaah;
+    protected TextView agenJamaah;
+    protected TextView paketJamaah;
+    protected TextView cicilanJamaah;
     protected TextView  periode;
     protected TextView  berangkat;
-    protected TextView  va_jamaah;
-    protected TextView  bank_jamaah;
-    protected TextView  txt_noRek;
+    protected TextView vaJamaah;
+    protected TextView bankJamaah;
+    protected TextView txtNoRek;
     protected TextView  BICek;
     protected EditText  assigment;
-    protected EditText  no_rek;
+    protected EditText noRekening;
     protected Button setujuApproval;
     protected Button tolakApproval;
     public static String IDJAMAAH;
