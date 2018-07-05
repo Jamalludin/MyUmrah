@@ -26,9 +26,9 @@ public class BayarDownPaymentActivity extends AbstracGenericActivity implements 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_down_payment);
 
-        idJamaah = (TextView)findViewById(R.id.txtIdJamaahBayarDP);
-        namaJamaah = (TextView)findViewById(R.id.txtNamaJamaahBayarDP);
-        nikJamaah = (TextView)findViewById(R.id.txtNomorIndukBayarDP);
+        idJamaah     = (TextView)findViewById(R.id.txtIdJamaahBayarDP);
+        namaJamaah   = (TextView)findViewById(R.id.txtNamaJamaahBayarDP);
+        nikJamaah    = (TextView)findViewById(R.id.txtNomorIndukBayarDP);
         periode      = (TextView)findViewById(R.id.txt_lmCicilan);
         downpayment  = (TextView)findViewById(R.id.txtJumlahbayarBayarDP);
         bukanDP      = (TextView)findViewById(R.id.txt_bukanDP);
@@ -37,8 +37,8 @@ public class BayarDownPaymentActivity extends AbstracGenericActivity implements 
         btn_bayar    = (Button) findViewById(R.id.btn_bayarDP);
         cancel_Bayar = (Button)findViewById(R.id.btn_cancel_bayarDP);
 
-        mainLayout   = (LinearLayout)this.findViewById(R.id.btn_layDP);
-        bayarPresenter = new BayarPresenter(this, getApplicationContext());
+        mainLayout      = (LinearLayout)this.findViewById(R.id.btn_layDP);
+        bayarPresenter  = new BayarPresenter(this, getApplicationContext());
         bayarPresenter.setDetaiTagihan();
 
         btn_bayar.setOnClickListener(this);

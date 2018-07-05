@@ -137,6 +137,13 @@
             android:layout_below="@+id/linear_bendahara_1"
             android:background="#000000" />
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/image_no_data"
+            android:id="@+id/img_cekCicilan"/>
+
         <android.support.v7.widget.RecyclerView
             android:id="@+id/list_dp"
             android:layout_marginLeft="5dp"

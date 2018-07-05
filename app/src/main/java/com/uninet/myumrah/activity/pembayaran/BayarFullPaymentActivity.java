@@ -26,9 +26,9 @@ public class BayarFullPaymentActivity extends AbstracGenericActivity implements 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_full_payment);
 
-        idJamaah = (TextView)findViewById(R.id.txtIdJamaahBayarFP);
-        namaJamaah = (TextView)findViewById(R.id.txtNamaJamaahBayarFP);
-        nikJamaah = (TextView)findViewById(R.id.txtNomorIndukBayarFP);
+        idJamaah     = (TextView)findViewById(R.id.txtIdJamaahBayarFP);
+        namaJamaah   = (TextView)findViewById(R.id.txtNamaJamaahBayarFP);
+        nikJamaah    = (TextView)findViewById(R.id.txtNomorIndukBayarFP);
         totalBayar   = (TextView)findViewById(R.id.txtJumlahbayarBayarFP);
         bukanDP      = (TextView)findViewById(R.id.txt_bukanFP);
         prosesDP     = (TextView)findViewById(R.id.txt_menunngu_fp);
@@ -74,8 +74,6 @@ public class BayarFullPaymentActivity extends AbstracGenericActivity implements 
         nikJamaah.setText(" : "+jamaah.getNik());
         hpJamaah.setText(" : "+jamaah.getNoHp());
         totalBayar.setText(" : "+jamaah.getDownPayment().getNominalDp());
-
-
     }
 
     @Override

@@ -13,11 +13,11 @@
         android:layout_height="match_parent">
 
     <LinearLayout
-        android:id="@+id/linear_menu1"
+        android:id="@+id/linear_mainMenu1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:clipToPadding="false"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="10dp"
         android:gravity="center"
         android:orientation="horizontal">
 
@@ -52,6 +52,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:id="@+id/txt_pendaftaran"
                     android:text="Pendaftaran"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -96,7 +97,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linear_menu2"
+        android:id="@+id/linear_mainMenu2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:clipToPadding="false"
@@ -177,7 +178,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linear_menu3"
+        android:id="@+id/linear_mainMenu3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:clipToPadding="false"
@@ -259,7 +260,7 @@
     </LinearLayout>
 
     <LinearLayout
-            android:id="@+id/linear_menu4"
+            android:id="@+id/linear_mainMenu4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clipToPadding="false"

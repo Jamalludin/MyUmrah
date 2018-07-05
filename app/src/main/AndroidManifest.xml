@@ -44,7 +44,7 @@
             android:name=".activity.approval.MyUmrahApprovalActivity"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".activity.approval.JamahApprovalActivity"
+            android:name=".activity.approval.JamaahApprovalActivity"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".activity.approval.JamaahApprovalBankActivity"
@@ -107,7 +107,7 @@
             android:name=".activity.oprasional.DataJamaahSakitActivity"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".activity.oprasional.DataJamaahMeninggal"
+            android:name=".activity.oprasional.DataJamaahMeninggalActivity"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".activity.oprasional.DataJamaahTersesatActivity"

@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -39,13 +40,16 @@ public class CicilanPaketActivity extends AbstracGenericActivity implements Cici
 
     public DecimalFormat formatter = new DecimalFormat("#,###");
     public static String item;
-    Talangan tangalanBank = new Talangan();
-    public String idTal;
+    private Talangan tangalanBank = new Talangan();
+    private ImageView imgCekPaket;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cicilan_paket);
+
+        imgCekPaket = (ImageView)findViewById(R.id.img_cekCicilan);
+        imgCekPaket.setVisibility(View.GONE);
 
         mRecyclerView = (RecyclerView) findViewById(R.id.list_dp);
         mRecyclerView.setHasFixedSize(true);
@@ -137,6 +141,13 @@ public class CicilanPaketActivity extends AbstracGenericActivity implements Cici
         } catch (Exception e) {
 
 
+        }
+
+        if (cicilans.isEmpty()){
+            imgCekPaket.setVisibility(View.VISIBLE);
+
+        }else {
+            imgCekPaket.setVisibility(View.GONE);
         }
 
         mAdapter = new CicilanAdapter(cicilans);

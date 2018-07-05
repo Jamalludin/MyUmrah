@@ -23,7 +23,7 @@ import java.util.List;
 
 import static com.uninet.myumrah.util.DaftarUtil.ROLE_USER;
 
-public class JamahApprovalActivity extends AbstracGenericActivity implements ApprovalView {
+public class JamaahApprovalActivity extends AbstracGenericActivity implements ApprovalView {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

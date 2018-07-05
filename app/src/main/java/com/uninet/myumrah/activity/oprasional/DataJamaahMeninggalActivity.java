@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import com.uninet.myumrah.R;
 
-public class DataJamaahMeninggal extends AppCompatActivity {
+public class DataJamaahMeninggalActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

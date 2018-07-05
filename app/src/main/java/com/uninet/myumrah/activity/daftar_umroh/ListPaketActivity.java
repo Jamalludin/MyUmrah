@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -49,10 +50,15 @@ import static com.uninet.myumrah.util.DaftarUtil.TAHUN;
 
 public class ListPaketActivity extends AbstracGenericActivity implements ListPaketView, AdapterView.OnItemSelectedListener {
 
+    private ImageView imgCekPaket;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_paket);
+
+        imgCekPaket = (ImageView)findViewById(R.id.img_cekPaket);
+        imgCekPaket.setVisibility(View.GONE);
 
         mRecyclerView   = (RecyclerView) findViewById(R.id.list_paket);
         mRecyclerView.setHasFixedSize(true);
@@ -229,8 +235,16 @@ public class ListPaketActivity extends AbstracGenericActivity implements ListPak
 
         }
 
+        if (resutlNew.isEmpty()){
+            imgCekPaket.setVisibility(View.VISIBLE);
+
+        }else {
+            imgCekPaket.setVisibility(View.GONE);
+        }
+
         mAdapter = new PaketAdapter(resutlNew);
         mRecyclerView.setAdapter(mAdapter);
+
     }
 
     @Override

@@ -2,7 +2,7 @@ package com.uninet.myumrah.util;
 
 public class Url {
 
-    public static final String HOST2             = "http://192.168.43.168:8080/myumrah-api";
+    public static final String HOST2             = "http://10.12.1.176:8080/myumrah-api";
     public static final String HOST              = "http://36.37.68.130:41009/myumrah-api";
     public static final String REGISTER          = HOST+"/public/users";
     public static final String LOGIN             = HOST+"/login";

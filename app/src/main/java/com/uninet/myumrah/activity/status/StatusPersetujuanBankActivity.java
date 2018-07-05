@@ -1,6 +1,8 @@
 package com.uninet.myumrah.activity.status;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -21,6 +23,8 @@ import java.text.SimpleDateFormat;
 
 public class StatusPersetujuanBankActivity extends AbstracGenericActivity implements CekStatusView {
 
+    private ImageView imgStatus;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,12 +33,17 @@ public class StatusPersetujuanBankActivity extends AbstracGenericActivity implem
         statusPresenter = new CekStatusPresenter(this,getApplicationContext());
         statusPresenter.cekStatus();
 
-        namaJamaah = (TextView)findViewById(R.id.txt_cekBankName);
-        nikJamaah = (TextView)findViewById(R.id.txt_nikCekBank);
+        namaJamaah        = (TextView)findViewById(R.id.txt_cekBankName);
+        nikJamaah         = (TextView)findViewById(R.id.txt_nikCekBank);
         jenisBayar        = (TextView)findViewById(R.id.txt_jnsBayarBank);
         tglApproval       = (TextView)findViewById(R.id.txt_tglApproBank);
         assigmentApproval = (TextView)findViewById(R.id.txt_assigBank);
         rLayout           = (RelativeLayout)this.findViewById(R.id.rLetaveBank);
+        imgStatus         = (ImageView)findViewById(R.id.cekStat);
+
+        rLayout.setVisibility(View.GONE);
+        imgStatus.setVisibility(View.GONE);
+
     }
 
     @Override
@@ -58,11 +67,18 @@ public class StatusPersetujuanBankActivity extends AbstracGenericActivity implem
 
         }
 
-        String tglApprovalBank = format.format(jamaah.getJamaahApproval().getTglApprovalBank());
-        namaJamaah.setText(" : "+jamaah.getNamaLengkap());
-        nikJamaah.setText(" : "+jamaah.getNik());
-        jenisBayar.setText(" : "+jamaah.getJenisBayar().getNamaJenisBayar());
-        tglApproval.setText(" : "+tglApprovalBank);
-        assigmentApproval.setText(" : "+jamaah.getJamaahApproval().getAssesmentBank());
+        if (jamaah.getJamaahApproval().getAssesmentBank() == null){
+            rLayout.setVisibility(View.GONE);
+            imgStatus.setVisibility(View.VISIBLE);
+
+        }else {
+            rLayout.setVisibility(View.VISIBLE);
+            String tglApprovalBank = format.format(jamaah.getJamaahApproval().getTglApprovalBank());
+            namaJamaah.setText(" : "+jamaah.getNamaLengkap());
+            nikJamaah.setText(" : "+jamaah.getNik());
+            jenisBayar.setText(" : "+jamaah.getJenisBayar().getNamaJenisBayar());
+            tglApproval.setText(" : "+tglApprovalBank);
+            assigmentApproval.setText(" : "+jamaah.getJamaahApproval().getAssesmentBank());
+        }
     }
 }

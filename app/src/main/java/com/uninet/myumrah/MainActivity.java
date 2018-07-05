@@ -4,30 +4,13 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.Spinner;
-import android.widget.Toast;
+import android.widget.TextView;
 
-import com.uninet.myumrah.activity.approval.JamaahApprovalBankActivity;
-import com.uninet.myumrah.activity.approval.JamaahApprovalMyUmrohActivity;
-import com.uninet.myumrah.activity.approval.JamahApprovalActivity;
+import com.uninet.myumrah.activity.approval.JamaahApprovalActivity;
 import com.uninet.myumrah.activity.daftar_umroh.ListPaketActivity;
 import com.uninet.myumrah.activity.login_aplikasi.LoginActivity;
 import com.uninet.myumrah.activity.login_aplikasi.Session;
-import com.uninet.myumrah.activity.pembayaran.BayarFullPaymentActivity;
-import com.uninet.myumrah.activity.status.CekBayarDownpaymentActivity;
-import com.uninet.myumrah.activity.status.CekBayarFullPaymentActivity;
-import com.uninet.myumrah.activity.status.CekBayarMahramActivity;
-import com.uninet.myumrah.activity.status.CekIdJamaahdanNoVaActivity;
-import com.uninet.myumrah.activity.status.StatusPersetujuanBankActivity;
-import com.uninet.myumrah.activity.status.StatusPersetujuanKoperasiActivity;
-import com.uninet.myumrah.activity.status.StatusPersetujuanTravelActivity;
 import com.uninet.myumrah.menu.MenuOperationalActivity;
 import com.uninet.myumrah.menu.MenuPembayaranActivity;
 import com.uninet.myumrah.menu.MenuPendukungActivity;
@@ -46,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private CardView operationalUmroh;
     private CardView fiturPendukung;
     private CardView keluarAplikasi;
+    private TextView txtPendaftaran;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         operationalUmroh = (CardView)findViewById(R.id.cardView_operational);
         fiturPendukung   = (CardView)findViewById(R.id.cardView_pendukung);
         keluarAplikasi   = (CardView)findViewById(R.id.cardView_logout);
+        txtPendaftaran   = (TextView)findViewById(R.id.txt_pendaftaran);
 
         pendaftaran.setOnClickListener(this);
         pembayaran.setOnClickListener(this);
@@ -70,13 +55,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         operationalUmroh.setOnClickListener(this);
         fiturPendukung.setOnClickListener(this);
         keluarAplikasi.setOnClickListener(this);
+
+        if (ROLE_USER.equalsIgnoreCase("ROLE_BANDAHARA_KOPERASI") ||
+               ROLE_USER.equalsIgnoreCase("ROLE_PETUGAS_MYUMROH") ||
+               ROLE_USER.equalsIgnoreCase("ROLE_PETUGAS_BANK")){
+
+            txtPendaftaran.setText("Approval");
+        }else {
+            txtPendaftaran.setText("Pendaftaran");
+        }
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.cardView_pendaftaran:
-                startActivity(new Intent(this,ListPaketActivity.class));
+                if (ROLE_USER.equalsIgnoreCase("ROLE_BANDAHARA_KOPERASI") ||
+                       ROLE_USER.equalsIgnoreCase("ROLE_PETUGAS_MYUMROH") ||
+                       ROLE_USER.equalsIgnoreCase("ROLE_PETUGAS_BANK")){
+
+                    startActivity(new Intent(this,JamaahApprovalActivity.class));
+                }else {
+                    startActivity(new Intent(this,ListPaketActivity.class));
+                }
                 break;
             case R.id.cardView_pembayaran:
                 startActivity(new Intent(this, MenuPembayaranActivity.class));

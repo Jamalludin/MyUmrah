@@ -344,6 +344,13 @@
             android:layout_marginTop="5dp"
             android:layout_below="@+id/viewBtn">
 
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/image_no_data"
+                android:id="@+id/img_cekPaket"/>
+
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/list_paket"
                 android:layout_width="match_parent"
