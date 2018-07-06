@@ -45,6 +45,7 @@ public abstract class AbstracGenericActivity extends AppCompatActivity{
     protected ArrayList<String> cicilanList   = new ArrayList<String>();
     protected ArrayList<String> perkawinan    = new ArrayList<String>();
     protected ArrayList<String> golonganDarah = new ArrayList<String>();
+
     protected LamaHariPresenter lamaHariPresenter;
     protected InstansiPresenter instansiPresenter;
     protected CaraBayarPresenter caraBayarPresenter;
@@ -52,6 +53,7 @@ public abstract class AbstracGenericActivity extends AppCompatActivity{
     protected PaketPresenter paketPresenter;
     protected DownPaymentPresenter downPaymentPresenter;
     protected DataTambahanPresenter dataTambahanPresenter;
+
     protected Spinner lamaPerjalanan;
     protected Spinner tahunPaketSpin;
     protected Spinner bulanPaketSpin;
@@ -60,28 +62,39 @@ public abstract class AbstracGenericActivity extends AppCompatActivity{
     protected Spinner bankListSpin;
     protected Spinner instansiList;
     protected Spinner downPaymentListSpin;
+
     protected TextView hargaPaket;
     protected TextView dpNominal;
     protected TextView totalTalangan;
+
     protected Button cariPaket;
+
     protected String idInstansi;
     protected String idBayar;
     protected String idBank;
     protected String idDownP;
+    protected String statusCode;
+
     protected JSONArray instansiId;
     protected JSONArray bankId;
     protected JSONArray bayarId;
+
     protected RecyclerView mRecyclerView;
     protected RecyclerView.Adapter mAdapter;
     protected RecyclerView.LayoutManager mLayoutManager;
+
     protected ProgressDialog pdialog;
 
     //daftarUmroh
     protected Spinner golonganDarahSpin;
     protected Spinner statusPerkawinan;
+
     protected RadioButton pria,wni,wanita,wna;
+
     protected TextView tglLahir;
+
     protected ImageView img_tgl_lahir;
+
     protected EditText textNama;
     protected EditText textAyah;
     protected EditText textTmpLahir;
@@ -91,13 +104,18 @@ public abstract class AbstracGenericActivity extends AppCompatActivity{
     protected EditText textNoHp;
     protected EditText textEmail;
     protected EditText textThUmroh;
+
     protected Button   daftarIndividu;
+
     protected JSONArray goldarArray;
     protected JSONArray cicilanArr;
     protected JSONArray downPaymentArr;
+
     protected ArrayList<String> darahs = new ArrayList<String>();;
     protected ArrayList<String> perkawinans = new ArrayList<String>();
+
     protected Calendar calendar = Calendar.getInstance();
+
     protected IDataDiri dataDiri;
 
     //datapendukung
@@ -113,6 +131,7 @@ public abstract class AbstracGenericActivity extends AppCompatActivity{
     protected ArrayList<String> tahunSakitArray = new ArrayList<String>();
     protected ArrayList<String> penyakitList    = new ArrayList<String>();
     protected ArrayList<String> lamaList        = new ArrayList<String>();
+
     protected EditText alamatJamaah;
     protected EditText rtrw;
     protected EditText namaMahram;
@@ -120,7 +139,9 @@ public abstract class AbstracGenericActivity extends AppCompatActivity{
     protected EditText telpDarurat;
     protected EditText alamatDarurat;
     protected EditText dinas;
+
     protected TextView txtPos;
+
     protected Spinner pilihPovinsi;
     protected Spinner pilihKabupaten;
     protected Spinner pilihKecamatan;
@@ -139,7 +160,9 @@ public abstract class AbstracGenericActivity extends AppCompatActivity{
     protected Spinner lamaSakit2;
     protected Spinner lamaSakit3;
     protected Spinner hubDaruratList;
+
     protected Button simpanData;
+
     protected JSONArray provinsiArray;
     protected JSONArray kabupatenArray;
     protected JSONArray kecamatanArray;
@@ -150,34 +173,38 @@ public abstract class AbstracGenericActivity extends AppCompatActivity{
     protected JSONArray mahramArray;
     protected JSONArray penyakitArray;
     protected JSONArray hubunganArray;
+
     protected String  idProvi;
 
     //approval
     protected ApprovalPresenter approvalPresenter;
-    protected TextView tglRegistrasi;
-    protected TextView idJamaah;
-    protected TextView namaJamaah;
-    protected TextView nikJamaah;
-    protected TextView hpJamaah;
-    protected TextView jenisKelaminJamaah;
-    protected TextView agenJamaah;
-    protected TextView paketJamaah;
-    protected TextView cicilanJamaah;
-    protected TextView  periode;
-    protected TextView  berangkat;
-    protected TextView vaJamaah;
-    protected TextView bankJamaah;
+
+    protected TextView txtTglRegistrasi;
+    protected TextView txtIdJamaah;
+    protected TextView txtNamaJamaah;
+    protected TextView txtNikJamaah;
+    protected TextView txtHpJamaah;
+    protected TextView txtJenisKelaminJamaah;
+    protected TextView txtAgenJamaah;
+    protected TextView txtPaketJamaah;
+    protected TextView txtCicilanJamaah;
+    protected TextView txtPeriode;
+    protected TextView txtBerangkat;
+    protected TextView txtVaJamaah;
+    protected TextView txtBankJamaah;
     protected TextView txtNoRek;
-    protected TextView  BICek;
-    protected EditText  assigment;
+    protected TextView txtBiCek;
+
+    protected EditText editTxtAssigment;
     protected EditText noRekening;
+
     protected Button setujuApproval;
     protected Button tolakApproval;
     public static String IDJAMAAH;
 
     protected LinearLayout mainLayout;
-    protected TextView downpayment;
 
+    protected TextView downpayment;
     protected TextView bukanDP;
     protected TextView totalBayar;
     protected TextView prosesDP;
@@ -190,8 +217,10 @@ public abstract class AbstracGenericActivity extends AppCompatActivity{
     protected TextView status;
     protected TextView nomorPaspor;
     protected TextView masaAktif;
+
     protected Button btn_bayar;
     protected Button cancel_Bayar;
+
     protected ImageView pdfRekomendasi;
 
     protected RelativeLayout rLayout;

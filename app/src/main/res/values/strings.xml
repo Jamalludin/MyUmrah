@@ -55,4 +55,7 @@
         <item>Full Payment Depan</item>
         <item>Full Payment Belakang</item>
     </string-array>
+
+    <string name="failed_update">Gagal Update Data</string>
+    <string name="success_update">Data Berhasil Di Update</string>
 </resources>

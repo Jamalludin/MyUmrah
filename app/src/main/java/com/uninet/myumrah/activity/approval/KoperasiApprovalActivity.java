@@ -16,13 +16,14 @@ import com.google.gson.reflect.TypeToken;
 import com.uninet.myumrah.R;
 import com.uninet.myumrah.activity.AbstracGenericActivity;
 import com.uninet.myumrah.model.Approval;
+import com.uninet.myumrah.model.CommonModel;
 import com.uninet.myumrah.model.Jamaah;
 import com.uninet.myumrah.model.JamaahApproval;
+import com.uninet.myumrah.model.Role;
 import com.uninet.myumrah.model.StatusAktif;
 import com.uninet.myumrah.model.StatusApproval;
 import com.uninet.myumrah.model.User;
 import com.uninet.myumrah.presenter.ApprovalPresenter;
-import com.uninet.myumrah.util.JsonUtil;
 import com.uninet.myumrah.view.ApprovalView;
 
 import java.lang.reflect.Type;
@@ -30,7 +31,9 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class KoperasiApprovalActivity extends AbstracGenericActivity implements ApprovalView,View.OnClickListener{
+import static com.uninet.myumrah.util.DaftarUtil.ROLE_USER;
+
+public class KoperasiApprovalActivity extends AbstracGenericActivity implements ApprovalView, View.OnClickListener {
 
     public static String NOMOR_REK;
     public static String ASSIGMENT;
@@ -41,26 +44,26 @@ public class KoperasiApprovalActivity extends AbstracGenericActivity implements 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_koperasi_approval);
 
-        Bundle extras   = getIntent().getExtras();
-        IDJAMAAH        = extras.getString("idnya");
+        Bundle extras = getIntent().getExtras();
+        IDJAMAAH = extras.getString("idnya");
 
-        tglRegistrasi = (TextView) findViewById(R.id.tglDftr_bendahara);
-        idJamaah = (TextView) findViewById(R.id.id_jamaah_bendahara);
-        namaJamaah = (TextView) findViewById(R.id.nama_lengkap_jamaah_bendahara);
-        nikJamaah = (TextView) findViewById(R.id.nip_jamaah_bendahara);
-        hpJamaah = (TextView) findViewById(R.id.no_hp_jamaah_bendahara);
-        jenisKelaminJamaah = (TextView) findViewById(R.id.txt_jk_benda);
-        agenJamaah = (TextView) findViewById(R.id.agen_bendahara);
-        paketJamaah = (TextView) findViewById(R.id.txt_paketPB);
-        cicilanJamaah = (TextView) findViewById(R.id.txt_cicil);
-        periode         = (TextView) findViewById(R.id.txt_pcicil);
-        berangkat       = (TextView) findViewById(R.id.txt_berangkatB);
-        vaJamaah = (TextView) findViewById(R.id.txt_vaBenda);
-        bankJamaah = (TextView) findViewById(R.id.txt_bankBend);
+        txtTglRegistrasi = (TextView) findViewById(R.id.tglDftr_bendahara);
+        txtIdJamaah = (TextView) findViewById(R.id.id_jamaah_bendahara);
+        txtNamaJamaah = (TextView) findViewById(R.id.nama_lengkap_jamaah_bendahara);
+        txtNikJamaah = (TextView) findViewById(R.id.nip_jamaah_bendahara);
+        txtHpJamaah = (TextView) findViewById(R.id.no_hp_jamaah_bendahara);
+        txtJenisKelaminJamaah = (TextView) findViewById(R.id.txt_jk_benda);
+        txtAgenJamaah = (TextView) findViewById(R.id.agen_bendahara);
+        txtPaketJamaah = (TextView) findViewById(R.id.txt_paketPB);
+        txtCicilanJamaah = (TextView) findViewById(R.id.txt_cicil);
+        txtPeriode = (TextView) findViewById(R.id.txt_pcicil);
+        txtBerangkat = (TextView) findViewById(R.id.txt_berangkatB);
+        txtVaJamaah = (TextView) findViewById(R.id.txt_vaBenda);
+        txtBankJamaah = (TextView) findViewById(R.id.txt_bankBend);
         noRekening = (EditText) findViewById(R.id.input_noRekB);
-        assigment       = (EditText) findViewById(R.id.input_assmentB);
-        setujuApproval  = (Button) findViewById(R.id.setuju_jamaah_benda);
-        tolakApproval   = (Button) findViewById(R.id.tolak_jamaah_benda);
+        editTxtAssigment = (EditText) findViewById(R.id.input_assmentB);
+        setujuApproval = (Button) findViewById(R.id.setuju_jamaah_benda);
+        tolakApproval = (Button) findViewById(R.id.tolak_jamaah_benda);
 
         setujuApproval.setOnClickListener(this);
         tolakApproval.setOnClickListener(this);
@@ -89,7 +92,7 @@ public class KoperasiApprovalActivity extends AbstracGenericActivity implements 
             jamaah = gson.fromJson(approval.get("data"), type);
 
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
 
         }
@@ -97,61 +100,81 @@ public class KoperasiApprovalActivity extends AbstracGenericActivity implements 
         String tglRegistrasi = format.format(jamaah.getTglDaftar());
         String tglBerangkat = format.format(jamaah.getPaket().getTglBerangkat());
 
-        this.tglRegistrasi.setText(" : "+tglRegistrasi);
-        idJamaah.setText(" : "+jamaah.getIdCard());
-        namaJamaah.setText(" : "+jamaah.getNamaLengkap());
-        nikJamaah.setText(" : "+jamaah.getNik());
-        hpJamaah.setText(" : "+jamaah.getNoHp());
-        jenisKelaminJamaah.setText(" : "+jamaah.getJenisKelamin().getNamaJenisKelamin());
-        agenJamaah.setText(" : "+jamaah.getAgen().getNamaAgen());
-        paketJamaah.setText(" : "+jamaah.getPaket().getNamaPaket());
-        cicilanJamaah.setText(" : "+jamaah.getCicilan().getNominalCicilan());
-        periode.setText(" : "+jamaah.getCicilan().getLamaCicilan());
-        berangkat.setText(" : "+tglBerangkat);
-        vaJamaah.setText(" : "+jamaah.getVa().getNamaVa());
-        bankJamaah.setText(" : "+jamaah.getBank().getNamaBank());
+        this.txtTglRegistrasi.setText(" : " + tglRegistrasi);
+        txtIdJamaah.setText(" : " + jamaah.getIdCard());
+        txtNamaJamaah.setText(" : " + jamaah.getNamaLengkap());
+        txtNikJamaah.setText(" : " + jamaah.getNik());
+        txtHpJamaah.setText(" : " + jamaah.getNoHp());
+        txtJenisKelaminJamaah.setText(" : " + jamaah.getJenisKelamin().getNamaJenisKelamin());
+        txtAgenJamaah.setText(" : " + jamaah.getAgen().getNamaAgen());
+        txtPaketJamaah.setText(" : " + jamaah.getPaket().getNamaPaket());
+        txtCicilanJamaah.setText(" : " + jamaah.getCicilan().getNominalCicilan());
+        txtPeriode.setText(" : " + jamaah.getCicilan().getLamaCicilan());
+        txtBerangkat.setText(" : " + tglBerangkat);
+        txtVaJamaah.setText(" : " + jamaah.getVa().getNamaVa());
+        txtBankJamaah.setText(" : " + jamaah.getBank().getNamaBank());
 
     }
 
     @Override
     public void approvalJamaah(String approvalJamaah) {
-        Toast.makeText(this, ""+approvalJamaah, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "" + approvalJamaah, Toast.LENGTH_SHORT).show();
 
     }
 
     @Override
     public void updateJamaah(String updateJamaah) {
 
+        try {
+
+            Gson gson = new Gson();
+            CommonModel commonModel = gson.fromJson(updateJamaah, CommonModel.class);
+            statusCode = commonModel.getStatus();
+        } catch (Exception e) {
+
+        }
+
+        if (statusCode.equalsIgnoreCase("0013")) {
+            startActivity(new Intent(KoperasiApprovalActivity.this, JamaahApprovalActivity.class));
+            Toast.makeText(this, R.string.success_update, Toast.LENGTH_SHORT).show();
+            finish();
+        } else {
+            Toast.makeText(this, R.string.failed_update, Toast.LENGTH_SHORT).show();
+        }
+
     }
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.setuju_jamaah_benda:
 
                 NOMOR_REK = noRekening.getText().toString();
-                ASSIGMENT = assigment.getText().toString();
+                ASSIGMENT = editTxtAssigment.getText().toString();
+
+                jamaah.setNoRek(NOMOR_REK);
+                jamaah.setStatusAktif(new StatusAktif(0));
+                jamaah.setUser(new User(new Role(ROLE_USER)));
+
                 JamaahApproval jamaahApproval = new JamaahApproval();
                 jamaahApproval.setApproval(new Approval(2));
                 jamaahApproval.setAssesmentKoperasi(ASSIGMENT);
                 jamaahApproval.setTglApprovalKoperasi(new java.sql.Date(new Date().getTime()));
                 jamaahApproval.setStatusApproval(new StatusApproval(2));
-                jamaah.setNoRek(NOMOR_REK);
-                jamaah.setJamaahApproval(jamaahApproval);
-                jamaah.setStatusAktif(new StatusAktif(0));
-                jamaah.setUser(new User());
+                jamaahApproval.setJamaah(jamaah);
 
-                if (ASSIGMENT.equals("")){
+                if (ASSIGMENT.equals("")) {
 
                     Toast.makeText(this, "Mohon Isi Assigment", Toast.LENGTH_SHORT).show();
 
-                }else if (NOMOR_REK.equals("")){
+                } else if (NOMOR_REK.equals("")) {
 
                     Toast.makeText(this, "Mohon Isi Nomor Rekening", Toast.LENGTH_SHORT).show();
 
-                }else {
+                } else {
 
-                    approvalPresenter.setUpdateJamaah(JsonUtil.toJson(jamaah));
+                    Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
+                    approvalPresenter.setUpdateJamaah(gson.toJson(jamaahApproval));
 
                     /*pdialog.setMessage("Sedang Memproses...");
                     pdialog.show();*/
@@ -162,32 +185,38 @@ public class KoperasiApprovalActivity extends AbstracGenericActivity implements 
             case R.id.tolak_jamaah_benda:
 
                 NOMOR_REK = noRekening.getText().toString();
-                ASSIGMENT = assigment.getText().toString();
+                ASSIGMENT = editTxtAssigment.getText().toString();
+
+                if (NOMOR_REK.equalsIgnoreCase("")) {
+
+                } else {
+                    jamaah.setNoRek(NOMOR_REK);
+                }
+
+                jamaah.setStatusAktif(new StatusAktif(0));
+                jamaah.setUser(new User(new Role(ROLE_USER)));
+
                 JamaahApproval jamaahApproval1 = new JamaahApproval();
                 jamaahApproval1.setApproval(new Approval(1));
                 jamaahApproval1.setAssesmentKoperasi(ASSIGMENT);
                 jamaahApproval1.setTglApprovalKoperasi(new java.sql.Date(new Date().getTime()));
                 jamaahApproval1.setStatusApproval(new StatusApproval(0));
-                jamaah.setNoRek(NOMOR_REK);
-                jamaah.setJamaahApproval(jamaahApproval1);
-                jamaah.setStatusAktif(new StatusAktif(0));
-                jamaah.setUser(new User());
+                jamaahApproval1.setJamaah(jamaah);
 
-                if (ASSIGMENT.equals("")){
+                if (ASSIGMENT.equals("")) {
 
                     Toast.makeText(this, "Mohon Isi Assigment", Toast.LENGTH_SHORT).show();
 
-                }else {
+                } else {
 
-                    approvalPresenter.setUpdateJamaah(JsonUtil.toJson(jamaah));
-                    startActivity(new Intent(KoperasiApprovalActivity.this, JamaahApproval.class));
-                    finish();
+                    Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
+                    approvalPresenter.setUpdateJamaah(gson.toJson(jamaahApproval1));
+
                     /*pdialog.setMessage("Sedang Memproses...");
                     pdialog.show();*/
                 }
 
                 break;
         }
-
     }
 }

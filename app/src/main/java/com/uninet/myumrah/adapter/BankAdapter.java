@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.uninet.myumrah.R;
-import com.uninet.myumrah.activity.approval.JamaahApprovalBankActivity;
 import com.uninet.myumrah.model.Jamaah;
 
 import java.util.List;

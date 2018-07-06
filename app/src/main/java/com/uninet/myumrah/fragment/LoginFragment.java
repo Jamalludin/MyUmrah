@@ -126,18 +126,35 @@ public class LoginFragment extends Fragment implements LoginView{
 
                     String status;
                     String token;
+                    String role;
+                    String replaceRole;
 
                     try {
 
                         CommonModel commonModel =  JsonUtil.fromJson(hasil, CommonModel.class);
                         status = commonModel.getStatus();
                         token  = commonModel.getData().toString();
-                        Log.i("tokenss", token);
+                        role   = commonModel.getRoles().toString();
+
+                        if (role.equalsIgnoreCase("ROLE_ADMINISTRATOR")){
+                            replaceRole = "ADMINISTRATOR";
+                        }else if (role.equalsIgnoreCase("ROLE_BANDAHARA_KOPERASI")){
+                            replaceRole = "BANDAHARA_KOPERASI";
+                        }else if (role.equalsIgnoreCase("ROLE_PETUGAS_BANK")){
+                            replaceRole = "PETUGAS_BANK";
+                        }else if (role.equalsIgnoreCase("PETUGAS_MYUMROH")){
+                            replaceRole = "PETUGAS_MYUMROH";
+                        }else if (role.equalsIgnoreCase("ROLE_ADMINISTRATOR")){
+                            replaceRole = "ADMINISTRATOR";
+                        }else {
+                            replaceRole = "KETUA_REGU";
+                        }
+
                         if (status.equalsIgnoreCase("success")){
 
                             loginPresenter.onLogin(status);
 
-                            new Session(getActivity().getApplicationContext()).token(USER_LOGIN,PASSWORD,commonModel.getRoles(),token);
+                            new Session(getActivity().getApplicationContext()).token(USER_LOGIN,PASSWORD,replaceRole,token);
                             startActivity(new Intent(getActivity(),MainActivity.class));
                             getActivity().finish();
 

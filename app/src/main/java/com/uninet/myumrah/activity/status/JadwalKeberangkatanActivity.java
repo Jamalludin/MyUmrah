@@ -1,6 +1,5 @@
 package com.uninet.myumrah.activity.status;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -27,9 +26,9 @@ public class JadwalKeberangkatanActivity extends AbstracGenericActivity implemen
         statusPresenter = new CekStatusPresenter(this,getApplicationContext());
         statusPresenter.cekStatus();
 
-        idJamaah = (TextView)findViewById(R.id.txt_idJamaah_berangkat);
-        namaJamaah = (TextView)findViewById(R.id.txt_namaJamaah_berangkat);
-        nikJamaah = (TextView)findViewById(R.id.txt_nomorIndukJamaah_berangkat);
+        txtIdJamaah = (TextView)findViewById(R.id.txt_idJamaah_berangkat);
+        txtNamaJamaah = (TextView)findViewById(R.id.txt_namaJamaah_berangkat);
+        txtNikJamaah = (TextView)findViewById(R.id.txt_nomorIndukJamaah_berangkat);
     }
 
     @Override
@@ -52,9 +51,9 @@ public class JadwalKeberangkatanActivity extends AbstracGenericActivity implemen
 
         }
 
-        namaJamaah.setText(" : "+jamaah.getNamaLengkap());
-        nikJamaah.setText(" : "+jamaah.getNik());
-        idJamaah.setText(" : "+jamaah.getIdJamaah());
+        txtNamaJamaah.setText(" : "+jamaah.getNamaLengkap());
+        txtNikJamaah.setText(" : "+jamaah.getNik());
+        txtIdJamaah.setText(" : "+jamaah.getIdJamaah());
 
     }
 }

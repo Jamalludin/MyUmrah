@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.uninet.myumrah.activity.approval.JamaahApprovalActivity;
 import com.uninet.myumrah.activity.daftar_umroh.ListPaketActivity;
@@ -56,23 +57,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         fiturPendukung.setOnClickListener(this);
         keluarAplikasi.setOnClickListener(this);
 
-        if (ROLE_USER.equalsIgnoreCase("ROLE_BANDAHARA_KOPERASI") ||
-               ROLE_USER.equalsIgnoreCase("ROLE_PETUGAS_MYUMROH") ||
-               ROLE_USER.equalsIgnoreCase("ROLE_PETUGAS_BANK")){
+        if (ROLE_USER.equalsIgnoreCase("BANDAHARA_KOPERASI") ||
+               ROLE_USER.equalsIgnoreCase("PETUGAS_MYUMROH") ||
+               ROLE_USER.equalsIgnoreCase("PETUGAS_BANK")){
 
             txtPendaftaran.setText("Approval");
         }else {
             txtPendaftaran.setText("Pendaftaran");
         }
+
+        Toast.makeText(this, ROLE_USER, Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.cardView_pendaftaran:
-                if (ROLE_USER.equalsIgnoreCase("ROLE_BANDAHARA_KOPERASI") ||
-                       ROLE_USER.equalsIgnoreCase("ROLE_PETUGAS_MYUMROH") ||
-                       ROLE_USER.equalsIgnoreCase("ROLE_PETUGAS_BANK")){
+                if (ROLE_USER.equalsIgnoreCase("BANDAHARA_KOPERASI") ||
+                       ROLE_USER.equalsIgnoreCase("PETUGAS_MYUMROH") ||
+                       ROLE_USER.equalsIgnoreCase("PETUGAS_BANK")){
 
                     startActivity(new Intent(this,JamaahApprovalActivity.class));
                 }else {

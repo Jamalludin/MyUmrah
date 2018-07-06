@@ -35,7 +35,7 @@ public class ListJamaah implements Serializable{
     @Override
     public String toString() {
         return "ListJamaah{" +
-                "idJamaah='" + idJamaah + '\'' +
+                "txtIdJamaah='" + idJamaah + '\'' +
                 ", namaLengkap='" + namaLengkap + '\'' +
                 ", nik='" + nik + '\'' +
                 '}';

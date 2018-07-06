@@ -26,9 +26,9 @@ public class CekIdJamaahdanNoVaActivity extends AbstracGenericActivity implement
         statusPresenter = new CekStatusPresenter(this,getApplicationContext());
         statusPresenter.cekStatus();
 
-        idJamaah = (TextView)findViewById(R.id.txt_idJamaahVA);
-        namaJamaah = (TextView)findViewById(R.id.txt_namaJamaahVA);
-        nikJamaah = (TextView)findViewById(R.id.txt_nomorIndukJamaahVA);
+        txtIdJamaah = (TextView)findViewById(R.id.txt_idJamaahVA);
+        txtNamaJamaah = (TextView)findViewById(R.id.txt_namaJamaahVA);
+        txtNikJamaah = (TextView)findViewById(R.id.txt_nomorIndukJamaahVA);
         noVa        = (TextView)findViewById(R.id.txt_noVa);
         statusAktif = (TextView)findViewById(R.id.txt_statusVA);
     }
@@ -53,9 +53,9 @@ public class CekIdJamaahdanNoVaActivity extends AbstracGenericActivity implement
 
         }
 
-        namaJamaah.setText(" : "+jamaah.getNamaLengkap());
-        nikJamaah.setText(" : "+jamaah.getNik());
-        idJamaah.setText(" : "+jamaah.getIdJamaah());
+        txtNamaJamaah.setText(" : "+jamaah.getNamaLengkap());
+        txtNikJamaah.setText(" : "+jamaah.getNik());
+        txtIdJamaah.setText(" : "+jamaah.getIdJamaah());
         noVa.setText(" : "+jamaah.getVa().getNamaVa());
     }
 }

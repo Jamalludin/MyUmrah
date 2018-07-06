@@ -47,12 +47,6 @@
             android:name=".activity.approval.JamaahApprovalActivity"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".activity.approval.JamaahApprovalBankActivity"
-            android:theme="@style/AppTheme" />
-        <activity
-            android:name=".activity.approval.JamaahApprovalMyUmrohActivity"
-            android:theme="@style/AppTheme" />
-        <activity
             android:name=".activity.pembayaran.BayarDownPaymentActivity"
             android:theme="@style/AppTheme" />
         <activity

@@ -7,6 +7,9 @@ public class StatusMahram implements Serializable{
     private Integer idStatusMahram;
     private String namaStatus;
 
+    public StatusMahram() {
+    }
+
     public StatusMahram(Integer idStatusMahram) {
         this.idStatusMahram = idStatusMahram;
     }

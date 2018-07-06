@@ -26,9 +26,9 @@ public class CekBayarDownpaymentActivity extends AbstracGenericActivity implemen
         statusPresenter = new CekStatusPresenter(this,getApplicationContext());
         statusPresenter.cekStatus();
 
-        idJamaah = (TextView)findViewById(R.id.txt_idJamaah_dp);
-        namaJamaah = (TextView)findViewById(R.id.txt_namaJamaah_dp);
-        nikJamaah = (TextView)findViewById(R.id.txt_nomorIndukJamaah_dp);
+        txtIdJamaah = (TextView)findViewById(R.id.txt_idJamaah_dp);
+        txtNamaJamaah = (TextView)findViewById(R.id.txt_namaJamaah_dp);
+        txtNikJamaah = (TextView)findViewById(R.id.txt_nomorIndukJamaah_dp);
         status = (TextView)findViewById(R.id.txt_status_dp);
     }
 
@@ -52,9 +52,9 @@ public class CekBayarDownpaymentActivity extends AbstracGenericActivity implemen
 
         }
 
-        namaJamaah.setText(" : "+jamaah.getNamaLengkap());
-        nikJamaah.setText(" : "+jamaah.getNik());
-        idJamaah.setText(" : "+jamaah.getIdJamaah());
+        txtNamaJamaah.setText(" : "+jamaah.getNamaLengkap());
+        txtNikJamaah.setText(" : "+jamaah.getNik());
+        txtIdJamaah.setText(" : "+jamaah.getIdJamaah());
 
     }
 }

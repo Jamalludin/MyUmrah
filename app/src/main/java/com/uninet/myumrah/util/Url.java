@@ -31,7 +31,7 @@ public class Url {
     public static final String APPROVAL_BANK     = HOST+"/public/approvals/update-bank";
     public static final String APPROVAL_MYUMROH  = HOST+"/public/approvals/update-myumroh";
     public static final String APPROVAL_SAVE     = HOST+"/public/approvals/creates";
-    public static final String UPDATE_JAMAAH     = HOST2+"/public/jamaahs/update";
+    public static final String UPDATE_JAMAAH     = HOST2+"/public/jamaahs/update-specify";
     public static final String JAMAAH_PENYAKIT   = HOST+"/public/penyakits/create";
     public static final String FIND_USER         = HOST+"/public/jamaahs/find-namaUser?namaUser=";
     public static final String TAGIHAN_BAYAR     = HOST2+"";

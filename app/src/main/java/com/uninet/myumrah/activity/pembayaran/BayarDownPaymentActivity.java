@@ -26,10 +26,10 @@ public class BayarDownPaymentActivity extends AbstracGenericActivity implements 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_down_payment);
 
-        idJamaah     = (TextView)findViewById(R.id.txtIdJamaahBayarDP);
-        namaJamaah   = (TextView)findViewById(R.id.txtNamaJamaahBayarDP);
-        nikJamaah    = (TextView)findViewById(R.id.txtNomorIndukBayarDP);
-        periode      = (TextView)findViewById(R.id.txt_lmCicilan);
+        txtIdJamaah = (TextView)findViewById(R.id.txtIdJamaahBayarDP);
+        txtNamaJamaah = (TextView)findViewById(R.id.txtNamaJamaahBayarDP);
+        txtNikJamaah = (TextView)findViewById(R.id.txtNomorIndukBayarDP);
+        txtPeriode = (TextView)findViewById(R.id.txt_lmCicilan);
         downpayment  = (TextView)findViewById(R.id.txtJumlahbayarBayarDP);
         bukanDP      = (TextView)findViewById(R.id.txt_bukanDP);
         prosesDP     = (TextView)findViewById(R.id.txt_menunngu_dp);
@@ -71,12 +71,12 @@ public class BayarDownPaymentActivity extends AbstracGenericActivity implements 
 
         }
 
-        idJamaah.setText(" : "+jamaah.getIdCard());
-        namaJamaah.setText(" : "+jamaah.getNamaLengkap());
-        nikJamaah.setText(" : "+jamaah.getNik());
-        hpJamaah.setText(" : "+jamaah.getNoHp());
+        txtIdJamaah.setText(" : "+jamaah.getIdCard());
+        txtNamaJamaah.setText(" : "+jamaah.getNamaLengkap());
+        txtNikJamaah.setText(" : "+jamaah.getNik());
+        txtHpJamaah.setText(" : "+jamaah.getNoHp());
         downpayment.setText(" : "+jamaah.getDownPayment().getNominalDp());
-        periode.setText(" : "+jamaah.getCicilan().getLamaCicilan());
+        txtPeriode.setText(" : "+jamaah.getCicilan().getLamaCicilan());
 
     }
 

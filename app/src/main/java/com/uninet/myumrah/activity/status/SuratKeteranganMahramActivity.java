@@ -26,9 +26,9 @@ public class SuratKeteranganMahramActivity extends AbstracGenericActivity implem
         statusPresenter = new CekStatusPresenter(this,getApplicationContext());
         statusPresenter.cekStatus();
 
-        idJamaah = (TextView)findViewById(R.id.txt_idJamaah_ketMahram);
-        namaJamaah = (TextView)findViewById(R.id.txt_namaJamaah_ketMahram);
-        nikJamaah = (TextView)findViewById(R.id.txt_nomorIndukJamaah_ketMahram);
+        txtIdJamaah = (TextView)findViewById(R.id.txt_idJamaah_ketMahram);
+        txtNamaJamaah = (TextView)findViewById(R.id.txt_namaJamaah_ketMahram);
+        txtNikJamaah = (TextView)findViewById(R.id.txt_nomorIndukJamaah_ketMahram);
         status = (TextView)findViewById(R.id.txt_status_ketMahram);
     }
 
@@ -52,9 +52,9 @@ public class SuratKeteranganMahramActivity extends AbstracGenericActivity implem
 
         }
 
-        namaJamaah.setText(" : "+jamaah.getNamaLengkap());
-        nikJamaah.setText(" : "+jamaah.getNik());
-        idJamaah.setText(" : "+jamaah.getIdJamaah());
+        txtNamaJamaah.setText(" : "+jamaah.getNamaLengkap());
+        txtNikJamaah.setText(" : "+jamaah.getNik());
+        txtIdJamaah.setText(" : "+jamaah.getIdJamaah());
 
     }
 }

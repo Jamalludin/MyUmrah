@@ -33,4 +33,7 @@ public class User implements Serializable {
         this.namaUser = namaUser;
     }
 
+    public User(Role role) {
+        this.role = role;
+    }
 }
